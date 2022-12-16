@@ -1,13 +1,11 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import Dashboard from '../pages/dashboard';
+import Nitro from '../pages/dashboard/nitro';
+import Loading from '../pages/loading';
+import Login from '../pages/login';
+import Register from '../pages/register';
 
-import FrendsRouters from './Routes/routes-frends';
-
-import Nitro from '../pages/page/dashboard/nitro/nitro';
-import Loading from '../pages/page/loading/loading';
-import LoginRegister from '../pages/page/login-register/login-register';
-import Dashboard from '../pages/page/dashboard/dashboard';
-
-import FriendsOnline from '../pages/page/dashboard/friends/friends-online/friends-online';
+import FriendsRouters from './routes-friends';
 
 function AppRoutes() {
   return (
@@ -15,13 +13,13 @@ function AppRoutes() {
       <Routes>
         <Route path="/*">
           <Route index element={<Loading />} />
-          <Route path="login-register/" element={<LoginRegister />} />
+          <Route path="login/" element={<Login />} />
+          <Route path="register/" element={<Register />} />
           <Route path="dashboard/*">
             <Route index element={<Dashboard />} />
             <Route path="friends/*">
-              <Route index element={<FriendsOnline />} />
-              {/* default frends-page  */}
-              <Route path="*" element={<FrendsRouters />} />
+              <Route index element={<Navigate replace to="online" />} />
+              <Route path="*" element={<FriendsRouters />} />
             </Route>
             <Route path="nitro/" element={<Nitro />} />
           </Route>
