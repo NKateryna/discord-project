@@ -37,3 +37,7 @@ export { AcceptIcon } from './accept';
 export { UnblockUserIcon } from './unblock-user.js';
 
 export { CreateServerIcon } from './create-server';
+/*icon components*/
+export { CheckboxIcon } from './checkbox';
+export { CheckboxCheckedIcon } from './checbox-checked';
+export { ArrowSelectIcon } from './arrow-select';

@@ -1,0 +1,21 @@
+:root {
+    --white: #ffffff;
+    --brend-color: #5865f2;
+    --brend-color-hover: #4752c4;
+    --brend-color-active: #3c45a5;
+
+    ---gray-1: #2f3136;
+    ---gray-2: #36393F;
+    ---gray-3: #B9BBBE;
+    ---gray-4: #202225;
+    ---gray-5: #3C3F45;
+    ---gray-6: #72767D;
+    ---gray-7: #A3A6AA;
+    --blue-1: #00AFF4;
+    /*status*/
+    --status-grau: #3ba55d;
+    --status-red: #ed4245;
+    --status-yellow: #faa81a;
+    --status-green: #3ba55d;
+  }
+
