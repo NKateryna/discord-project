@@ -25,33 +25,89 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           textTransform: 'none',
-          // fontSize: '16px',
-          // fontFamily: 'Whitney',
-          // borderRadius: '4px',
-          width: '100%',
-          padding: '0px',
-        },
-        /*ApplicationLogin Button*/
-        containedSizeLarge: {
-          fontFamily: 'Noto Sans',
-          fontStyle: 'normal',
-          fontWeight: '500',
           fontSize: '16px',
-          lineHeight: '22px',
-          background: 'var(--brend-color)',
-          height: '44px',
-          color: '#FFFFFF',
-          borderRadius: '3px',
+          fontFamily: 'Whitney',
+          padding: '0px',
+          boxSizing: 'border-box',
           '&:hover': {
-            background: 'var(--brend-color-hover)',
+            border: 'none',
           },
-          '&:active': {
-            background: 'var(--brend-color-active)',
-          },
-          '&.Mui-disabled': {
+        },
+        contained: {
+          /*default /contained,large*/
+          '&.MuiButton-containedPrimary': {
+            fontFamily: 'Noto Sans',
+            fontStyle: 'normal',
+            fontWeight: '500',
+            fontSize: '16px',
+            lineHeight: '22px',
             background: 'var(--brend-color)',
-            opacity: '0.5',
+            height: '44px',
             color: 'var(--white)',
+            borderRadius: '3px',
+            width: '100%',
+            '&:hover': {
+              background: 'var(--brend-color-hover)',
+            },
+            '&:active': {
+              background: 'var(--brend-color-active)',
+            },
+            '&.Mui-disabled': {
+              background: 'var(--brend-color)',
+              opacity: '0.5',
+              color: 'var(--white)',
+            },
+          },
+          /*delete a friend /contained,warning */
+          '&.MuiButton-containedWarning': {
+            backgroundColor: 'var(--red-1)',
+            '&:hover': {},
+            '&:active': {},
+            '&.Mui-disabled': {},
+          },
+        },
+        outlined: {
+          border: 'none',
+          /**delete a friend, transparent /outlined,Inherit*/
+          '&.MuiButton-outlinedInherit': {
+            fontFamily: 'Whitney',
+            color: 'var(--white-2)',
+            '&:hover': {
+              color: 'var(--white-2)',
+              textDecoration: 'underline',
+            },
+          },
+          /*more-menu /outlined,primary*/
+          '&.MuiButton-outlinedPrimary': {
+            fontFamily: 'Whitney',
+            justifyContent: 'flex-start',
+            padding: '8px',
+            borderRadius: '2px',
+            fontSize: '14px',
+            lineHeight: '16.8px',
+            fontWeight: '350',
+            lineHeight: '17px',
+            color: 'var(--white)',
+            '&:hover': {
+              backgroundColor: 'var(--brend-color-hover)',
+              color: 'var(--white)',
+            },
+          },
+          /*more-menu /outlined,warning*/
+          '&.MuiButton-outlinedWarning': {
+            fontFamily: 'Whitney',
+            justifyContent: 'flex-start',
+            padding: '8px',
+            borderRadius: '2px',
+            fontSize: '14px',
+            lineHeight: '16.8px',
+            fontWeight: '350',
+            lineHeight: '17px',
+            color: 'var(--red-1)',
+            '&:hover': {
+              backgroundColor: 'var(--red-1)',
+              color: 'var(--white)',
+            },
           },
         },
       },
@@ -77,6 +133,7 @@ const theme = createTheme({
           marginBottom: '20px',
           '&.Mui-focused': {},
         },
+        /* Search input*/
         inputTypeSearch: {},
       },
     },
@@ -145,7 +202,7 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           '&.MuiMenu-list': {
-            backgroundColor: 'var(---gray-4)',
+            backgroundColor: 'var(---gray-2)',
             padding: '0',
           },
         },
@@ -161,12 +218,27 @@ const theme = createTheme({
           overflow: 'hidden',
           boxSizing: 'border-box',
           color: 'var(---gray-3)',
+          '&:hover': {
+            backgroundColor: 'var(---gray-4)',
+          },
+          '&.Mui-selected': {
+            backgroundColor: 'var(---gray-2)',
+            '&:hover': {
+              backgroundColor: 'var(---gray-4)',
+            },
+          },
         },
       },
     },
     /* display some content on top of another */
-    MuiPopover: {
-      paper: { borderRadius: 0 },
+    MuiPaper: {
+      styleOverrides: {
+        root: {
+          '&.MuiMenu-paper': {
+            borderRadius: '0px',
+          },
+        },
+      },
     },
   },
 });

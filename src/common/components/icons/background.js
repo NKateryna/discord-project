@@ -1,14 +1,20 @@
 export function BackgroundIcon() {
   const style = {
-    height: '100%',
-    width: '100%',
+    height: '100vh',
+    width: '100vw',
+    minWidth: '1020px',
     position: 'absolute',
     top: '0px',
-    zIndex: '1',
+    left: '0px',
   };
 
   return (
-    <svg style={style} fill="none">
+    <svg
+      style={style}
+      fill="none"
+      viewBox="0 0 1920 1356"
+      preserveAspectRatio="xMinYMin slice"
+    >
       <g clipPath="url(#clip0_104_338)">
         <path d="M0 0H1921V1356.41H0V0Z" fill="#5865F2" />
         <path

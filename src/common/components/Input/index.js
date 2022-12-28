@@ -2,6 +2,8 @@ import { Input } from '@mui/material';
 
 function InputDefault({
   sx,
+  value,
+  onChange,
   type,
   placeholder,
   id,
@@ -12,6 +14,8 @@ function InputDefault({
   return (
     <Input
       sx={sx}
+      value={value}
+      onChange={onChange}
       type={type}
       placeholder={placeholder}
       id={id}
