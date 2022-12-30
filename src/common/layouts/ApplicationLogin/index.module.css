@@ -28,7 +28,7 @@
     font-size: 24px;
     line-height: 33px;
     color: var(--white);
-    padding: 0px 0px 6px 0px;
+    padding-bottom: 6px;
 }
 .subtitle {
     display: flex;
@@ -40,7 +40,7 @@
     line-height: 22px;
     letter-spacing: -0.06em;
     color: var(---gray-3);
-    padding: 0px 0px 20px 0px;
+    padding-bottom:  20px;
 }
 .helpText {
     font-family: 'Noto Sans';
