@@ -13,12 +13,6 @@ const theme = createTheme({
       dark: 'var(---gray-4)',
       contrastText: 'var(--white)',
     },
-    // secondary: {
-    //   // light: '',
-    //   // main: '',
-    //   // dark: ',
-    //   // contrastText: '',
-    // },
   },
   components: {
     MuiButton: {

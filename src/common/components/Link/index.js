@@ -1,11 +1,11 @@
-import { Link } from '@mui/material';
+import { Link as BaseLink } from '@mui/material';
 
-function LinkDefault({ sx, children, href, underline = 'none' }) {
+function Link({ sx, children, href, underline = 'none' }) {
   return (
-    <Link sx={sx} href={href} underline={underline} target="_blank">
+    <BaseLink sx={sx} href={href} underline={underline} target="_blank">
       {children}
-    </Link>
+    </BaseLink>
   );
 }
 
-export default LinkDefault;
+export default Link;

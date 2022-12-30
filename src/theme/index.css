@@ -1,3 +1,6 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css");
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap');
+
 :root {
     --white: #ffffff;
     --white-2: #DCDDDE;
@@ -26,4 +29,55 @@
     --status-yellow: #faa81a;
     --status-green: #3ba55d;
   }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  
+  ul[class],
+  ol[class] {
+    padding: 0;
+  }
+
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  ul[class],
+  ol[class],
+  li,
+  figure,
+  figcaption,
+  blockquote,
+  dl,
+  dd {
+    margin: 0;
+  }
+  
+  body {
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+  }
+  
+  ul[class],
+  ol[class] {
+    list-style: none;
+  }
+  
+  a:not([class]) {
+    text-decoration-skip-ink: auto;
+  }
+  
+  img {
+    max-width: 100%;
+    display: block;
+  }
+  
+  
 

@@ -1,5 +1,5 @@
 import styles from './index.module.css';
-import { BackgroundIcon } from './../icons/index';
+import { BackgroundIcon } from './../../components/icons/index';
 
 function ApplicationLogin({ children, title, subtitle, helpText, link }) {
   return (
