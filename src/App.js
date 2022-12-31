@@ -1,11 +1,13 @@
-import './App.css';
+import './theme/index.css';
+import theme from './theme';
+import { ThemeProvider } from '@mui/material/';
 import AppRoutes from './routes/index';
 
 function App() {
   return (
-    <div className="App">
+    <ThemeProvider theme={theme}>
       <AppRoutes />
-    </div>
+    </ThemeProvider>
   );
 }
 

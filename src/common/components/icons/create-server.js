@@ -124,8 +124,8 @@ export function CreateServerIcon() {
           y2="35.3106"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#DAE1EA" />
-          <stop offset="1" stop-color="#BECBD8" />
+          <stop stopColor="#DAE1EA" />
+          <stop offset="1" stopColor="#BECBD8" />
         </linearGradient>
       </defs>
     </svg>
