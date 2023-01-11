@@ -23,6 +23,7 @@
     --blue-1: #00AFF4;
 
     --red-1: #ED4245;
+    --red-2: #A12D2F;
     /*status*/
     --status-grau: #3ba55d;
     --status-red: #ed4245;
@@ -78,6 +79,5 @@
     max-width: 100%;
     display: block;
   }
-  
-  
+
 

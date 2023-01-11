@@ -2,14 +2,14 @@ import { Checkbox, FormControlLabel } from '@mui/material';
 import { CheckboxCheckedIcon, CheckboxIcon } from '../icons/index';
 
 function CheckboxSingle({
-  sxFormControl,
-  checked = false,
-  onChange,
   label,
   labelPlacement,
   error,
-  sxCheckbox,
+  onChange,
   required,
+  checked = false,
+  sxFormControl,
+  sxCheckbox,
 }) {
   const styleCheckboxChecked = {
     border: '1px solid "var(---gray-6)"',
@@ -20,16 +20,16 @@ function CheckboxSingle({
 
   return (
     <FormControlLabel
-      sx={sxFormControl}
       label={label}
       labelPlacement={labelPlacement}
       error={error}
+      sx={sxFormControl}
       control={
         <Checkbox
-          sx={sxCheckbox}
-          checked={checked}
           onChange={onChange}
+          checked={checked}
           required={required}
+          sx={sxCheckbox}
           icon={<CheckboxIcon />}
           checkedIcon={<CheckboxCheckedIcon style={styleCheckboxChecked} />}
         />

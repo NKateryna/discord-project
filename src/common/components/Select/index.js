@@ -3,15 +3,16 @@ import { ArrowSelectIcon } from '../icons/index';
 
 function Select({
   children,
-  sxSelect,
   value = '',
   onChange,
+  label,
+  labelId,
+  variant,
   placeholder = '',
   MenuProps,
-  variant,
-  sxLabel,
-  labelId,
   labelText,
+  sxSelect,
+  sxLabel,
   ...rest
 }) {
   return (
@@ -23,17 +24,17 @@ function Select({
       ) : null}
       <BaseSelect
         {...rest}
+        value={value}
+        onChange={onChange}
+        label={label}
+        labelId={labelId}
         sx={sxSelect}
         variant={variant}
-        MenuProps={MenuProps}
-        labelId={labelId}
-        id="select"
-        value={value}
-        label={labelId}
-        onChange={onChange}
-        IconComponent={() => <ArrowSelectIcon />}
-        displayEmpty
         renderValue={value !== '' ? undefined : () => `${placeholder}`}
+        MenuProps={MenuProps}
+        displayEmpty
+        id="select"
+        IconComponent={() => <ArrowSelectIcon />}
       >
         {children}
       </BaseSelect>

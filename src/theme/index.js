@@ -78,7 +78,6 @@ const theme = createTheme({
             padding: '8px',
             borderRadius: '2px',
             fontSize: '14px',
-            lineHeight: '16.8px',
             fontWeight: '350',
             lineHeight: '17px',
             color: 'var(--white)',
@@ -94,7 +93,6 @@ const theme = createTheme({
             padding: '8px',
             borderRadius: '2px',
             fontSize: '14px',
-            lineHeight: '16.8px',
             fontWeight: '350',
             lineHeight: '17px',
             color: 'var(--red-1)',
@@ -116,6 +114,11 @@ const theme = createTheme({
           border: '0',
           width: '100%',
         },
+        input: {
+          '&:-webkit-autofill': {
+            transitionDelay: '5000s',
+          },
+        },
         /* ApplicationLogin input*/
         sizeSmall: {
           height: '40px',
@@ -124,7 +127,6 @@ const theme = createTheme({
           fontFamily: 'Noto Sans',
           fontSize: '16px',
           fontWeight: '400',
-          marginBottom: '20px',
           '&.Mui-focused': {},
         },
         /* Search input*/
@@ -180,7 +182,7 @@ const theme = createTheme({
         root: {
           backgroundColor: 'var(---gray-4)',
           height: 40,
-          width: 125,
+          // width: 125,
           padding: '0 10px',
         },
         select: {
@@ -189,6 +191,11 @@ const theme = createTheme({
           display: 'flex',
           alignItems: 'center',
           color: 'var(---gray-3)',
+          fontFamily: 'Noto Sans',
+          fontStyle: 'normal',
+          fontWeight: '400',
+          fontSize: '16px',
+          lineHeight: '22px',
         },
       },
     },
@@ -198,6 +205,7 @@ const theme = createTheme({
           '&.MuiMenu-list': {
             backgroundColor: 'var(---gray-2)',
             padding: '0',
+            height: '200px',
           },
         },
       },
@@ -212,6 +220,12 @@ const theme = createTheme({
           overflow: 'hidden',
           boxSizing: 'border-box',
           color: 'var(---gray-3)',
+          backgroundColor: 'var(---gray-2)',
+          fontFamily: 'Noto Sans',
+          fontStyle: 'normal',
+          fontWeight: '400',
+          fontSize: '16px',
+          lineHeight: '22px',
           '&:hover': {
             backgroundColor: 'var(---gray-4)',
           },
@@ -229,7 +243,7 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           '&.MuiMenu-paper': {
-            borderRadius: '0px',
+            backgroundColor: 'transparent',
           },
         },
       },
