@@ -2,62 +2,17 @@ import { useState } from 'react';
 import { Button, Input, MenuItem } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import styles from './index.module.css';
+import { stylesMUI, menuPropsStyle, sx } from './styles';
 import ApplicationLogin from '../../common/layouts/ApplicationLogin';
 import Link from '../../common/components/Link';
 import Select from '../../common/components/Select';
-import dataSelects from './data-selects';
 import CheckboxSingle from '../../common/components/CheckboxSingle';
+import { useEffect } from 'react';
 
-const useStyles = makeStyles({
-  select: {
-    width: 125,
-  },
-  monthSelect: {
-    width: 146,
-    margin: '0 10px',
-  },
-  selectMenuItem: {
-    width: 122,
-  },
-  montSelecthMenuItem: {
-    width: 143,
-  },
-  paper: {
-    borderStyle: 'solid',
-    borderRadius: '4px',
-    borderWidth: '1px',
-    borderColor: 'var(---gray-4)',
-    '&::-webkit-scrollbar': {
-      width: '8px',
-      backgroundColor: 'var(---gray-2)',
-      position: 'absolute',
-    },
-    '&::-webkit-scrollbar-thumb': {
-      backgroundColor: 'var(---gray-4)',
-      height: '40px',
-      width: '6px',
-      borderRadius: '30%',
-      border: '2px solid var(---gray-2)',
-      borderTop: '4px solid var(---gray-2)',
-      borderBottom: '4px solid var(---gray-2)',
-    },
-  },
-});
-
-const menuPropsStyle = {
-  anchorOrigin: {
-    vertical: 'top',
-    horizontal: 'center',
-  },
-  transformOrigin: {
-    vertical: 'bottom',
-    horizontal: 'center',
-  },
-};
+const useStyles = makeStyles(stylesMUI);
 
 function Register() {
   const classes = useStyles();
-  const selectsItems = dataSelects;
 
   const [emailValue, setEmailValue] = useState('');
   const [userNameValue, setUserNameValue] = useState('');
@@ -66,6 +21,30 @@ function Register() {
   const [monthValue, setMonthValue] = useState('');
   const [yearValue, setYearValue] = useState('');
   const [checkedValue, setCheckedValue] = useState([false, true]);
+  const today = new Date();
+  const [daySelectsItems, setDaySelectItems] = useState(
+    new Array(31).fill(0).map((_, i) => i + 1)
+  );
+  const monthSelectsItems = new Array(12).fill(0).map((_, i) =>
+    new Date(today.getFullYear(), i).toLocaleString('en-US', {
+      month: 'long',
+    })
+  );
+  const yearSelectsItems = new Array(149)
+    .fill(0)
+    .map((_, i) => today.getFullYear() - (3 + i));
+
+  useEffect(() => {
+    const numberOfDays = new Date(
+      yearValue || today.getFullYear(),
+      (monthValue || today.getUTCMonth()) + 1,
+      0
+    ).getDate();
+    setDaySelectItems(new Array(numberOfDays).fill(0).map((_, i) => i + 1));
+    if (dayValue && dayValue > numberOfDays) {
+      setDayValue('');
+    }
+  }, [monthValue, yearValue]);
 
   const emailValueChange = (event) => {
     setEmailValue(event.target.value);
@@ -88,6 +67,7 @@ function Register() {
   const receiveEmailsCheckedChange = (event) => {
     setCheckedValue([event.target.checked, event.target.checked]);
   };
+
   return (
     <ApplicationLogin
       title={'Create an account'}
@@ -139,7 +119,7 @@ function Register() {
           }}
           className={classes.select}
         >
-          {selectsItems.day.map((a) => (
+          {daySelectsItems.map((a) => (
             <MenuItem
               key={a}
               value={a}
@@ -164,10 +144,10 @@ function Register() {
           }}
           className={classes.monthSelect}
         >
-          {selectsItems.month.map((a) => (
+          {monthSelectsItems.map((a, id) => (
             <MenuItem
               key={a}
-              value={a}
+              value={id}
               className={classes.montSelecthMenuItem}
               disableTouchRipple={true}
             >
@@ -190,7 +170,7 @@ function Register() {
           }}
           className={classes.select}
         >
-          {selectsItems.year.map((a) => (
+          {yearSelectsItems.map((a) => (
             <MenuItem
               key={a}
               value={a}
@@ -207,13 +187,13 @@ function Register() {
         onChange={receiveEmailsCheckedChange}
         required={true}
         label="(Optional) It’s okay to send me emails with Discord updates, tips, and special offers. You can opt out at any time."
-        sxFormControl={{ width: '369px' }}
-        sxCheckbox={{ margin: '20px 8px 20px 0px' }}
+        sxFormControl={sx.FormControl}
+        sxCheckbox={sx.Checkbox}
       />
       <Button
         variant="contained"
         color="primary"
-        sx={{ marginBottom: '10px' }}
+        sx={sx.Button}
         disableRipple={true}
       >
         Continue

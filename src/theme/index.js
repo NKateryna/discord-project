@@ -116,7 +116,13 @@ const theme = createTheme({
         },
         input: {
           '&:-webkit-autofill': {
-            transitionDelay: '5000s',
+            '&.MuiInputBase-inputSizeSmall': {
+              '&:-webkit-autofill': {
+                border: 'none',
+                WebkitTextFillColor: 'var(---gray-3)',
+                boxShadow: '0 0 0px 1000px var(---gray-4) inset',
+              },
+            },
           },
         },
         /* ApplicationLogin input*/
@@ -182,7 +188,6 @@ const theme = createTheme({
         root: {
           backgroundColor: 'var(---gray-4)',
           height: 40,
-          // width: 125,
           padding: '0 10px',
         },
         select: {

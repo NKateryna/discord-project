@@ -4,6 +4,10 @@ import styles from './index.module.css';
 import ApplicationLogin from '../../common/layouts/ApplicationLogin';
 import Link from '../../common/components/Link';
 
+const buttonSX = {
+  margin: '20px 0px 10px 0px',
+};
+
 function Login() {
   const [emailValue, setEmailValue] = useState('');
   const [passwordValue, setPasswordValue] = useState('');
@@ -45,7 +49,7 @@ function Login() {
       <Button
         variant="contained"
         color="primary"
-        sx={{ margin: '20px 0px 10px 0px' }}
+        sx={buttonSX}
         disableRipple={true}
       >
         Log In
