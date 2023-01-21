@@ -6,14 +6,13 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
-   }
+}
 .box {
     display: flex;
+    box-sizing: border-box;
     flex-direction: column;
     min-width: 200px;
-    width: 25%;
-    max-width: 480px;
-    min-width: 420px;
+    min-width: 480px;
     padding: 30px 32px;
     background-color: var(---gray-2);
     z-index: 2;
@@ -40,7 +39,6 @@
     line-height: 22px;
     letter-spacing: -0.06em;
     color: var(---gray-3);
-    padding-bottom:  20px;
 }
 .helpText {
     font-family: 'Noto Sans';
