@@ -2,7 +2,6 @@ import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 
 import Dashboard from '../pages/dashboard';
 import Nitro from '../pages/dashboard/nitro';
-import LoadingScreen from '../common/components/LoadingScreen';
 import Login from '../pages/login';
 import Register from '../pages/register';
 import FriendsRouters from './routes-friends';
