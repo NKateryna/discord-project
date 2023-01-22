@@ -12,15 +12,7 @@ function AppRoutes() {
     <BrowserRouter>
       <Routes>
         <Route path="/*">
-          <Route
-            index
-            element={
-              <LoadingScreen
-                title="DID YOU KNOW"
-                subtitle="We’re glad you’re back!"
-              />
-            }
-          />
+          <Route index element={<Login />} />
           <Route path="login/" element={<Login />} />
           <Route path="register/" element={<Register />} />
           <Route path="dashboard/*">
