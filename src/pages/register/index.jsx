@@ -1,4 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect, useContext } from 'react';
+import Cookies from 'universal-cookie';
+import { AuthContext } from '../../contexts/AuthContext';
 import { Button, Input, MenuItem } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import styles from './index.module.css';
@@ -7,19 +9,20 @@ import ApplicationLogin from '../../common/layouts/ApplicationLogin';
 import Link from '../../common/components/Link';
 import Select from '../../common/components/Select';
 import CheckboxSingle from '../../common/components/CheckboxSingle';
-import { useEffect } from 'react';
+import HelpText from '../../common/components/HelpText';
 
 const useStyles = makeStyles(stylesMUI);
 
 function Register() {
+  const [user, setUser] = useContext(AuthContext);
   const classes = useStyles();
-
   const [emailValue, setEmailValue] = useState('');
   const [userNameValue, setUserNameValue] = useState('');
   const [passwordValue, setPasswordValue] = useState('');
   const [dayValue, setDayValue] = useState('');
   const [monthValue, setMonthValue] = useState('');
   const [yearValue, setYearValue] = useState('');
+  const [birthDate, setBirthDate] = useState('');
   const [checkedValue, setCheckedValue] = useState([false, true]);
   const today = new Date();
   const [daySelectsItems, setDaySelectItems] = useState(
@@ -33,6 +36,9 @@ function Register() {
   const yearSelectsItems = new Array(149)
     .fill(0)
     .map((_, i) => today.getFullYear() - (3 + i));
+  const [error, setError] = useState(false);
+  const [textError, setTextError] = useState('');
+  const [disabledButton, setDisabledButton] = useState(true);
 
   useEffect(() => {
     const numberOfDays = new Date(
@@ -46,26 +52,91 @@ function Register() {
     }
   }, [monthValue, yearValue]);
 
+  useEffect(() => {
+    if (
+      emailValue &&
+      userNameValue &&
+      passwordValue &&
+      monthValue &&
+      dayValue &&
+      yearValue
+    ) {
+      setDisabledButton(false);
+    } else setDisabledButton(true);
+    if (monthValue && dayValue && yearValue) {
+      setBirthDate(
+        new Date(`${monthValue}/${dayValue}/${yearValue} EDT`).toISOString()
+      );
+    }
+  }, [
+    emailValue,
+    userNameValue,
+    passwordValue,
+    monthValue,
+    dayValue,
+    yearValue,
+  ]);
+
   const emailValueChange = (event) => {
     setEmailValue(event.target.value);
+    setError(false);
   };
   const userNameValueChange = (event) => {
     setUserNameValue(event.target.value);
+    setError(false);
   };
   const passwordValueChange = (event) => {
     setPasswordValue(event.target.value);
+    setError(false);
   };
   const dayValueChange = (event) => {
     setDayValue(event.target.value);
+    setError(false);
   };
   const monthValueChange = (event) => {
     setMonthValue(event.target.value);
+    setError(false);
   };
   const yearValueChange = (event) => {
     setYearValue(event.target.value);
+    setError(false);
   };
   const receiveEmailsCheckedChange = (event) => {
     setCheckedValue([event.target.checked, event.target.checked]);
+    setError(false);
+  };
+
+  const register = async () => {
+    setDisabledButton(true);
+    setError(false);
+    
+    const cookies = new Cookies();
+    const response = await fetch('http://localhost:80/auth/register', {
+      method: 'POST',
+      body: JSON.stringify({
+        email: emailValue,
+        username: userNameValue,
+        password: passwordValue,
+        birthDate: birthDate,
+        acceptNotifications: checkedValue[0],
+      }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    const data = await response.json();
+
+    if (data.code) {
+      setTextError(data.message);
+      setError(true);
+      setDisabledButton(false);
+    }
+
+    cookies.set('authToken', data.accessToken, { path: '/' });
+    const { accessToken, ...userData } = data;
+    setUser(userData);
+    console.log(user);
   };
 
   return (
@@ -182,6 +253,7 @@ function Register() {
           ))}
         </Select>
       </div>
+      {error && <HelpText error={true}>{textError}</HelpText>}
       <CheckboxSingle
         checked={checkedValue[0]}
         onChange={receiveEmailsCheckedChange}
@@ -195,6 +267,8 @@ function Register() {
         color="primary"
         sx={sx.Button}
         disableRipple={true}
+        onClick={register}
+        disabled={disabledButton}
       >
         Continue
       </Button>

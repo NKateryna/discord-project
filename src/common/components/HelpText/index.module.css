@@ -1,0 +1,11 @@
+.text {
+    display: flex;
+    align-items: center;
+    min-height: 20px;
+    width: 100%;
+    font-family: "Whitney";
+    color: var(--red-3);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+}

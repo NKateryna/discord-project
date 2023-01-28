@@ -1,13 +1,16 @@
-import './theme/index.css';
-import theme from './theme';
+import AuthProvider from './contexts/AuthContext';
 import { ThemeProvider } from '@mui/material/';
+import theme from './theme';
+import './theme/index.css';
 import AppRoutes from './routes/index';
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <AppRoutes />
-    </ThemeProvider>
+    <AuthProvider>
+      <ThemeProvider theme={theme}>
+        <AppRoutes />
+      </ThemeProvider>
+    </AuthProvider>
   );
 }
 
