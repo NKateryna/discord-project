@@ -38,7 +38,7 @@ function Register() {
     .map((_, i) => today.getFullYear() - (3 + i));
   const [error, setError] = useState(false);
   const [textError, setTextError] = useState('');
-  const [disabledButton, setDisabledButton] = useState(true);
+  const [isLoading, setisLoading] = useState(false);
 
   useEffect(() => {
     const numberOfDays = new Date(
@@ -51,31 +51,13 @@ function Register() {
       setDayValue('');
     }
   }, [monthValue, yearValue]);
-
   useEffect(() => {
-    if (
-      emailValue &&
-      userNameValue &&
-      passwordValue &&
-      monthValue &&
-      dayValue &&
-      yearValue
-    ) {
-      setDisabledButton(false);
-    } else setDisabledButton(true);
     if (monthValue && dayValue && yearValue) {
       setBirthDate(
         new Date(`${monthValue}/${dayValue}/${yearValue} EDT`).toISOString()
       );
     }
-  }, [
-    emailValue,
-    userNameValue,
-    passwordValue,
-    monthValue,
-    dayValue,
-    yearValue,
-  ]);
+  }, [monthValue, dayValue, yearValue]);
 
   const emailValueChange = (event) => {
     setEmailValue(event.target.value);
@@ -107,9 +89,9 @@ function Register() {
   };
 
   const register = async () => {
-    setDisabledButton(true);
+    setisLoading(true);
     setError(false);
-    
+
     const cookies = new Cookies();
     const response = await fetch('http://localhost:80/auth/register', {
       method: 'POST',
@@ -130,13 +112,12 @@ function Register() {
     if (data.code) {
       setTextError(data.message);
       setError(true);
-      setDisabledButton(false);
     }
 
     cookies.set('authToken', data.accessToken, { path: '/' });
     const { accessToken, ...userData } = data;
     setUser(userData);
-    console.log(user);
+    setisLoading(false);
   };
 
   return (
@@ -268,7 +249,17 @@ function Register() {
         sx={sx.Button}
         disableRipple={true}
         onClick={register}
-        disabled={disabledButton}
+        disabled={
+          isLoading ||
+          !(
+            emailValue &&
+            userNameValue &&
+            passwordValue &&
+            monthValue &&
+            dayValue &&
+            yearValue
+          )
+        }
       >
         Continue
       </Button>

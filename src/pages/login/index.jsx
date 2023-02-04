@@ -17,13 +17,7 @@ function Login() {
   const [passwordValue, setPasswordValue] = useState('');
   const [error, setError] = useState(false);
   const [textError, setTextError] = useState('');
-  const [disabledButton, setDisabledButton] = useState(true);
-
-  useEffect(() => {
-    if (emailValue && passwordValue) {
-      setDisabledButton(false);
-    } else setDisabledButton(true);
-  }, [emailValue, passwordValue]);
+  const [isLoading, setisLoading] = useState(false);
 
   const emailValueChange = (event) => {
     setEmailValue(event.target.value);
@@ -35,7 +29,7 @@ function Login() {
   };
 
   const login = async () => {
-    setDisabledButton(true);
+    setisLoading(true);
     const cookies = new Cookies();
     const response = await fetch('http://localhost:80/auth/login', {
       method: 'POST',
@@ -50,12 +44,12 @@ function Login() {
     if (data.code) {
       setTextError(data.message);
       setError(!error);
-      setDisabledButton(false);
     }
 
     cookies.set('authToken', data.accessToken, { path: '/' });
     const { accessToken, ...userData } = data;
     setUser(userData);
+    setisLoading(false);
   };
 
   return (
@@ -92,7 +86,7 @@ function Login() {
         sx={buttonSX}
         disableRipple={true}
         onClick={login}
-        disabled={disabledButton}
+        disabled={isLoading || !(emailValue && passwordValue)}
       >
         Log In
       </Button>
