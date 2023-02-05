@@ -22,7 +22,6 @@ function Register() {
   const [dayValue, setDayValue] = useState('');
   const [monthValue, setMonthValue] = useState('');
   const [yearValue, setYearValue] = useState('');
-  const [birthDate, setBirthDate] = useState('');
   const [checkedValue, setCheckedValue] = useState([false, true]);
   const today = new Date();
   const [daySelectsItems, setDaySelectItems] = useState(
@@ -51,13 +50,6 @@ function Register() {
       setDayValue('');
     }
   }, [monthValue, yearValue]);
-  useEffect(() => {
-    if (monthValue && dayValue && yearValue) {
-      setBirthDate(
-        new Date(`${monthValue}/${dayValue}/${yearValue} EDT`).toISOString()
-      );
-    }
-  }, [monthValue, dayValue, yearValue]);
 
   const emailValueChange = (event) => {
     setEmailValue(event.target.value);
@@ -91,6 +83,10 @@ function Register() {
   const register = async () => {
     setisLoading(true);
     setError(false);
+
+    const birthDate = new Date(
+      `${monthValue}/${dayValue}/${yearValue} EDT`
+    ).toISOString();
 
     const cookies = new Cookies();
     const response = await fetch('http://localhost:80/auth/register', {
@@ -255,7 +251,7 @@ function Register() {
             emailValue &&
             userNameValue &&
             passwordValue &&
-            monthValue &&
+            monthValue >= 0 &&
             dayValue &&
             yearValue
           )
