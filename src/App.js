@@ -1,15 +1,24 @@
+import './theme/index.css';
+import theme from './theme';
 import AuthProvider from './contexts/AuthContext';
 import { ThemeProvider } from '@mui/material/';
-import theme from './theme';
-import './theme/index.css';
 import AppRoutes from './routes/index';
+import { Provider } from 'react-redux';
+import { configureStore } from '@reduxjs/toolkit';
+import rootReducer from './redux/rootReducer';
+
+const store = configureStore({
+  reducer: rootReducer,
+});
 
 function App() {
   return (
     <AuthProvider>
-      <ThemeProvider theme={theme}>
-        <AppRoutes />
-      </ThemeProvider>
+      <Provider store={store}>
+        <ThemeProvider theme={theme}>
+          <AppRoutes />
+        </ThemeProvider>
+      </Provider>
     </AuthProvider>
   );
 }

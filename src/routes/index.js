@@ -1,31 +1,29 @@
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import WrapperContents from '../common/components/WrapperContents';
 
-import Dashboard from '../pages/dashboard';
-import Nitro from '../pages/dashboard/nitro';
 import Login from '../pages/login';
 import Register from '../pages/register';
-import FriendsRouters from './routes-friends';
+import ProtectedRoute from './ProtectedRoute';
+import Protected from './routes-protected';
 
 function AppRoutes() {
+  let user = true;
+
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/*">
-          <Route
-            index
-            element={<Navigate replace to="dashboard/friends/online" />}
-          />
-          <Route path="login/" element={<Login />} />
-          <Route path="register/" element={<Register />} />
-          <Route path="dashboard/*">
-            <Route index element={<Dashboard />} />
-            <Route path="friends/*">
-              <Route index element={<Navigate replace to="online" />} />
-              <Route path="*" element={<FriendsRouters />} />
-            </Route>
-            <Route path="nitro/" element={<Nitro />} />
-          </Route>
-        </Route>
+        <Route path="login/" element={<Login />} />
+        <Route path="register/" element={<Register />} />
+        <Route
+          path="/*"
+          element={
+            <ProtectedRoute user={user}>
+              <WrapperContents>
+                <Protected />
+              </WrapperContents>
+            </ProtectedRoute>
+          }
+        />
       </Routes>
     </BrowserRouter>
   );
