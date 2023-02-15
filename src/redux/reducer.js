@@ -13,7 +13,7 @@ const serversReduser = (state = INITIAL_STATE, action) => {
       servers.map((server) => ServersArray.push(server));
       return { ...state, servers: ServersArray };
     }
-    case actions.SAVE_ACTIVE_ITEM_SIDBAR: {
+    case actions.SAVE_ACTIVE_ITEM_SIDEBAR: {
       return { ...state, activeServer: action.payload.id };
     }
     default:

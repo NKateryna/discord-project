@@ -20,7 +20,7 @@
     background-color:  var(--green-1);
     color: var(--white);
 }
-.box:not(.itemActive):hover  .icon{
+.box:not(.itemActive):hover .icon{
     fill: var(--white);
 }
 
@@ -55,6 +55,11 @@
     color: var( --white-2)
 }
 
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .green .icon {
     width: 20px;
     height: 20px;

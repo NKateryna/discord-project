@@ -1,6 +1,6 @@
 const actions = {
   CREATION_SERVERS: 'CREATION_SERVERS',
-  SAVE_ACTIVE_ITEM_SIDBAR: 'SAVE_ACTIVE_ITEM_SIDBAR',
+  SAVE_ACTIVE_ITEM_SIDEBAR: 'SAVE_ACTIVE_ITEM_SIDEBAR',
 };
 
 export default actions;
@@ -11,7 +11,7 @@ export const creationServers = () => {
 
 export const saveActiveItem = (id) => {
   return {
-    type: actions.SAVE_ACTIVE_ITEM_SIDBAR,
+    type: actions.SAVE_ACTIVE_ITEM_SIDEBAR,
     payload: { id: id },
   };
 };

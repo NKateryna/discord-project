@@ -5,7 +5,7 @@ export { LoadingV11Icon } from './loading-v1';
 export { LoadingV2Icon } from './loading-v2';
 export { LoadingV3Icon } from './loading-v3';
 export { LoadingV4Icon } from './loading-v4';
-/*sidbar*/
+/*sidebar*/
 export { AddChannelIcon } from './add-channel';
 export { DownloadAppIcon } from './download-app';
 export { ChannelSearchIcon } from './channel-search';

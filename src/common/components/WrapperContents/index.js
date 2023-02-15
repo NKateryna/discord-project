@@ -1,6 +1,7 @@
 import styles from './index.module.css';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { getServers } from '../../../redux/selectors';
 import { creationServers, saveActiveItem } from '../../../redux/actions';
 import Sidebar from '../Sidebar';
@@ -16,6 +17,9 @@ function WrapperContents({ children }) {
   const serversData = useSelector(getServers);
   const dispatch = useDispatch();
 
+  const navigate = useNavigate();
+  const location = useLocation();
+
   useEffect(() => {
     dispatch(creationServers());
   }, []);
@@ -30,6 +34,12 @@ function WrapperContents({ children }) {
       dispatch(saveActiveItem(a));
     };
   }
+  function onClickPrivateMessages(a) {
+    return () => {
+      navigate('dashboard/friends/online');
+      dispatch(saveActiveItem(a));
+    };
+  }
 
   return (
     <div className={styles.wrapperContent}>
@@ -37,8 +47,8 @@ function WrapperContents({ children }) {
         <SidebarItem
           name={'Private messages'}
           icon={<LogoIcon style={{ height: '20px', width: '26px' }} />}
-          onClick={onClickMenuItem('Private messages')}
-          active={'Private messages' === serversData.servers.activeServer}
+          onClick={onClickPrivateMessages('Private messages')}
+          active={location.pathname === '/dashboard/friends/online'}
         />
         <div className={styles.separator}></div>
         {serversData.servers.servers.map((a) => {
@@ -56,6 +66,7 @@ function WrapperContents({ children }) {
           green={true}
           name={'Add server'}
           icon={<AddChannelIcon />}
+          onClick={null}
         />
         <SidebarItem
           green={true}
