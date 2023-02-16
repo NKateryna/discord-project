@@ -1,0 +1,16 @@
+.wrapperContent {
+    display: flex;
+    flex-direction: row;
+  }
+  ::-webkit-scrollbar {
+    display: none;
+}
+
+
+.separator{
+  background-color: var(---gray-2);
+  width: 32px;
+  height: 2px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}

@@ -19,16 +19,15 @@
     ---gray-8: #4F545C;
     ---gray-8-opacity-6: rgba(79, 84, 92, 0.6);
     ---gray-8-opacity-4: rgba(79, 84, 92, 0.4);
+    ---gray-9: #18191C;
 
     --blue-1: #00AFF4;
 
+    --green-1: #3BA55D;
+
     --red-1: #ED4245;
     --red-2: #A12D2F;
-    /*status*/
-    --status-grau: #3ba55d;
-    --status-red: #ed4245;
-    --status-yellow: #faa81a;
-    --status-green: #3ba55d;
+    --red-3: #C80000;
   }
 
   *,
@@ -75,9 +74,7 @@
     text-decoration-skip-ink: auto;
   }
   
-  img {
-    max-width: 100%;
-    display: block;
-  }
 
 
+
+ 

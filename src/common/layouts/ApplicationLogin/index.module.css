@@ -11,8 +11,8 @@
     display: flex;
     box-sizing: border-box;
     flex-direction: column;
-    min-width: 200px;
     min-width: 480px;
+    max-width: 500px;
     padding: 30px 32px;
     background-color: var(---gray-2);
     z-index: 2;
