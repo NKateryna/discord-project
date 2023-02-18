@@ -3,7 +3,11 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { getServers } from '../../../redux/selectors';
-import { creationServers, saveActiveItem } from '../../../redux/actions';
+import {
+  fetchServerListWithRouting,
+  saveActiveItem,
+} from '../../../redux/actions';
+import Cookies from 'universal-cookie';
 import Sidebar from '../Sidebar';
 import SidebarItem from '../SidebarItem';
 import {
@@ -19,14 +23,15 @@ function WrapperContents({ children }) {
 
   const navigate = useNavigate();
   const location = useLocation();
+  const cookies = new Cookies();
 
   useEffect(() => {
-    dispatch(creationServers());
+    dispatch(fetchServerListWithRouting(navigate, cookies));
   }, []);
 
   function onClickServer(a) {
     return () => {
-      dispatch(saveActiveItem(a.id));
+      dispatch(saveActiveItem(a._id));
     };
   }
   function onClickMenuItem(a) {
@@ -54,11 +59,11 @@ function WrapperContents({ children }) {
         {serversData.servers.servers.map((a) => {
           return (
             <SidebarItem
-              key={a.id}
+              key={a._id}
               name={a.name}
               photo={a.photo}
               onClick={onClickServer(a)}
-              active={a.id === serversData.servers.activeServer}
+              active={a._id === serversData.servers.activeServer}
             />
           );
         })}

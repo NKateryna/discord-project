@@ -5,8 +5,8 @@ const actions = {
 
 export default actions;
 
-export const creationServers = () => {
-  return { type: actions.CREATION_SERVERS };
+export const creationServers = (servers) => {
+  return { type: actions.CREATION_SERVERS, payload: { servers: servers } };
 };
 
 export const saveActiveItem = (id) => {
@@ -15,3 +15,27 @@ export const saveActiveItem = (id) => {
     payload: { id: id },
   };
 };
+
+export const fetchServerListWithRouting =
+  (navigate, cookies) => async (dispatch) => {
+    const token = cookies.get('authToken', { path: '/' });
+    if (!token) {
+      navigate('login');
+      console.log('no token');
+    } else {
+      try {
+        const response = await fetch('http://localhost:80/servers', {
+          method: 'GET',
+          headers: {
+            Authorization: `Bearer ${token}`,
+            'Content-Type': 'application/json',
+          },
+        });
+        const data = await response.json();
+        const servers = data.data;
+        dispatch(creationServers(servers));
+      } catch (error) {
+        navigate('login');
+      }
+    }
+  };
