@@ -1,18 +1,23 @@
 const actions = {
-  CREATION_SERVERS: 'CREATION_SERVERS',
+  ADDING_SERVER: 'ADDING_SERVER',
   SAVE_ACTIVE_ITEM_SIDEBAR: 'SAVE_ACTIVE_ITEM_SIDEBAR',
+  CREATING_SERVERS_LIST: 'CREATING_SERVER_LIST',
 };
 
 export default actions;
 
-export const creationServers = (servers) => {
-  return { type: actions.CREATION_SERVERS, payload: { servers: servers } };
+export const creationServersList = (servers) => {
+  return { type: actions.CREATING_SERVERS_LIST, payload: { servers } };
+};
+
+export const addingServer = (server) => {
+  return { type: actions.ADDING_SERVER, payload: { server } };
 };
 
 export const saveActiveItem = (id) => {
   return {
     type: actions.SAVE_ACTIVE_ITEM_SIDEBAR,
-    payload: { id: id },
+    payload: { id },
   };
 };
 
@@ -21,7 +26,6 @@ export const fetchServerListWithRouting =
     const token = cookies.get('authToken', { path: '/' });
     if (!token) {
       navigate('login');
-      console.log('no token');
     } else {
       try {
         const response = await fetch('http://localhost:80/servers', {
@@ -31,11 +35,17 @@ export const fetchServerListWithRouting =
             'Content-Type': 'application/json',
           },
         });
+        if (!response.ok) {
+          if (response.status === 401) {
+            navigate('login');
+            throw new Error('Unauthorized');
+          }
+        }
         const data = await response.json();
         const servers = data.data;
-        dispatch(creationServers(servers));
+        dispatch(creationServersList(servers));
       } catch (error) {
-        navigate('login');
+        console.log(error);
       }
     }
   };
