@@ -1,5 +1,4 @@
 import actions from './actions';
-import servers from './servers';
 
 const INITIAL_STATE = {
   servers: [],
@@ -8,9 +7,14 @@ const INITIAL_STATE = {
 
 const serversReduser = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case actions.CREATION_SERVERS: {
+    case actions.CREATING_SERVERS_LIST: {
+      const ServersArray = [];
+      action.payload.servers.map((server) => ServersArray.push(server));
+      return { ...state, servers: ServersArray };
+    }
+    case actions.ADDING_SERVER: {
       const ServersArray = [...state.servers];
-      servers.map((server) => ServersArray.push(server));
+      ServersArray.push(action.payload.server);
       return { ...state, servers: ServersArray };
     }
     case actions.SAVE_ACTIVE_ITEM_SIDEBAR: {
