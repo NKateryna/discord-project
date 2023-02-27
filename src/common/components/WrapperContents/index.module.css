@@ -1,9 +1,13 @@
 .wrapperContent {
     display: flex;
     flex-direction: row;
+    max-height:  100vh;
+  
   }
-  ::-webkit-scrollbar {
-    display: none;
+
+.wrapperContent::-webkit-scrollbar {
+  width: 0; 
+  background-color: transparent;
 }
 
 

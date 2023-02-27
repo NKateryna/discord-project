@@ -6,6 +6,7 @@
     padding-bottom: 4px;
     width: 100%;
     fill: var(--white);
+    cursor: pointer;
 }
 .box:not(.itemActive):hover .photoBcg  {
     background-color: var(--brend-color);

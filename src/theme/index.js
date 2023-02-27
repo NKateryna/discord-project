@@ -136,7 +136,10 @@ const theme = createTheme({
           '&.Mui-focused': {},
         },
         /* Search input*/
-        inputTypeSearch: {},
+        inputTypeSearch: {
+          backgroundColor: '#202225',
+          borderRadius: '4px',
+        },
       },
     },
     MuiOutlinedInput: {

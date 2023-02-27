@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect } from 'react';
+import { useState, useContext } from 'react';
 import Cookies from 'universal-cookie';
 import { AuthContext } from '../../contexts/AuthContext';
 import { Button, Input } from '@mui/material';

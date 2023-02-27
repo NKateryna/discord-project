@@ -23,11 +23,11 @@ function WrapperContents({ children }) {
 
   const navigate = useNavigate();
   const location = useLocation();
-  const cookies = new Cookies();
 
   useEffect(() => {
+    const cookies = new Cookies();
     dispatch(fetchServerListWithRouting(navigate, cookies));
-  }, []);
+  }, [dispatch, navigate]);
 
   function onClickServer(a) {
     return () => {
@@ -41,7 +41,7 @@ function WrapperContents({ children }) {
   }
   function onClickPrivateMessages(a) {
     return () => {
-      navigate('dashboard/friends/online');
+      navigate('friends/online');
       dispatch(saveActiveItem(a));
     };
   }
@@ -53,7 +53,10 @@ function WrapperContents({ children }) {
           name={'Private messages'}
           icon={<LogoIcon style={{ height: '20px', width: '26px' }} />}
           onClick={onClickPrivateMessages('Private messages')}
-          active={location.pathname === '/dashboard/friends/online'}
+          active={
+            location.pathname.startsWith('/friends') ||
+            location.pathname === '/nitro'
+          }
         />
         <div className={styles.separator}></div>
         {serversData.servers.servers.map((a) => {
