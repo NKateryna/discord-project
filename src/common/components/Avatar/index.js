@@ -1,35 +1,31 @@
 import styles from './index.module.css';
-import {
-  StatusActiveIcon,
-  StatusDoNotDisturbIcon,
-  StatusInactiveIcon,
-  StatusInvisibleIcon,
-} from '../icons';
+import { useState } from 'react';
+import { LogoIcon } from '../icons';
+import CreateStatus from '../CreateStatus';
 
 function Avatar({ avatar, status, name }) {
-  const createStatus = (status) => {
-    switch (status) {
-      case 'ONLINE':
-        return <StatusActiveIcon />;
-      case 'OFFLINE':
-        return <StatusInvisibleIcon />;
-      case 'AWAY':
-        return <StatusInactiveIcon />;
-      case 'BUSY':
-        return <StatusDoNotDisturbIcon />;
-      default:
-        return <StatusInvisibleIcon />;
-    }
+  const styleLogo = {
+    width: '20px',
+    height: '20px',
+    fill: 'var(--white-2)',
   };
 
-  let statusIcon = createStatus(status);
+  const [fallbackAvatar, setFallbackAvatar] = useState(false);
+  const statusIcon = CreateStatus(status);
 
   return (
     <div className={styles.box}>
       <div className={styles.avatarBcg}>
-        {avatar ? (
-          <img src={avatar} alt={name} className={styles.avatar} />
-        ) : null}
+        {avatar && !fallbackAvatar ? (
+          <img
+            src={avatar}
+            alt={name}
+            className={styles.avatar}
+            onError={() => setFallbackAvatar(true)}
+          />
+        ) : (
+          <LogoIcon style={styleLogo} />
+        )}
       </div>
       <div className={styles.statusIcon}>{statusIcon}</div>
     </div>

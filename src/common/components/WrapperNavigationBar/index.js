@@ -19,7 +19,7 @@ function WrapperNavigationBar({ children }) {
       navigate('/nitro');
     };
   }
-  console.log(directMessages.messages);
+
   return (
     <div className={styles.wrapperContent}>
       <div className={styles.NavigationBar}>

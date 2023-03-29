@@ -1,31 +1,12 @@
 import styles from './index.module.css';
-import { useEffect, useState } from 'react';
-import {
-  HeadphonesIcon,
-  HeadphonesOffIcon,
-  MicrophoneIcon,
-  MicrophoneOffIcon,
-  SettingsIcon,
-} from '../icons';
 import Avatar from '../Avatar';
+import Microphone from '../Microphone';
+import Headphones from '../Headphones';
+import { SettingsIcon } from '../icons';
 import personalInfo from '../../../redux/personal-info';
 
 function UserPanel() {
-  const [microphoneOn, setMicrophoneOn] = useState(true);
-  const [headphonesOn, setheadphonesOn] = useState(true);
-
-  useEffect(() => {
-    setMicrophoneOn(personalInfo.microphone);
-    setheadphonesOn(personalInfo.headphones);
-  }, []);
-
   const onClickAccountInfo = () => {};
-  const onClickMicrophone = () => {
-    setMicrophoneOn(!microphoneOn);
-  };
-  const onClickHeadphones = () => {
-    setheadphonesOn(!headphonesOn);
-  };
   const onClickSettings = () => {};
 
   return (
@@ -38,12 +19,8 @@ function UserPanel() {
         <div className={styles.userId}>{null}</div>
       </div>
       <div className={styles.settingsIcons}>
-        <div onClick={onClickMicrophone} className={styles.icon}>
-          {microphoneOn ? <MicrophoneIcon /> : <MicrophoneOffIcon />}
-        </div>
-        <div onClick={onClickHeadphones} className={styles.icon}>
-          {headphonesOn ? <HeadphonesIcon /> : <HeadphonesOffIcon />}
-        </div>
+        <Microphone />
+        <Headphones />
         <div onClick={onClickSettings} className={styles.icon}>
           <SettingsIcon />
         </div>
