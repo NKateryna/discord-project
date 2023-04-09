@@ -1,8 +1,8 @@
 .wrapperContent {
     display: flex;
     flex-direction: row;
-    max-height:  100vh;
-  
+    height:  100vh;
+    overflow: hidden;
   }
 
 .wrapperContent::-webkit-scrollbar {
@@ -10,9 +10,8 @@
   background-color: transparent;
 }
 
-
 .separator{
-  background-color: var(---gray-2);
+  background-color: var(--gray-2);
   width: 32px;
   height: 2px;
   margin-top: 4px;

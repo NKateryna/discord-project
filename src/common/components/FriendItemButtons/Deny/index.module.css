@@ -1,0 +1,23 @@
+.background{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    margin-right: 16px;
+    border-radius: 18px;
+    background-color: var(--gray-1);
+}
+
+.icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    fill:var(--gray-3)
+}
+
+.icon:hover{
+    fill:var(--red-1)
+}

@@ -1,0 +1,17 @@
+.wrapperFriends {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    flex: 1;
+    overflow: hidden;
+  }
+
+  .contentFriends{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex: 1;
+    height: 100%;
+  }
+
+

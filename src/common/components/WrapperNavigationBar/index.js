@@ -11,7 +11,7 @@ function WrapperNavigationBar({ children }) {
 
   function onClickButtonFriends() {
     return () => {
-      navigate('/friends/online');
+      navigate('/channels/@me');
     };
   }
   function onClickButtonNitro() {
@@ -21,7 +21,7 @@ function WrapperNavigationBar({ children }) {
   }
 
   return (
-    <div className={styles.wrapperContent}>
+    <div className={styles.wrapperNavigationBar}>
       <div className={styles.NavigationBar}>
         {/* Search */}
         <div className={styles.navigationPanel}>
@@ -30,7 +30,7 @@ function WrapperNavigationBar({ children }) {
               icon={<FriendsIcon />}
               name="Friends"
               onClick={onClickButtonFriends()}
-              active={location.pathname.startsWith('/friends')}
+              active={location.pathname.startsWith('/channels/@me')}
             />
             <NavigationBarItem
               icon={<NitroIcon />}

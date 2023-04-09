@@ -1,0 +1,46 @@
+.friendsSidbar{
+    display: flex;
+    flex-direction: column;
+    min-width: 416px;
+    height:  100%;
+    background-color: var(--gray-2);
+    padding: 24px 16px 48px 16px;
+    position: relative;
+    overflow-x: hidden; 
+    overflow-y: auto;
+}
+
+.friendsSidbar::-webkit-scrollbar{
+    width: 8px;
+    position: absolute;
+    background-color: var(--gray-1);
+}
+
+.friendsSidbar::-webkit-scrollbar-thumb{
+    background-color: var(--gray-4);
+    height: 133px;
+    width: 2px;
+    border: 2px solid var(--gray-1);
+}
+
+.title{
+    font-family: 'ABC Ginto Normal';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 26px;
+    color: #FFFFFF;
+    margin-bottom: 14px;
+    cursor: default;
+}
+
+@media (max-width: 1200px) {
+    .friendsSidbar{
+       display: none;
+    }
+}
+
+
+
+
+

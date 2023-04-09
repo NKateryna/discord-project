@@ -1,7 +1,7 @@
-.wrapperContent {
+.wrapperNavigationBar {
     display: flex;
     flex-direction: row;
-    
+    flex:1;
 }
 
 .NavigationBar{ 
@@ -11,7 +11,7 @@
     flex-direction: column;
     width: 240px;
     min-height: 100vh;
-    background-color: var(---gray-1);
+    background-color: var(--gray-1);
 }
 
 .navigationPanel {
@@ -26,13 +26,13 @@
 .navigationPanel::-webkit-scrollbar {  
     width: 8px;
     position: absolute;
-    background-color: var(---gray-1);
+    background-color: var(--gray-1);
 }
 .navigationPanel::-webkit-scrollbar-thumb {
-    background-color: var(---gray-4);
+    background-color: var(--gray-4);
     height: 133px;
     width: 2px;
-    border: 2px solid var(---gray-1);
+    border: 2px solid var(--gray-1);
  }
 
 .NavButtonsBlock {
@@ -48,7 +48,7 @@
     line-height: 16px;
     display: flex;
     align-items: center;
-    color: var(---gray-11);
+    color: var(--gray-11);
     margin-bottom: 8px;
     padding-left: 8px;
 }
