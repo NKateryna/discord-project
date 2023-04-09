@@ -6,7 +6,7 @@
     align-items: center;
     flex-direction: column;
     overflow: hidden;
-    background-color: var(---gray-1)
+    background-color: var(--gray-1)
 }
 
 .title{

@@ -26,15 +26,16 @@ export { NitroIcon } from './nitro';
 export { CreateMessagesIcon } from './create-messages.js';
 export { CloseChatIcon } from './сlose-chat';
 /*content*/
+export { AcceptIcon } from './accept';
+export { DenyIcon } from './deny';
+export { MessageIcon } from './message';
+export { MoreIcon } from './more';
+export { UnblockUserIcon } from './unblock-user.js';
+
 export { NewGroupChatIcon } from './new-group-chat.js';
 export { MailIcon } from './mail';
 export { HelpIcon } from './help';
 export { SearchIcon } from './search';
-export { MoreIcon } from './more';
-export { MessageIcon } from './message';
-export { DenyIcon } from './deny';
-export { AcceptIcon } from './accept';
-export { UnblockUserIcon } from './unblock-user.js';
 
 export { CreateServerIcon } from './create-server';
 /*icon components*/

@@ -122,7 +122,7 @@ function Register() {
       link={<Link children={'Already have an account?'} href={'/login'} />}
     >
       <div className={styles.caption}>EMAIL</div>
-      <Input
+      <classes
         value={emailValue}
         onChange={emailValueChange}
         type={'email'}

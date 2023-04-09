@@ -9,7 +9,7 @@
     height: 52px;
     box-sizing: border-box;
     padding: 10px 12px 10px 8px;
-    background-color: var(---gray-10);
+    background-color: var(--gray-10);
 }
 
 .accountInfo {
@@ -26,10 +26,9 @@
 }
 
 .accountInfo:hover {
-    background-color: var(---gray-5);
+    background-color: var(--gray-5);
     border-radius: 4px;
 }
-
 
 .avatar{
     grid-area: A;
@@ -56,7 +55,7 @@
     font-weight: 350;
     font-size: 12px;
     line-height: 14px;
-    color: var(---gray-3);
+    color: var(--gray-3);
     max-width: 80px;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -82,7 +81,7 @@
     position: absolute;
     width: 25px;
     height: 32px;
-    background-color: var(---gray-5);
+    background-color: var(--gray-5);
     border-radius: 4px;
     z-index: -1;
 }
