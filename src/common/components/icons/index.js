@@ -21,7 +21,7 @@ export { StatusDoNotDisturbIcon } from './status-do-not-disturb';
 export { StatusInvisibleIcon } from './status-invisible';
 export { StatusInactiveIcon } from './status-inactive';
 /*navigation*/
-export { FrendsIcon } from './frends';
+export { FriendsIcon } from './frends';
 export { NitroIcon } from './nitro';
 export { CreateMessagesIcon } from './create-messages.js';
 export { CloseChatIcon } from './сlose-chat';

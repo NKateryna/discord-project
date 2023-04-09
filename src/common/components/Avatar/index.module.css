@@ -1,0 +1,30 @@
+.box {
+    width: 32px;
+    height: 32px;
+    position: relative;
+}
+
+.avatarBcg, .avatar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 16px;
+    background-color: var(--brend-color);
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+}
+
+.statusIcon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 16px;
+    height: 16px;
+    background-color: var(---gray-10);
+    border-radius: 8px;
+    position: absolute;
+    top: 19px;
+    left: 19px;
+}
+

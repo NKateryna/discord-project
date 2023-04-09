@@ -1,10 +1,9 @@
 import { Routes, Route } from 'react-router-dom';
-
-import FriendsAdd from '../../../pages/dashboard/friends/friends-add';
-import FriendsAll from '../../../pages/dashboard/friends/friends-all';
-import FriendsBlocked from '../../../pages/dashboard/friends/friends-blocked';
-import FriendsOnline from '../../../pages/dashboard/friends/friends-online';
-import FriendsPending from '../../../pages/dashboard/friends/friends-pending';
+import FriendsAdd from '../../../pages/friends/friends-add';
+import FriendsAll from '../../../pages/friends/friends-all';
+import FriendsBlocked from '../../../pages/friends/friends-blocked';
+import FriendsOnline from '../../../pages/friends/friends-online';
+import FriendsPending from '../../../pages/friends/friends-pending';
 
 function FriendsRouters() {
   return (
