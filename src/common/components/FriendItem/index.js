@@ -2,7 +2,7 @@ import styles from './index.module.css';
 import { useState } from 'react';
 import Avatar from '../Avatar';
 
-function FriendItem({ avatar, status, name, buttons }) {
+function FriendItem({ avatar, status, username, hash, buttons, text }) {
   const [isHovered, setIsHovered] = useState(false);
   const statusIconPropsStyle = isHovered ? 'var(--gray-12)' : 'var(--gray-2)';
 
@@ -20,12 +20,12 @@ function FriendItem({ avatar, status, name, buttons }) {
           <Avatar
             avatar={avatar}
             status={status}
-            name={name}
+            name={username}
             statusBcgColor={statusIconPropsStyle}
           />
         </div>
-        <div className={styles.name}>{name}</div>
-        <div className={styles.status}>{status}</div>
+        <div className={styles.name}>{username}</div>
+        <div className={styles.hash}>{text || hash}</div>
       </div>
       <div className={styles.buttonsBlock}>
         {buttons ? [...buttons].map((el, i) => <div key={i}>{el}</div>) : null}

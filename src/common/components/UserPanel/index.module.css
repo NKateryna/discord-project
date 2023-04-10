@@ -10,6 +10,8 @@
     box-sizing: border-box;
     padding: 10px 12px 10px 8px;
     background-color: var(--gray-10);
+    z-index: 1;
+    position: relative;
 }
 
 .accountInfo {
@@ -21,20 +23,31 @@
     "A A A C C C";
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 130px;
+    max-width: 120px;
     cursor: pointer;
+
 }
 
-.accountInfo:hover {
+
+.accountInfo:hover::before {
+    content: "";
+    position: absolute;
     background-color: var(--gray-5);
     border-radius: 4px;
+    bottom: 6px;
+    left: 6px;
+    width: 128px;
+    height: 40px;
+    z-index: 1;
 }
+
 
 .avatar{
     grid-area: A;
     margin-right: 8px;
     height: 32px;
     width: 32px;
+    z-index: 2;
 }
 
 .name{
@@ -46,6 +59,7 @@
     line-height: 17px;
     color: var(--white);
     max-width: 80px;
+    z-index: 2;
 }
 
 .userId{
@@ -73,7 +87,7 @@
     cursor: pointer;
     width: 20px;
     height: 20px; 
-    z-index: 1;
+    z-index: 2;
 }
 
 .icon:hover::after{

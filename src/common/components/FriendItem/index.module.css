@@ -46,7 +46,7 @@
     text-overflow: ellipsis;
 }
 
-.status{
+.hash{
     grid-area: C;
     font-family: 'Whitney';
     font-style: normal;

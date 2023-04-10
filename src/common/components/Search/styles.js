@@ -26,11 +26,13 @@ export const stylesMUI = {
   inputaddFriendPage: {
     height: '50px',
     borderRadius: '8px',
+
     '&:focus-within': {
-      with: '100%',
-      border: '1px solid var(--blue-1)',
+      width: '100%',
+      outline: '1px solid var(--blue-1)',
       boxSizing: 'border-box',
     },
   },
 };
+
 export const adornment = { margin: '0px 9px' };
