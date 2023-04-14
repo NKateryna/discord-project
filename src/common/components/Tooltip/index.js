@@ -1,6 +1,6 @@
 import { Tooltip as BaseTooltip } from '@mui/material';
 
-function Tooltip({ children, title, placement }) {
+function Tooltip({ children, title, placement, popperProps }) {
   const styleTooltip = {
     tooltip: {
       sx: {
@@ -19,11 +19,12 @@ function Tooltip({ children, title, placement }) {
   return (
     <BaseTooltip
       title={title}
-      componentsProps={styleTooltip}
       placement={placement}
+      slotProps={styleTooltip}
+      PopperProps={popperProps}
       arrow
     >
-      <div>{children}</div>
+      <span>{children}</span>
     </BaseTooltip>
   );
 }

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { makeStyles } from '@mui/styles';
-import { adornment, stylesMUI, buttonStyle } from './styles';
+import { adornment, stylesMUI } from './styles';
 import { Button, Input, InputAdornment } from '@mui/material';
 import { SearchIcon } from '../icons';
 const useStyles = makeStyles(stylesMUI);
