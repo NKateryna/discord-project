@@ -24,8 +24,11 @@ function FriendItem({ avatar, status, username, hash, buttons, text }) {
             statusBcgColor={statusIconPropsStyle}
           />
         </div>
-        <div className={styles.name}>{username}</div>
-        <div className={styles.hash}>{text || hash}</div>
+        <div className={styles.nameBlock}>
+          <div className={styles.name}>{username}</div>
+          <div className={styles.hash}>#{hash}</div>
+        </div>
+        <div className={styles.statusText}>{text || status}</div>
       </div>
       <div className={styles.buttonsBlock}>
         {buttons ? [...buttons].map((el, i) => <div key={i}>{el}</div>) : null}
@@ -35,3 +38,5 @@ function FriendItem({ avatar, status, username, hash, buttons, text }) {
 }
 
 export default FriendItem;
+
+/*hash - номер аккаунта добавить при наведении*/

@@ -6,6 +6,7 @@ export function FriendsAdd() {
     <FriendsPageBackground
       title={'ADD FRIEND'}
       helpText={'You can add a friend with Discord Tag. It’s cAse sEnSitIvE!'}
+      addFriendPage={true}
       searchBox={<Search addFriendPage={true} />}
     ></FriendsPageBackground>
   );

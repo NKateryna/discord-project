@@ -23,6 +23,7 @@ export function FriendsBlocked() {
             avatar={user.avatar}
             status={user.status}
             username={user.username}
+            hash={user.hash}
             text="Blocked"
             buttons={[<UnblockUser />]}
             key={user.id}

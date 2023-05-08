@@ -23,6 +23,7 @@ export function FriendsPending() {
             avatar={user.avatar}
             status={user.status}
             username={user.username}
+            hash={user.hash}
             text="Incoming friend request"
             buttons={[<Accept />, <Deny />]}
             key={user.id}

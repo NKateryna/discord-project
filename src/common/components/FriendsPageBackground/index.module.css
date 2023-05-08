@@ -10,8 +10,11 @@
 
 .header {
     padding-left: 30px;
-    border-bottom: 1px solid var(--gray-12);;
 }
+.headerLine{
+    border-bottom: 1px solid var(--gray-12);
+}
+
 .titleBox {
     margin-top: 20px;
 }
@@ -25,6 +28,7 @@
     margin-bottom: 8px;
     cursor:default;
 }
+
 .helpText{
     font-family: 'Whitney';
     font-style: normal;
@@ -34,9 +38,11 @@
     color: var(--gray-3);
     cursor:default;
 }
+
 .searchBox{
     margin: 16px 21px 21px 0px;
 }
+
 .friendsCounter{
     font-family: 'ABC Ginto Normal';
     font-style: normal;

@@ -1,4 +1,5 @@
 import styles from './index.module.css';
+import classNames from 'classnames';
 
 function FriendsPageBackground({
   children,
@@ -6,10 +7,15 @@ function FriendsPageBackground({
   helpText,
   searchBox,
   friendsCounter,
+  addFriendPage,
 }) {
   return (
     <div className={styles.background}>
-      <div className={styles.header}>
+      <div
+        className={classNames(styles.header, {
+          [styles.headerLine]: addFriendPage,
+        })}
+      >
         {title ? (
           <div className={styles.titleBox}>
             <div className={styles.title}>{title}</div>
