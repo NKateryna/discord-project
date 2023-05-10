@@ -4,6 +4,7 @@ import { FriendsIcon, NitroIcon } from '../icons';
 import UserPanel from '../UserPanel';
 import NavigationBarItem from '../NavigationBarItem';
 import directMessages from '../../../redux/direct-messages';
+import NavigationBarSearch from '../NavigationBarSearch';
 
 function WrapperNavigationBar({ children }) {
   const navigate = useNavigate();
@@ -24,6 +25,7 @@ function WrapperNavigationBar({ children }) {
     <div className={styles.wrapperNavigationBar}>
       <div className={styles.NavigationBar}>
         {/* Search */}
+        <NavigationBarSearch />
         <div className={styles.navigationPanel}>
           <div className={styles.NavButtonsBlock}>
             <NavigationBarItem
