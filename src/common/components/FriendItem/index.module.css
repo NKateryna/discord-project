@@ -1,0 +1,100 @@
+.friendItem {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    box-sizing: border-box;
+    min-height: 61px;
+    height: 61px;
+    width: 100%;
+    cursor: pointer;
+    padding-left: 10px;
+    position: relative;
+}
+
+.friendItem:not(:hover)::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 1px;
+    background-color: var(--gray-12);
+}
+
+.friendItem:hover {
+    background-color: var(--gray-12);
+    border-radius: 8px;
+}
+
+.userInfo {
+    display: grid;
+    flex: 1;
+    justify-content: start;
+    grid-template-areas:
+    "A A A B B B"
+    "A A A C C C";
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 400px;
+}
+
+.avatar{
+    grid-area: A;
+    height: 32px;
+    width: 32px;
+    margin-right: 12px;
+}
+
+.nameBlock{
+    grid-area: B;
+    display: flex;
+    align-items: flex-end;
+}
+.name{
+    font-family: 'Whitney';
+    font-style: normal;
+    font-weight: 375;
+    font-size: 16px;
+    line-height: 19px;
+    color: var(--white);
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.hash{
+    font-family: 'Whitney';
+    font-style: normal;
+    font-weight: 350;
+    font-size: 14px;
+    line-height: 17px;
+    color: var(--gray-3);
+    display: none;
+}
+
+.friendItem:hover .hash{
+    display: block;
+}
+
+.statusText{
+    grid-area: C;
+    font-family: 'Whitney';
+    font-style: normal;
+    font-weight: 350;
+    font-size: 14px;
+    line-height: 17px;
+    color: var(--gray-3);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-transform: lowercase;
+}
+
+.statusText:first-letter{
+    text-transform: uppercase;
+}
+
+.buttonsBlock{
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}

@@ -6,6 +6,7 @@ import styles from './index.module.css';
 import ApplicationLogin from '../../common/layouts/ApplicationLogin';
 import Link from '../../common/components/Link';
 import HelpText from '../../common/components/HelpText';
+import { useNavigate } from 'react-router-dom';
 
 const buttonSX = {
   margin: '20px 0px 10px 0px',
@@ -18,6 +19,7 @@ function Login() {
   const [error, setError] = useState(false);
   const [textError, setTextError] = useState('');
   const [isLoading, setisLoading] = useState(false);
+  const navigate = useNavigate();
 
   const emailValueChange = (event) => {
     setEmailValue(event.target.value);
@@ -50,6 +52,10 @@ function Login() {
     const { accessToken, ...userData } = data;
     setUser(userData);
     setisLoading(false);
+
+    if (cookies.cookies?.authToken !== undefined) {
+      navigate('/channels/@me');
+    }
   };
 
   return (

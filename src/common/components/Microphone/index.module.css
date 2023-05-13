@@ -14,7 +14,7 @@
     position: absolute;
     width: 25px;
     height: 32px;
-    background-color: var(---gray-5);
+    background-color: var(--gray-5);
     border-radius: 4px;
     z-index: -1;
 }

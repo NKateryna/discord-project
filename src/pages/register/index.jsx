@@ -10,6 +10,7 @@ import Link from '../../common/components/Link';
 import Select from '../../common/components/Select';
 import CheckboxSingle from '../../common/components/CheckboxSingle';
 import HelpText from '../../common/components/HelpText';
+import { useNavigate } from 'react-router-dom';
 
 const useStyles = makeStyles(stylesMUI);
 
@@ -38,6 +39,7 @@ function Register() {
   const [error, setError] = useState(false);
   const [textError, setTextError] = useState('');
   const [isLoading, setisLoading] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const numberOfDays = new Date(
@@ -114,6 +116,10 @@ function Register() {
     const { accessToken, ...userData } = data;
     setUser(userData);
     setisLoading(false);
+
+    if (cookies.cookies?.authToken !== undefined) {
+      navigate('/channels/@me');
+    }
   };
 
   return (

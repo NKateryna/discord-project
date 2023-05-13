@@ -31,6 +31,7 @@ function WrapperContents({ children }) {
 
   function onClickServer(a) {
     return () => {
+      navigate(`channels/ + ${a._id}`);
       dispatch(saveActiveItem(a._id));
     };
   }
@@ -41,7 +42,7 @@ function WrapperContents({ children }) {
   }
   function onClickPrivateMessages(a) {
     return () => {
-      navigate('friends/online');
+      navigate('channels/');
       dispatch(saveActiveItem(a));
     };
   }
@@ -54,7 +55,7 @@ function WrapperContents({ children }) {
           icon={<LogoIcon style={{ height: '20px', width: '26px' }} />}
           onClick={onClickPrivateMessages('Private messages')}
           active={
-            location.pathname.startsWith('/friends') ||
+            location.pathname.startsWith('/channels/@me') ||
             location.pathname === '/nitro'
           }
         />

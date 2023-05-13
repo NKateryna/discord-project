@@ -3,15 +3,18 @@ import { useState } from 'react';
 import { LogoIcon } from '../icons';
 import CreateStatus from '../CreateStatus';
 
-function Avatar({ avatar, status, name }) {
+function Avatar({ avatar, name, status, statusBcgColor }) {
+  const [fallbackAvatar, setFallbackAvatar] = useState(false);
+  const statusIcon = CreateStatus(status);
+
   const styleLogo = {
     width: '20px',
     height: '20px',
     fill: 'var(--white-2)',
   };
-
-  const [fallbackAvatar, setFallbackAvatar] = useState(false);
-  const statusIcon = CreateStatus(status);
+  const statusIconPropsStyle = {
+    backgroundColor: statusBcgColor,
+  };
 
   return (
     <div className={styles.box}>
@@ -27,7 +30,9 @@ function Avatar({ avatar, status, name }) {
           <LogoIcon style={styleLogo} />
         )}
       </div>
-      <div className={styles.statusIcon}>{statusIcon}</div>
+      <div className={styles.statusIcon} style={statusIconPropsStyle}>
+        {statusIcon}
+      </div>
     </div>
   );
 }

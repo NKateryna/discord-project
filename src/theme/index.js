@@ -8,9 +8,9 @@ const theme = createTheme({
   },
   palette: {
     primary: {
-      light: 'var(---gray-5)',
+      light: 'var(--gray-5)',
       main: '#5865F2',
-      dark: 'var(---gray-4)',
+      dark: 'var(--gray-4)',
       contrastText: 'var(--white)',
     },
   },
@@ -109,8 +109,8 @@ const theme = createTheme({
         root: {
           textTransform: 'none',
           boxSizing: 'border-box',
-          backgroundColor: 'var(---gray-4)',
-          color: 'var(---gray-3)',
+          backgroundColor: 'var(--gray-4)',
+          color: 'var(--gray-3)',
           border: '0',
           width: '100%',
         },
@@ -119,8 +119,8 @@ const theme = createTheme({
             '&.MuiInputBase-inputSizeSmall': {
               '&:-webkit-autofill': {
                 border: 'none',
-                WebkitTextFillColor: 'var(---gray-3)',
-                boxShadow: '0 0 0px 1000px var(---gray-4) inset',
+                WebkitTextFillColor: 'var(--gray-3)',
+                boxShadow: '0 0 0px 1000px var(--gray-4) inset',
               },
             },
           },
@@ -137,8 +137,36 @@ const theme = createTheme({
         },
         /* Search input*/
         inputTypeSearch: {
-          backgroundColor: '#202225',
-          borderRadius: '4px',
+          backgroundColor: 'var(--gray-4)',
+          color: 'var(--gray-3)',
+          padding: '8px 10px',
+          fontFamily: 'Whitney',
+          fontStyle: 'normal',
+          fontWeight: '325',
+          fontSize: '16px',
+          lineHeight: '19px',
+          borderRadius: '8px !important',
+          '&::placeholder': {
+            color: 'var(--gray-3)',
+            fontFamily: 'Whitney',
+            fontStyle: 'normal',
+            fontWeight: '325',
+            fontSize: '16px',
+            lineHeight: '19px',
+            opacity: 1,
+          },
+          '&::-webkit-search-cancel-button': {
+            display: 'none',
+          },
+          '&::-webkit-search-decoration': {
+            '-webkit-appearance': 'none',
+          },
+          '&::-webkit-search-results-button': {
+            '-webkit-appearance': 'none',
+          },
+          '&::-moz-search-clear-button': {
+            display: 'none',
+          },
         },
       },
     },
@@ -178,7 +206,7 @@ const theme = createTheme({
           fontStyle: 'normal',
           fontWeight: '400',
           letterSpacing: '-0.06em',
-          color: 'var(---gray-7)',
+          color: 'var(--gray-7)',
           '& .MuiFormControlLabel-label': {
             fontSize: '12px',
             lineHeight: '16px',
@@ -189,7 +217,7 @@ const theme = createTheme({
     MuiSelect: {
       styleOverrides: {
         root: {
-          backgroundColor: 'var(---gray-4)',
+          backgroundColor: 'var(--gray-4)',
           height: 40,
           padding: '0 10px',
         },
@@ -198,7 +226,7 @@ const theme = createTheme({
           height: 40,
           display: 'flex',
           alignItems: 'center',
-          color: 'var(---gray-3)',
+          color: 'var(--gray-3)',
           fontFamily: 'Noto Sans',
           fontStyle: 'normal',
           fontWeight: '400',
@@ -211,7 +239,7 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           '&.MuiMenu-list': {
-            backgroundColor: 'var(---gray-2)',
+            backgroundColor: 'var(--gray-2)',
             padding: '0',
             height: '200px',
           },
@@ -227,20 +255,20 @@ const theme = createTheme({
           padding: '9px 0 9px 10px',
           overflow: 'hidden',
           boxSizing: 'border-box',
-          color: 'var(---gray-3)',
-          backgroundColor: 'var(---gray-2)',
+          color: 'var(--gray-3)',
+          backgroundColor: 'var(--gray-2)',
           fontFamily: 'Noto Sans',
           fontStyle: 'normal',
           fontWeight: '400',
           fontSize: '16px',
           lineHeight: '22px',
           '&:hover': {
-            backgroundColor: 'var(---gray-4)',
+            backgroundColor: 'var(--gray-4)',
           },
           '&.Mui-selected': {
-            backgroundColor: 'var(---gray-2)',
+            backgroundColor: 'var(--gray-2)',
             '&:hover': {
-              backgroundColor: 'var(---gray-4)',
+              backgroundColor: 'var(--gray-4)',
             },
           },
         },
@@ -252,6 +280,39 @@ const theme = createTheme({
         root: {
           '&.MuiMenu-paper': {
             backgroundColor: 'transparent',
+          },
+        },
+      },
+    },
+    MuiTabs: {
+      styleOverrides: {
+        root: { display: 'flex', alignItems: 'center' },
+      },
+    },
+    MuiTab: {
+      styleOverrides: {
+        root: {
+          fontFamily: 'Whitney',
+          fontStyle: 'normal',
+          fontWeight: '350',
+          fontSize: '16px',
+          lineHeight: '19px',
+          textTransform: 'none',
+          color: 'var(--gray-3)',
+          borderRadius: '4px',
+          padding: '3px 8px',
+          minHeight: '24px',
+          height: '24px',
+          minWidth: '0px',
+          boxSizing: 'border-box',
+          marginRight: '16px',
+          '&:hover': {
+            backgroundColor: 'var(--gray-8-opacity-4)',
+            color: 'var(--white-2)',
+          },
+          '&.Mui-selected': {
+            backgroundColor: 'var(--gray-8-opacity-6)',
+            color: 'var(--white)',
           },
         },
       },

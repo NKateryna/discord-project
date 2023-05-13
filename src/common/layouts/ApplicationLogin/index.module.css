@@ -14,7 +14,7 @@
     min-width: 480px;
     max-width: 500px;
     padding: 30px 32px;
-    background-color: var(---gray-2);
+    background-color: var(--gray-2);
     z-index: 2;
 
 }
@@ -38,7 +38,7 @@
     font-size: 16px;
     line-height: 22px;
     letter-spacing: -0.06em;
-    color: var(---gray-3);
+    color: var(--gray-3);
 }
 .helpText {
     font-family: 'Noto Sans';
@@ -47,6 +47,6 @@
     font-size: 14px;
     line-height: 19px;
     letter-spacing: -0.06em;
-    color: var(---gray-3);
+    color: var(--gray-3);
     margin-right: 2px;
 }

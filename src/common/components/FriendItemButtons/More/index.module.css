@@ -1,0 +1,49 @@
+.background{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    margin-right: 16px;
+    border-radius: 18px;
+    background-color: var(--gray-1);
+}
+
+.icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    fill:var(--gray-3)
+}
+
+.popperButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 32px;
+    font-family: 'Whitney';
+    font-style: normal;
+    font-weight: 350;
+    font-size: 14px;
+    line-height: 17px;
+    color: var(--white);
+    cursor: pointer;
+}
+
+.popperButtonBlue:hover{
+    background-color: var(--brend-color-hover);
+    border-radius: 2px;
+}
+
+.popperButtonRed{
+    color: var(--red-1);
+}
+
+.popperButtonRed:hover{
+    color: var(--white);
+    background-color:  var(--red-1);
+    border-radius: 1px;
+}

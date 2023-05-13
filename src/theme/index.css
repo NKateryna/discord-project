@@ -1,5 +1,6 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css");
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap');
+@import url('./typography//style');
 
 :root {
     --white: #ffffff;
@@ -9,25 +10,29 @@
     --brend-color-hover: #4752c4;
     --brend-color-active: #3c45a5;
 
-    ---gray-1: #2F3136;
-    ---gray-2: #36393F;
-    ---gray-3: #B9BBBE;
-    ---gray-4: #202225;
-    ---gray-5: #3C3F45;
-    ---gray-6: #72767D;
-    ---gray-7: #A3A6AA;
-    ---gray-8: #4F545C;
-    ---gray-8-opacity-6: rgba(79, 84, 92, 0.6);
-    ---gray-8-opacity-4: rgba(79, 84, 92, 0.4);
-    ---gray-9: #18191C;
-    ---gray-10: #292B2F;
-    ---gray-11: #96989D;
-    ---gray-12: #42464D;
-    ---gray-13: #ACADB0;
-
+    --gray-1: #2F3136;
+    --gray-2: #36393F;
+    --gray-3: #B9BBBE;
+    --gray-4: #202225;
+    --gray-5: #3C3F45;
+    --gray-6: #72767D;
+    --gray-7: #A3A6AA;
+    --gray-8: #4F545C;
+    --gray-8-opacity-6: rgba(79, 84, 92, 0.6);
+    --gray-8-opacity-4: rgba(79, 84, 92, 0.4);
+    --gray-9: #18191C;
+    --gray-10: #292B2F;
+    --gray-11: #96989D;
+    --gray-12: #42464D;
+    --gray-13: #ACADB0;
+    --gray-14: #2B2D32;
+    --gray-15: #3F4248;
+    
     --blue-1: #00AFF4;
 
     --green-1: #3BA55D;
+    --green-2: #2D7D46;
+    --green-3: #46C46E;
 
     --red-1: #ED4245;
     --red-2: #A12D2F;
