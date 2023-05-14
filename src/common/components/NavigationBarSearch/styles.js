@@ -2,7 +2,6 @@ export const stylesMUI = {
   searchBox: {
     height: '48px',
     width: '100%',
-    // display: 'flex',
     padding: '10px',
     '&.Mui-disabled': {
       '&::placeholder': {
@@ -16,7 +15,6 @@ export const stylesMUI = {
       },
     },
   },
-
   search: {
     borderRadius: '4px',
   },

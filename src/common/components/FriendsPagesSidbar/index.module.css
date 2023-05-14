@@ -32,6 +32,7 @@
     color: #FFFFFF;
     margin-bottom: 14px;
     cursor: default;
+    user-select: none;
 }
 
 @media (max-width: 1200px) {

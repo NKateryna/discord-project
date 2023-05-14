@@ -31,12 +31,14 @@ function WrapperContents({ children }) {
 
   function onClickServer(a) {
     return () => {
-      navigate(`channels/ + ${a._id}`);
+      console.log(a._id);
+      navigate(`channels/${a._id}`);
       dispatch(saveActiveItem(a._id));
     };
   }
   function onClickMenuItem(a) {
     return () => {
+      navigate(`${a}`);
       dispatch(saveActiveItem(a));
     };
   }
@@ -81,8 +83,8 @@ function WrapperContents({ children }) {
           green={true}
           name={'Explore'}
           icon={<ChannelSearchIcon />}
-          onClick={onClickMenuItem('Explore')}
-          active={'Explore' === serversData.servers.activeServer}
+          onClick={onClickMenuItem('guild-discovery')}
+          active={'guild-discovery' === serversData.servers.activeServer}
         />
         <div className={styles.separator}></div>
         <SidebarItem

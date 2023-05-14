@@ -37,6 +37,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     max-width: 400px;
+    user-select: none;
 }
 
 .avatar{
