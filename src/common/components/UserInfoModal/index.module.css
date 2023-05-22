@@ -1,0 +1,176 @@
+.bcg{
+    display: flex;
+    flex-direction: column;
+    width: 340px;
+    height: 376px;
+    border-radius: 8px;
+    background-color: var(--gray-16);
+    position: relative;
+    user-select: none;
+}
+
+.banner{
+    width: 340px;
+    height: 60px;
+    background-color: var(--gray-18);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.avatar{
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;
+    background-color: var(--gray-16);
+    position: absolute;
+    top: 10px;
+    left: 16px;
+}
+
+.box{
+    display: flex;
+    flex-direction: column;
+    width: 308px;
+    height: 246px;
+    border-radius: 8px;
+    background-color: var(--gray-17);
+    margin: 54px 16px 16px 16px;
+    padding: 0px 12px;
+}
+
+.userInfo{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    height: 83px;
+    padding-bottom: 15px;
+}
+.userInfoText{
+    color: var(--white);
+    font-family: 'Whitney';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.memberIhfo{
+    position: relative;
+    height: 64px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 12px;
+    padding-bottom: 13px;
+}
+.memberIhfoTitle{
+    color: var(--white);
+    font-family: 'Whitney';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+}
+.memberIhfoData{
+  margin-top: 8px;
+}
+
+.memberIhfoData, 
+.statusText, 
+.logOutText {
+    color: var(--gray-3);
+    font-family: 'Whitney';
+    font-style: normal;
+    font-weight: 350;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+.statusIhfo{
+    position: relative;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 12px;
+    cursor: pointer;
+    position: relative;
+}
+.statusIhfo:active, .logOut:active {
+    background: var(--brend-color-hover);
+}
+.statusIhfoIcon{
+    display: flex;
+    width: 12px;
+    height: 12px;
+}
+.statusText{
+    text-transform: lowercase;
+    flex: 1;
+    margin-left: 10px;
+}
+.statusText:first-letter{
+    text-transform: uppercase;
+}
+.statusArrow{
+    display: flex;
+    width: 10px;
+    height: 10px;
+}
+.statusIhfo:active .statusText,
+.logOut:active .logOutText{
+    color: var(--white)
+}
+
+.logOut{
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    padding: 0px 12px;
+    cursor: pointer;
+}
+
+
+.logOutText{
+    flex: 1;
+    margin-left: 10px;
+}
+
+
+.memberIhfo::before,
+.statusIhfo::before,
+.logOut::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 284px;
+    height: 1px;
+    background-color: var(--gray-19);
+}
+
+
+.statusModal{
+    display:none;
+    position: absolute;
+    left: 300px;
+    top: -65px;
+    z-index: 2;
+  }
+
+.statusIhfo:hover::after {
+    content:"";
+    position: absolute;
+    left: 270px;
+    top: -65px;
+    z-index: 1;
+    width: 335px;
+    height: 210px;
+    }
+
+.statusIhfo:hover .statusModal {
+    display:block;
+}
+

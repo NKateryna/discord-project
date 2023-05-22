@@ -1,14 +1,14 @@
 import styles from './index.module.css';
 import { useEffect, useState } from 'react';
 import { MicrophoneIcon, MicrophoneOffIcon } from '../icons';
-import personalInfo from '../../../redux/personal-info';
 
-function Microphone() {
+function Microphone(microphoneStatus) {
   const [microphoneOn, setMicrophoneOn] = useState(true);
 
   useEffect(() => {
-    setMicrophoneOn(personalInfo.microphone);
-  }, []);
+    setMicrophoneOn(microphoneStatus);
+  }, [microphoneStatus]);
+
   const onClickMicrophone = () => {
     setMicrophoneOn(!microphoneOn);
   };

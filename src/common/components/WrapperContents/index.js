@@ -2,11 +2,8 @@ import styles from './index.module.css';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { getServers } from '../../../redux/selectors';
-import {
-  fetchServerListWithRouting,
-  saveActiveItem,
-} from '../../../redux/actions';
+import { getServers } from '../../../redux/servers/selectors';
+import { fetchUserData, saveActiveItem } from '../../../redux/servers/actions';
 import Cookies from 'universal-cookie';
 import Sidebar from '../Sidebar';
 import SidebarItem from '../SidebarItem';
@@ -26,12 +23,11 @@ function WrapperContents({ children }) {
 
   useEffect(() => {
     const cookies = new Cookies();
-    dispatch(fetchServerListWithRouting(navigate, cookies));
+    dispatch(fetchUserData(navigate, cookies));
   }, [dispatch, navigate]);
 
   function onClickServer(a) {
     return () => {
-      console.log(a._id);
       navigate(`channels/${a._id}`);
       dispatch(saveActiveItem(a._id));
     };

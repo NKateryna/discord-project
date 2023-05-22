@@ -24,7 +24,6 @@ function WrapperNavigationBar({ children }) {
   return (
     <div className={styles.wrapperNavigationBar}>
       <div className={styles.NavigationBar}>
-        {/* Search */}
         <NavigationBarSearch />
         <div className={styles.navigationPanel}>
           <div className={styles.NavButtonsBlock}>

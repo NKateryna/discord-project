@@ -13,6 +13,7 @@
     z-index: 1;
     position: relative;
     user-select: none;
+
 }
 
 .accountInfo {
@@ -26,7 +27,6 @@
     text-overflow: ellipsis;
     max-width: 120px;
     cursor: pointer;
-
 }
 
 
@@ -63,7 +63,7 @@
     z-index: 2;
 }
 
-.userId{
+.hash{
     grid-area: C;
     font-family: 'Whitney';
     font-style: normal;
@@ -74,6 +74,7 @@
     max-width: 80px;
     overflow: hidden;
     text-overflow: ellipsis;
+    z-index: 2;
 }
 
 .settingsIcons {
