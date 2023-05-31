@@ -1,58 +1,89 @@
 import styles from './index.module.css';
-import { useState, forwardRef } from 'react';
+import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { getUserInfo } from '../../../redux/userInfo/selectors';
+import Cookies from 'universal-cookie';
 import Avatar from '../Avatar';
 import Microphone from '../Microphone';
 import Headphones from '../Headphones';
 import { SettingsIcon } from '../icons';
-
+import { Modal } from '@mui/material';
 import UserInfoModal from '../UserInfoModal';
-import { Modal } from '@mui/base';
-import PropTypes from 'prop-types';
-import { Fade } from '@mui/material';
-import { styled } from '@mui/system';
 
 function UserPanel() {
   const [isHovered, setIsHovered] = useState(false);
   const statusIconPropsStyle = isHovered ? 'var(--gray-5)' : 'var(--gray-10)';
+  const [microphoneStatus, setMicrophoneStatus] = useState('');
+  const [microphoneClickDisabled, setMicrophoneClickDisabled] = useState(false);
+  const [headhonesStatus, setHeadphonesStatus] = useState('');
+  const [headhonesClickDisabled, setHeadphonesClickDisabled] = useState(false);
+  const [userInfoModalActive, setUserInfoModalActive] = useState(false);
+  const cookies = new Cookies();
 
   const personalInfo = useSelector(getUserInfo);
   const { username, hash, status, microphone, headphones, avatar } =
     personalInfo;
 
-  const [userInfoModalActive, setUserInfoModalActive] = useState(false);
+  useEffect(() => {
+    setMicrophoneStatus(microphone);
+    setHeadphonesStatus(headphones);
+  }, [microphone, headphones]);
+
+  const onClickMicrophone = async () => {
+    if (microphoneClickDisabled) {
+      return;
+    }
+
+    setMicrophoneClickDisabled(true);
+
+    const token = cookies.get('authToken', { path: '/' });
+    try {
+      await fetch('http://localhost:80/users/microphone', {
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer ${token}`,
+          'Content-Type': 'application/json',
+        },
+      });
+      setMicrophoneStatus(!microphoneStatus);
+    } catch (error) {
+      console.log(error);
+    }
+
+    setMicrophoneClickDisabled(false);
+  };
+
+  const onClickHeadphones = async () => {
+    if (headhonesClickDisabled) {
+      return;
+    }
+
+    setHeadphonesClickDisabled(true);
+
+    const token = cookies.get('authToken', { path: '/' });
+    try {
+      await fetch('http://localhost:80/users/headphones', {
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer ${token}`,
+          'Content-Type': 'application/json',
+        },
+      });
+      setHeadphonesStatus(!headhonesStatus);
+    } catch (error) {
+      console.log(error);
+    }
+
+    setHeadphonesClickDisabled(false);
+  };
+
+  const onClickSettings = () => {};
+
   const onClickAccountInfo = () => {
     setUserInfoModalActive(!userInfoModalActive);
   };
+
   const closeUserInfoModal = () => setUserInfoModalActive(false);
-  const Backdrop = forwardRef((props, ref) => {
-    const { open, ...other } = props;
-    return (
-      <Fade in={open}>
-        <div ref={ref} {...other} />
-      </Fade>
-    );
-  });
-  Backdrop.propTypes = {
-    open: PropTypes.bool,
-  };
-
-  const StyledBackdrop = styled(Backdrop)`
-    z-index: -1;
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    left: 0;
-  `;
-  const StyledModal = styled(Modal)`
-    position: absolute;
-    top: -384px;
-    left: -30px;
-  `;
-
-  const onClickSettings = () => {};
 
   return (
     <div className={styles.box}>
@@ -72,19 +103,30 @@ function UserPanel() {
         <div className={styles.name}>{username}</div>
         <div className={styles.hash}>#{hash}</div>
       </div>
-      <StyledModal
+      <Modal
         open={userInfoModalActive}
         onClose={closeUserInfoModal}
-        slots={{ backdrop: StyledBackdrop }}
+        slotProps={{ backdrop: { sx: { backgroundColor: '#00000000' } } }}
         disablePortal={true}
         disableEnforceFocus
         closeAfterTransition
+        sx={{
+          position: 'absolute',
+          top: '-384px',
+          left: '-30px',
+        }}
       >
         <UserInfoModal closeUserInfoModal={closeUserInfoModal} />
-      </StyledModal>
+      </Modal>
       <div className={styles.settingsIcons}>
-        <Microphone microphoneStatus={microphone} />
-        <Headphones headphonesStatus={headphones} />
+        <Microphone
+          microphoneStatus={microphoneStatus}
+          onClick={onClickMicrophone}
+        />
+        <Headphones
+          headphonesStatus={headhonesStatus}
+          onClick={onClickHeadphones}
+        />
         <div onClick={onClickSettings} className={styles.icon}>
           <SettingsIcon />
         </div>

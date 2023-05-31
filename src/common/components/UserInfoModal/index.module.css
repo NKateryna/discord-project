@@ -131,13 +131,10 @@
     padding: 0px 12px;
     cursor: pointer;
 }
-
-
 .logOutText{
     flex: 1;
     margin-left: 10px;
 }
-
 
 .memberIhfo::before,
 .statusIhfo::before,

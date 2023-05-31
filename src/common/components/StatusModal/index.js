@@ -5,10 +5,37 @@ import {
   StatusInactiveIcon,
   StatusInvisibleIcon,
 } from '../icons';
+import Cookies from 'universal-cookie';
+import { useDispatch } from 'react-redux';
+import { creationUserInfo } from '../../../redux/userInfo/actions';
 
 function StatusModal({ closeUserInfoModal }) {
+  const dispatch = useDispatch();
+
   const onClicStatus = (status) => {
-    return () => {
+    return async () => {
+      const cookies = new Cookies();
+      const token = cookies.get('authToken', { path: '/' });
+
+      try {
+        const response = await fetch('http://localhost:80/users/status', {
+          method: 'POST',
+          body: JSON.stringify({
+            status: status,
+          }),
+          headers: {
+            Authorization: `Bearer ${token}`,
+            'Content-Type': 'application/json',
+          },
+        });
+
+        const data = await response.json();
+
+        dispatch(creationUserInfo(data));
+      } catch (error) {
+        console.log(error);
+      }
+
       closeUserInfoModal();
     };
   };

@@ -11,7 +11,7 @@
 .statusItem {
     position: relative;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     padding: 7px 0px 8px 0px;
     min-height: 32px;
 }
@@ -27,6 +27,11 @@
     background-color: var(--brend-color-hover); 
     border-radius: 2px;   
 } 
+
+.iconHover {
+    fill:  var(--gray-17);
+}
+
 .statusItem:hover .iconHover {
     fill: var(--brend-color-hover);
 }

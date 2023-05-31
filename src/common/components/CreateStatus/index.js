@@ -5,18 +5,24 @@ import {
   StatusInvisibleIcon,
 } from '../icons';
 
-function CreateStatus(status, styleIconHover) {
+function CreateStatus(status, styleIconHover, className) {
   switch (status) {
     case 'ONLINE':
       return <StatusActiveIcon />;
     case 'OFFLINE':
-      return <StatusInvisibleIcon style={styleIconHover} />;
+      return (
+        <StatusInvisibleIcon style={styleIconHover} className={className} />
+      );
     case 'AWAY':
-      return <StatusInactiveIcon style={styleIconHover} />;
+      return (
+        <StatusInactiveIcon style={styleIconHover} className={className} />
+      );
     case 'BUSY':
       return <StatusDoNotDisturbIcon />;
     default:
-      return <StatusInvisibleIcon style={styleIconHover} />;
+      return (
+        <StatusInvisibleIcon style={styleIconHover} className={className} />
+      );
   }
 }
 

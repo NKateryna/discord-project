@@ -13,6 +13,13 @@ function UserInfoModal({ closeUserInfoModal }) {
   const personalInfo = useSelector(getUserInfo);
   const { username, hash, status, avatar, createdAt } = personalInfo;
   const [memberIhfoData, setMemberIhfoData] = useState(null);
+  const statusIcon = CreateStatus(status, { fill: 'var(--gray-17)' });
+  const statusText = {
+    ONLINE: 'Online',
+    AWAY: 'Idle',
+    BUSY: 'Do Not Disturb',
+    OFFLINE: 'Invisible',
+  };
 
   useEffect(() => {
     const dateRegistration = new Date(createdAt);
@@ -48,10 +55,8 @@ function UserInfoModal({ closeUserInfoModal }) {
           <div className={styles.memberIhfoData}>{memberIhfoData}</div>
         </div>
         <div className={styles.statusIhfo}>
-          <div className={styles.statusIhfoIcon}>
-            <CreateStatus status={status} />
-          </div>
-          <div className={styles.statusText}>{status}</div>
+          <div className={styles.statusIhfoIcon}>{statusIcon}</div>
+          <div className={styles.statusText}>{statusText[status]}</div>
           <div className={styles.statusArrow}>
             <ArrowRight />
           </div>
