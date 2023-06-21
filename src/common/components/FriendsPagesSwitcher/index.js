@@ -9,7 +9,7 @@ import {
 } from '../../../pages/friends';
 
 function FriendsPagesSwitcher() {
-  const [value, setValue] = useContext(FriendsPagesContext);
+  const [value, _] = useContext(FriendsPagesContext);
 
   switch (value) {
     case 0:

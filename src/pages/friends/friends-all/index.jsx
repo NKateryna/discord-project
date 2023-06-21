@@ -11,7 +11,7 @@ export function FriendsAll() {
   const [counter, setCounter] = useState(0);
   const users = [];
 
-  const [, setValue] = useContext(FriendsPagesContext);
+  const [_, setValue] = useContext(FriendsPagesContext);
 
   useEffect(() => {
     setCounter(users.length);
