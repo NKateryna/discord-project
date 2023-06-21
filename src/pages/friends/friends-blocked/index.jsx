@@ -3,6 +3,8 @@ import FriendsPageBackground from '../../../common/components/FriendsPageBackgro
 import Search from '../../../common/components/Search';
 import FriendItem from '../../../common/components/FriendItem';
 import { UnblockUser } from '../../../common/components/FriendItemButtons';
+import FriendsEmpty from '../../../common/components/FriendsEmpty';
+import { LoadingV3Icon } from '../../../common/components/icons';
 import users from '../../../redux/users';
 
 export function FriendsBlocked() {
@@ -12,7 +14,7 @@ export function FriendsBlocked() {
     setCounter(users.length);
   }, []);
 
-  return (
+  return users.length ? (
     <FriendsPageBackground
       searchBox={<Search />}
       friendsCounter={counter ? `BLOCKED-${counter}` : null}
@@ -31,6 +33,11 @@ export function FriendsBlocked() {
         );
       })}
     </FriendsPageBackground>
+  ) : (
+    <FriendsEmpty
+      emptyIcon={<LoadingV3Icon />}
+      text={'You can’t unblock the Wumpus.'}
+    />
   );
 }
 

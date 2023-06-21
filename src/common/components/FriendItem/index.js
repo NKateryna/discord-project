@@ -38,5 +38,3 @@ function FriendItem({ avatar, status, username, hash, buttons, text }) {
 }
 
 export default FriendItem;
-
-/*hash - номер аккаунта добавить при наведении*/

@@ -3,6 +3,8 @@ import FriendsPageBackground from '../../../common/components/FriendsPageBackgro
 import Search from '../../../common/components/Search';
 import FriendItem from '../../../common/components/FriendItem';
 import { Accept, Deny } from '../../../common/components/FriendItemButtons';
+import FriendsEmpty from '../../../common/components/FriendsEmpty';
+import { LoadingV4Icon } from '../../../common/components/icons';
 import users from '../../../redux/users';
 
 export function FriendsPending() {
@@ -12,7 +14,7 @@ export function FriendsPending() {
     setCounter(users.length);
   }, []);
 
-  return (
+  return users.length ? (
     <FriendsPageBackground
       searchBox={<Search />}
       friendsCounter={counter ? `PEHDING-${counter}` : null}
@@ -31,6 +33,11 @@ export function FriendsPending() {
         );
       })}
     </FriendsPageBackground>
+  ) : (
+    <FriendsEmpty
+      emptyIcon={<LoadingV4Icon />}
+      text={'There are no pending friend requests. Here’s Wumpus for now.'}
+    />
   );
 }
 

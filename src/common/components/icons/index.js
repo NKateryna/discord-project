@@ -15,6 +15,8 @@ export { HeadphonesOffIcon } from './headphones-off';
 export { MicrophoneIcon } from './microphone';
 export { MicrophoneOffIcon } from './microphone-off';
 export { SettingsIcon } from './settings';
+export { LogOut } from './log-out';
+export { ArrowRight } from './arrow-right';
 /*status*/
 export { StatusActiveIcon } from './status-active';
 export { StatusDoNotDisturbIcon } from './status-do-not-disturb';

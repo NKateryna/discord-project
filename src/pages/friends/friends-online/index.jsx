@@ -4,6 +4,8 @@ import Search from '../../../common/components/Search';
 import FriendItem from '../../../common/components/FriendItem';
 import { Message, More } from '../../../common/components/FriendItemButtons';
 import users from '../../../redux/users';
+import { LoadingV11Icon } from '../../../common/components/icons';
+import FriendsEmpty from '../../../common/components/FriendsEmpty';
 
 export function FriendsOnline() {
   const [counter, setCounter] = useState(0);
@@ -17,7 +19,7 @@ export function FriendsOnline() {
     setCounter(onlineUsers.length);
   }, [onlineUsers]);
 
-  return (
+  return onlineUsers.length ? (
     <FriendsPageBackground
       searchBox={<Search />}
       friendsCounter={counter ? `ONLINE-${counter}` : null}
@@ -35,6 +37,11 @@ export function FriendsOnline() {
         );
       })}
     </FriendsPageBackground>
+  ) : (
+    <FriendsEmpty
+      emptyIcon={<LoadingV11Icon />}
+      text={'Nobody wants to play with Wumpus.'}
+    />
   );
 }
 

@@ -51,4 +51,5 @@
     color: var(--gray-11);
     margin-bottom: 8px;
     padding-left: 8px;
+    user-select: none;
 }

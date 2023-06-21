@@ -27,7 +27,11 @@ function FriendsPageBackground({
           <div className={styles.friendsCounter}>{friendsCounter}</div>
         ) : null}
       </div>
-      <div className={styles.friendsList}>{children}</div>
+      {addFriendPage ? (
+        <div className={styles.friendsEmptyBox}>{children}</div>
+      ) : (
+        <div className={styles.friendsList}>{children}</div>
+      )}
     </div>
   );
 }

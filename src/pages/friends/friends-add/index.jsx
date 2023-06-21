@@ -1,5 +1,7 @@
+import FriendsEmpty from '../../../common/components/FriendsEmpty';
 import FriendsPageBackground from '../../../common/components/FriendsPageBackground';
 import Search from '../../../common/components/Search';
+import { LoadingV2Icon } from '../../../common/components/icons';
 
 export function FriendsAdd() {
   return (
@@ -8,7 +10,12 @@ export function FriendsAdd() {
       helpText={'You can add a friend with Discord Tag. It’s cAse sEnSitIvE!'}
       addFriendPage={true}
       searchBox={<Search addFriendPage={true} />}
-    ></FriendsPageBackground>
+    >
+      <FriendsEmpty
+        emptyIcon={<LoadingV2Icon />}
+        text={'Wumpus is waiting on friends. You don’t have though!'}
+      />
+    </FriendsPageBackground>
   );
 }
 

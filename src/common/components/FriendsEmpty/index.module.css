@@ -1,0 +1,23 @@
+.background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    background-color: var(--gray-2);
+    border-right: 1px solid var(--gray-12);
+}
+
+.text{
+    font-family: 'Whitney';
+    font-style: normal;
+    font-weight: 325;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: var(--gray-7);
+    margin-top: 48px;
+    user-select: none;
+}
