@@ -2,11 +2,8 @@ import styles from './index.module.css';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { getServers } from '../../../redux/selectors';
-import {
-  fetchServerListWithRouting,
-  saveActiveItem,
-} from '../../../redux/actions';
+import { getServers } from '../../../redux/servers/selectors';
+import { fetchUserData, saveActiveItem } from '../../../redux/servers/actions';
 import Cookies from 'universal-cookie';
 import Sidebar from '../Sidebar';
 import SidebarItem from '../SidebarItem';
@@ -26,26 +23,26 @@ function WrapperContents({ children }) {
 
   useEffect(() => {
     const cookies = new Cookies();
-    dispatch(fetchServerListWithRouting(navigate, cookies));
-  }, [dispatch, navigate]);
+    dispatch(fetchUserData(navigate, cookies));
+    // eslint-disable-next-line
+  }, []);
 
-  function onClickServer(a) {
+  function onClickServer(server) {
     return () => {
-      console.log(a._id);
-      navigate(`channels/${a._id}`);
-      dispatch(saveActiveItem(a._id));
+      navigate(`channels/${server._id}`);
+      dispatch(saveActiveItem(server._id));
     };
   }
-  function onClickMenuItem(a) {
+  function onClickMenuItem(menuItemName) {
     return () => {
-      navigate(`${a}`);
-      dispatch(saveActiveItem(a));
+      navigate(`${menuItemName}`);
+      dispatch(saveActiveItem(menuItemName));
     };
   }
-  function onClickPrivateMessages(a) {
+  function onClickPrivateMessages(privateMessages) {
     return () => {
       navigate('channels/');
-      dispatch(saveActiveItem(a));
+      dispatch(saveActiveItem(privateMessages));
     };
   }
 
@@ -62,14 +59,14 @@ function WrapperContents({ children }) {
           }
         />
         <div className={styles.separator}></div>
-        {serversData.servers.servers.map((a) => {
+        {serversData.servers.servers.map((server) => {
           return (
             <SidebarItem
-              key={a._id}
-              name={a.name}
-              photo={a.photo}
-              onClick={onClickServer(a)}
-              active={a._id === serversData.servers.activeServer}
+              key={server._id}
+              name={server.name}
+              photo={server.photo}
+              onClick={onClickServer(server)}
+              active={server._id === serversData.servers.activeServer}
             />
           );
         })}

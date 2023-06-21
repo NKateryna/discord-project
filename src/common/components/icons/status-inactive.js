@@ -1,4 +1,4 @@
-export function StatusInactiveIcon() {
+export function StatusInactiveIcon({ className, style }) {
   return (
     <svg
       width="10"
@@ -8,7 +8,14 @@ export function StatusInactiveIcon() {
       xmlns="http://www.w3.org/2000/svg"
     >
       <rect width="10" height="10" rx="5" fill="#FAA81A" />
-      <circle cx="3" cy="3" r="3" fill="#292B2F" />
+      <circle
+        className={className}
+        style={style}
+        cx="3"
+        cy="3"
+        r="3"
+        fill="#292B2F"
+      />
     </svg>
   );
 }
