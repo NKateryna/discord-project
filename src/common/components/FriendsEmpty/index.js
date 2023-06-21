@@ -28,15 +28,16 @@ const useStyles = makeStyles({
   },
 });
 
-function FriendsEmpty({ emptyIcon, text, buttonText }) {
+function FriendsEmpty({ emptyIcon, text, buttonText, onClick }) {
   const classes = useStyles();
+
   return (
     <div className={styles.background}>
       {emptyIcon}
       <div className={styles.text}>{text}</div>
       {buttonText ? (
         <Button
-          onClick={null}
+          onClick={onClick}
           className={classes.buttonStyle}
           disableRipple={true}
         >

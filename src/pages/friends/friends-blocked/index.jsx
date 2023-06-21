@@ -5,10 +5,10 @@ import FriendItem from '../../../common/components/FriendItem';
 import { UnblockUser } from '../../../common/components/FriendItemButtons';
 import FriendsEmpty from '../../../common/components/FriendsEmpty';
 import { LoadingV3Icon } from '../../../common/components/icons';
-import users from '../../../redux/users';
 
 export function FriendsBlocked() {
   const [counter, setCounter] = useState(0);
+  const users = [];
 
   useEffect(() => {
     setCounter(users.length);

@@ -3,13 +3,13 @@ import FriendsPageBackground from '../../../common/components/FriendsPageBackgro
 import Search from '../../../common/components/Search';
 import FriendItem from '../../../common/components/FriendItem';
 import { Message, More } from '../../../common/components/FriendItemButtons';
-import users from '../../../redux/users';
 import { LoadingV11Icon } from '../../../common/components/icons';
 import FriendsEmpty from '../../../common/components/FriendsEmpty';
 
 export function FriendsOnline() {
   const [counter, setCounter] = useState(0);
   const [onlineUsers, setOnlineUsers] = useState([]);
+  const users = [];
 
   useEffect(() => {
     setOnlineUsers(users.filter((user) => user.status === 'ONLINE'));

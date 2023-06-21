@@ -5,10 +5,10 @@ import FriendItem from '../../../common/components/FriendItem';
 import { Accept, Deny } from '../../../common/components/FriendItemButtons';
 import FriendsEmpty from '../../../common/components/FriendsEmpty';
 import { LoadingV4Icon } from '../../../common/components/icons';
-import users from '../../../redux/users';
 
 export function FriendsPending() {
   const [counter, setCounter] = useState(0);
+  const users = [];
 
   useEffect(() => {
     setCounter(users.length);
