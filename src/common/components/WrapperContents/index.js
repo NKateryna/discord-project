@@ -24,24 +24,25 @@ function WrapperContents({ children }) {
   useEffect(() => {
     const cookies = new Cookies();
     dispatch(fetchUserData(navigate, cookies));
-  }, [dispatch, navigate]);
+    // eslint-disable-next-line
+  }, []);
 
-  function onClickServer(a) {
+  function onClickServer(server) {
     return () => {
-      navigate(`channels/${a._id}`);
-      dispatch(saveActiveItem(a._id));
+      navigate(`channels/${server._id}`);
+      dispatch(saveActiveItem(server._id));
     };
   }
-  function onClickMenuItem(a) {
+  function onClickMenuItem(menuItemName) {
     return () => {
-      navigate(`${a}`);
-      dispatch(saveActiveItem(a));
+      navigate(`${menuItemName}`);
+      dispatch(saveActiveItem(menuItemName));
     };
   }
-  function onClickPrivateMessages(a) {
+  function onClickPrivateMessages(privateMessages) {
     return () => {
       navigate('channels/');
-      dispatch(saveActiveItem(a));
+      dispatch(saveActiveItem(privateMessages));
     };
   }
 
@@ -58,14 +59,14 @@ function WrapperContents({ children }) {
           }
         />
         <div className={styles.separator}></div>
-        {serversData.servers.servers.map((a) => {
+        {serversData.servers.servers.map((server) => {
           return (
             <SidebarItem
-              key={a._id}
-              name={a.name}
-              photo={a.photo}
-              onClick={onClickServer(a)}
-              active={a._id === serversData.servers.activeServer}
+              key={server._id}
+              name={server.name}
+              photo={server.photo}
+              onClick={onClickServer(server)}
+              active={server._id === serversData.servers.activeServer}
             />
           );
         })}
