@@ -11,7 +11,7 @@ function WrapperFriendsPages() {
         <FriendsPagesHeader />
         <div className={styles.contentFriends}>
           <FriendsPagesSwitcher />
-          <FriendsPagesSidbar title="Active Now"></FriendsPagesSidbar>
+          <FriendsPagesSidbar title="Active Now" />
         </div>
       </div>
     </FriendsPagestProvider>

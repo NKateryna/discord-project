@@ -45,7 +45,7 @@ function FriendsPagesTabs() {
           disableFocusRipple={true}
           disableRipple={true}
           className={classes.tabGreen}
-        ></Tab>
+        />
       </Tabs>
     </div>
   );
