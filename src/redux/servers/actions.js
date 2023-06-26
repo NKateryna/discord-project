@@ -30,24 +30,6 @@ export const fetchUserData = (navigate, cookies) => async (dispatch) => {
     navigate('login');
   } else {
     try {
-      const serversResponse = await fetch('http://localhost:80/servers', {
-        method: 'GET',
-        headers: {
-          Authorization: `Bearer ${token}`,
-          'Content-Type': 'application/json',
-        },
-      });
-      if (!serversResponse.ok) {
-        if (serversResponse.status === 401) {
-          navigate('login');
-          throw new Error('Unauthorized');
-        }
-      }
-      const serversData = await serversResponse.json();
-
-      const servers = serversData.data;
-      dispatch(creationServersList(servers));
-
       const userInfoResponse = await fetch('http://localhost:80/users/me', {
         method: 'GET',
         headers: {
@@ -66,6 +48,24 @@ export const fetchUserData = (navigate, cookies) => async (dispatch) => {
       const { accessToken, ...userInfo } = userData;
       cookies.set('authToken', accessToken, { path: '/' });
       dispatch(creationUserInfo(userInfo));
+
+      const serversResponse = await fetch('http://localhost:80/servers', {
+        method: 'GET',
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+          'Content-Type': 'application/json',
+        },
+      });
+      if (!serversResponse.ok) {
+        if (serversResponse.status === 401) {
+          navigate('login');
+          throw new Error('Unauthorized');
+        }
+      }
+      const serversData = await serversResponse.json();
+
+      const servers = serversData.data;
+      dispatch(creationServersList(servers));
     } catch (error) {
       console.log(error);
     }

@@ -1,5 +1,5 @@
 const directMessages = {
-  messages: [
+  data: [
     {
       name: 'name-1',
       avatar:
@@ -55,6 +55,7 @@ const directMessages = {
       status: 'ONLINE',
     },
   ],
+  total: 10,
 };
 
 export default directMessages;
