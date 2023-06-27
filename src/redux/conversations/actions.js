@@ -5,10 +5,10 @@ const actions = {
 
 export default actions;
 
-export const creationСonversationsList = (data, total) => {
+export const creationСonversationsList = (data) => {
   return {
     type: actions.CREATING_CONVERSATIONS_LIST,
-    payload: { data, total },
+    payload: { data },
   };
 };
 
@@ -44,9 +44,9 @@ export const fetchСonversations = (navigate, cookies) => async (dispatch) => {
       }
 
       const conversations = await userInfoResponse.json();
-      const { data, total } = conversations;
+      const { data } = conversations;
 
-      dispatch(creationСonversationsList(data, total));
+      dispatch(creationСonversationsList(data));
     } catch (error) {
       console.log(error);
     }
