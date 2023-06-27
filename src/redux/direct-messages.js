@@ -55,7 +55,6 @@ const directMessages = {
       status: 'ONLINE',
     },
   ],
-  total: 10,
 };
 
 export default directMessages;

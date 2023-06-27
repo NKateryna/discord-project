@@ -2,7 +2,6 @@ import actions from './actions';
 
 const INITIAL_STATE = {
   data: [],
-  total: 0,
 };
 
 const conversationsDataReduser = (state = INITIAL_STATE, action) => {
@@ -15,7 +14,6 @@ const conversationsDataReduser = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         data: сonversationsArray,
-        total: action.payload.total,
       };
     }
     case actions.DELETE_CONVERSATION: {
@@ -25,7 +23,6 @@ const conversationsDataReduser = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         data: сonversationsArray,
-        total: сonversationsArray.length,
       };
     }
     default:
