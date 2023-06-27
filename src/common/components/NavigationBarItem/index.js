@@ -5,21 +5,21 @@ import { CloseChatIcon } from '../icons';
 import Avatar from '../Avatar';
 
 function NavigationBarItem({
-  onClick,
+  onClickItem,
   id,
   icon,
   avatar,
   status,
   name,
   active,
-  onClickCloseChat,
+  onClickDeleteChat,
 }) {
   const [isHovered, setIsHovered] = useState(false);
   const statusIconPropsStyle = isHovered ? 'var(--gray-5)' : 'var(--gray-1)';
 
   return (
     <div
-      onClick={onClick}
+      onClick={onClickItem}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       className={classNames(
@@ -43,7 +43,7 @@ function NavigationBarItem({
       )}
       <div className={styles.name}>{name}</div>
       {icon ? null : (
-        <div onClick={onClickCloseChat} className={styles.closeChat}>
+        <div onClick={onClickDeleteChat} className={styles.closeChat}>
           <CloseChatIcon />
         </div>
       )}

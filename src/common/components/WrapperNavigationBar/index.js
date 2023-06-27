@@ -1,25 +1,40 @@
 import styles from './index.module.css';
+import { useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import Cookies from 'universal-cookie';
+import {
+  fetchСonversations,
+  deleteСonversationAsync,
+} from '../../../redux/conversations/actions';
 import { FriendsIcon, NitroIcon } from '../icons';
-import UserPanel from '../UserPanel';
-import NavigationBarItem from '../NavigationBarItem';
-import directMessages from '../../../redux/direct-messages';
 import NavigationBarSearch from '../NavigationBarSearch';
+import NavigationBarItem from '../NavigationBarItem';
+import UserPanel from '../UserPanel';
+import { getConversations } from '../../../redux/conversations/selectors';
 
 function WrapperNavigationBar({ children }) {
   const navigate = useNavigate();
   const location = useLocation();
+  const dispatch = useDispatch();
+  const conversationsData = useSelector(getConversations);
+  const cookies = new Cookies();
+
+  useEffect(() => {
+    dispatch(fetchСonversations(navigate, cookies));
+    // eslint-disable-next-line
+  }, []);
 
   function onClickButtonFriends() {
-    return () => {
-      navigate('/channels/@me');
-    };
+    navigate('/channels/@me');
   }
   function onClickButtonNitro() {
-    return () => {
-      navigate('/nitro');
-    };
+    navigate('/nitro');
   }
+
+  const onClickDeleteChat = (id) => {
+    return () => dispatch(deleteСonversationAsync(navigate, cookies, id));
+  };
 
   return (
     <div className={styles.wrapperNavigationBar}>
@@ -30,24 +45,28 @@ function WrapperNavigationBar({ children }) {
             <NavigationBarItem
               icon={<FriendsIcon />}
               name="Friends"
-              onClick={onClickButtonFriends()}
+              onClickItem={onClickButtonFriends}
               active={location.pathname.startsWith('/channels/@me')}
             />
             <NavigationBarItem
               icon={<NitroIcon />}
               name="Nitro"
-              onClick={onClickButtonNitro()}
+              onClickItem={onClickButtonNitro}
               active={location.pathname === '/nitro'}
             />
           </div>
           <div className={styles.directMessagesBlock}>
             <div className={styles.directMessagesTitle}>DIRECT MESSAGES</div>
-            {directMessages.messages.map((a) => {
+            {conversationsData.data.map((conversation) => {
+              const { username, avatar, status } = conversation.sender;
               return (
                 <NavigationBarItem
-                  name={a.name}
-                  avatar={a.avatar}
-                  status={a.status}
+                  id={conversation._id}
+                  name={username}
+                  avatar={avatar}
+                  status={status}
+                  onClickItem={null}
+                  onClickDeleteChat={onClickDeleteChat(conversation._id)}
                 />
               );
             })}
