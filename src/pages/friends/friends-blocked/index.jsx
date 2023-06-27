@@ -1,34 +1,45 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import Cookies from 'universal-cookie';
 import FriendsPageBackground from '../../../common/components/FriendsPageBackground';
 import Search from '../../../common/components/Search';
 import FriendItem from '../../../common/components/FriendItem';
 import { UnblockUser } from '../../../common/components/FriendItemButtons';
 import FriendsEmpty from '../../../common/components/FriendsEmpty';
 import { LoadingV3Icon } from '../../../common/components/icons';
+import { getFriends } from '../../../redux/friends/selectors';
+import { fetchFriends } from '../../../redux/friends/actions';
 
 export function FriendsBlocked() {
-  const [counter, setCounter] = useState(0);
-  const users = [];
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const cookies = new Cookies();
+
+  const friendsData = useSelector(getFriends);
+  const blockedFriends = friendsData.data;
+  const total = friendsData.total;
 
   useEffect(() => {
-    setCounter(users.length);
+    dispatch(fetchFriends(navigate, cookies, 'blocked'));
+    // eslint-disable-next-line
   }, []);
 
-  return users.length ? (
+  return total ? (
     <FriendsPageBackground
       searchBox={<Search />}
-      friendsCounter={counter ? `BLOCKED-${counter}` : null}
+      friendsCounter={`BLOCKED-${total}`}
     >
-      {users.map((user) => {
+      {blockedFriends.map((friend) => {
         return (
           <FriendItem
-            avatar={user.avatar}
-            status={user.status}
-            username={user.username}
-            hash={user.hash}
+            avatar={friend.avatar}
+            status={friend.status}
+            username={friend.username}
+            hash={friend.hash}
             text="Blocked"
             buttons={[<UnblockUser />]}
-            key={user.id}
+            key={friend._id}
           />
         );
       })}

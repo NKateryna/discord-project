@@ -1,38 +1,44 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import Cookies from 'universal-cookie';
 import FriendsPageBackground from '../../../common/components/FriendsPageBackground';
 import Search from '../../../common/components/Search';
 import FriendItem from '../../../common/components/FriendItem';
 import { Message, More } from '../../../common/components/FriendItemButtons';
 import { LoadingV11Icon } from '../../../common/components/icons';
 import FriendsEmpty from '../../../common/components/FriendsEmpty';
+import { getFriends } from '../../../redux/friends/selectors';
+import { fetchFriends } from '../../../redux/friends/actions';
 
 export function FriendsOnline() {
-  const [counter, setCounter] = useState(0);
-  const [onlineUsers, setOnlineUsers] = useState([]);
-  const users = [];
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const cookies = new Cookies();
+
+  const friendsData = useSelector(getFriends);
+  const onlineFriends = friendsData.data;
+  const total = friendsData.total;
 
   useEffect(() => {
-    setOnlineUsers(users.filter((user) => user.status === 'ONLINE'));
+    dispatch(fetchFriends(navigate, cookies, 'online'));
+    // eslint-disable-next-line
   }, []);
 
-  useEffect(() => {
-    setCounter(onlineUsers.length);
-  }, [onlineUsers]);
-
-  return onlineUsers.length ? (
+  return total ? (
     <FriendsPageBackground
       searchBox={<Search />}
-      friendsCounter={counter ? `ONLINE-${counter}` : null}
+      friendsCounter={`ONLINE-${total}`}
     >
-      {onlineUsers.map((user) => {
+      {onlineFriends.map((friend) => {
         return (
           <FriendItem
-            avatar={user.avatar}
-            status={user.status}
-            username={user.username}
-            hash={user.hash}
+            avatar={friend.avatar}
+            status={friend.status}
+            username={friend.username}
+            hash={friend.hash}
             buttons={[<Message />, <More />]}
-            key={user.id}
+            key={friend._id}
           />
         );
       })}
