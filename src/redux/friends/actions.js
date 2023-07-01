@@ -1,6 +1,7 @@
 const actions = {
   CREATING_FRIENDS_LIST: 'CREATING_FRIENDS_LIST',
   REMOVE_FRIENDS_LIST: 'REMOVE_FRIENDS_LIST',
+  TOGGLE_LOADING: 'TOGGLE_LOADING',
 };
 
 export default actions;
@@ -18,6 +19,13 @@ export const removeFriendsList = () => {
   };
 };
 
+export const setLoaging = (toggleValue) => {
+  return {
+    type: actions.TOGGLE_LOADING,
+    payload: { toggleValue },
+  };
+};
+
 export const fetchFriends =
   (navigate, cookies, status = 'online') =>
   async (dispatch) => {
@@ -26,6 +34,7 @@ export const fetchFriends =
     if (!token) {
       navigate('login');
     } else {
+      dispatch(setLoaging(true));
       dispatch(removeFriendsList());
       try {
         const userInfoResponse = await fetch(
@@ -49,6 +58,7 @@ export const fetchFriends =
         const { data, total } = friends;
 
         dispatch(creationFriendsList(data, total));
+        dispatch(setLoaging(false));
       } catch (error) {
         console.log(error);
       }

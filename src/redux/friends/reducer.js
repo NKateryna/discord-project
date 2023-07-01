@@ -2,7 +2,8 @@ import actions from './actions';
 
 const INITIAL_STATE = {
   data: [],
-  total: '',
+  total: 0,
+  toggleLoading: false,
 };
 
 const friendsDataReduser = (state = INITIAL_STATE, action) => {
@@ -20,7 +21,13 @@ const friendsDataReduser = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         data: [],
-        total: '',
+        total: 0,
+      };
+    }
+    case actions.TOGGLE_LOADING: {
+      return {
+        ...state,
+        toggleLoading: action.payload.toggleValue,
       };
     }
     default:

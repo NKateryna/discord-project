@@ -67,6 +67,7 @@ function WrapperNavigationBar({ children }) {
                   status={status}
                   onClickItem={null}
                   onClickDeleteChat={onClickDeleteChat(conversation._id)}
+                  key={conversation._id}
                 />
               );
             })}
