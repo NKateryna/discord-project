@@ -1,6 +1,8 @@
 import styles from './index.module.css';
 import { makeStyles } from '@mui/styles';
 import { Button } from '@mui/material';
+import { useContext } from 'react';
+import { FriendsPagesContext } from '../../../contexts/FriendsPagesContext';
 
 const useStyles = makeStyles({
   buttonStyle: {
@@ -28,8 +30,14 @@ const useStyles = makeStyles({
   },
 });
 
-function FriendsEmpty({ emptyIcon, text, buttonText, onClick }) {
+function FriendsEmpty({ emptyIcon, text, buttonText }) {
   const classes = useStyles();
+
+  const [_, setValue] = useContext(FriendsPagesContext);
+
+  const buttonAddFriend = () => {
+    setValue(4);
+  };
 
   return (
     <div className={styles.background}>
@@ -37,7 +45,7 @@ function FriendsEmpty({ emptyIcon, text, buttonText, onClick }) {
       <div className={styles.text}>{text}</div>
       {buttonText ? (
         <Button
-          onClick={onClick}
+          onClick={buttonAddFriend}
           className={classes.buttonStyle}
           disableRipple={true}
         >

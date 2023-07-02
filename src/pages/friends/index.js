@@ -1,5 +1,2 @@
-export { FriendsOnline } from './friends-online/';
-export { FriendsAll } from './friends-all';
-export { FriendsPending } from './friends-pending';
-export { FriendsBlocked } from './friends-blocked';
+export { SharedFriendsPage } from './shared-friends-page';
 export { FriendsAdd } from './friends-add';
