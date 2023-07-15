@@ -31,16 +31,21 @@
     --gray-17: #111214;
     --gray-18: #8C8C8C;
     --gray-19: #2E2F34;
+    --gray-20: #313338;
+    --gray-21: #2B2D31;
     
     --blue-1: #00AFF4;
 
     --green-1: #3BA55D;
     --green-2: #2D7D46;
     --green-3: #46C46E;
+    --green-4: #50C46E;
 
     --red-1: #ED4245;
     --red-2: #A12D2F;
     --red-3: #C80000;
+    --red-4: #DA373C;
+    --red-5: #A12828;
   }
 
   *,

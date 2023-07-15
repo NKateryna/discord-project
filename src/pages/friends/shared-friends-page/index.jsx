@@ -6,7 +6,8 @@ import FriendsPageBackground from '../../../common/components/FriendsPageBackgro
 import Search from '../../../common/components/Search';
 import FriendItem from '../../../common/components/FriendItem';
 import { getFriends } from '../../../redux/friends/selectors';
-import { fetchFriends } from '../../../redux/friends/actions';
+import { fetchFriends, savingActiveItem } from '../../../redux/friends/actions';
+import HashGenerator from '../../../common/components/HashGenerator';
 
 export function SharedFriendsPage({
   pageName,
@@ -36,6 +37,10 @@ export function SharedFriendsPage({
     return FriendsEmpty;
   }
 
+  const onClickFriendItem = (activeItem) => {
+    return () => dispatch(savingActiveItem(activeItem));
+  };
+
   return (
     <FriendsPageBackground
       searchBox={<Search />}
@@ -46,10 +51,11 @@ export function SharedFriendsPage({
 
         return (
           <FriendItem
+            onClick={onClickFriendItem(friend)}
             avatar={avatar}
             status={status}
             username={username}
-            hash={hash}
+            hash={HashGenerator(hash)}
             buttons={buttonsFriendItem}
             key={_id}
           />

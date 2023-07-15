@@ -1,8 +1,19 @@
+import { useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import Cookies from 'universal-cookie';
+import { getFriends } from '../../../../redux/friends/selectors';
+import { unblockFriend } from '../../../../redux/friends/actions';
 import styles from './index.module.css';
 import Tooltip from '../../Tooltip';
 import { UnblockUserIcon } from '../../icons';
 
 export function UnblockUser() {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const cookies = new Cookies();
+  const friendsData = useSelector(getFriends);
+  const friendId = friendsData.activeItem._id;
+
   const popperProps = {
     modifiers: [
       {
@@ -14,7 +25,9 @@ export function UnblockUser() {
     ],
   };
 
-  const onClickUnblockUser = () => {};
+  const onClickUnblockUser = () => {
+    dispatch(unblockFriend(navigate, cookies, friendId));
+  };
 
   return (
     <div className={styles.background} onClick={onClickUnblockUser}>

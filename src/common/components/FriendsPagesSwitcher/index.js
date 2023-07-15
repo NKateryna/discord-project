@@ -1,7 +1,6 @@
 import { useContext } from 'react';
 import { FriendsPagesContext } from '../../../contexts/FriendsPagesContext';
 import { FriendsAdd, SharedFriendsPage } from '../../../pages/friends';
-// import SharedFriendsPage from '../../../pages/friends/shared-friends-page/friends';
 import { Accept, Deny, Message, More, UnblockUser } from '../FriendItemButtons';
 import FriendsEmpty from '../FriendsEmpty';
 import {
