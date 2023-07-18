@@ -4,7 +4,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import Cookies from 'universal-cookie';
 import { getFriends } from '../../../../redux/friends/selectors';
-import { blockFriend, deleteFriend } from '../../../../redux/friends/actions';
+import {
+  blockFriend,
+  deleteFriend,
+  fetchFriends,
+} from '../../../../redux/friends/actions';
 import classNames from 'classnames';
 import { makeStyles } from '@mui/styles';
 import { MoreIcon } from '../../icons';
@@ -27,7 +31,7 @@ const useStyles = makeStyles(() => ({
   backdrop: { background: 'transparent', zIndex: 4 },
 }));
 
-export function More() {
+export function More({ pageName }) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const cookies = new Cookies();
@@ -61,13 +65,21 @@ export function More() {
   };
 
   const confirmRemoveFriend = () => {
-    dispatch(deleteFriend(navigate, cookies, friendId));
-    handleClose();
+    dispatch(deleteFriend(navigate, cookies, friendId))
+      .then(() => dispatch(fetchFriends(navigate, cookies, pageName)))
+      .then(() => handleClose())
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   const confirmBlockFriend = () => {
-    dispatch(blockFriend(navigate, cookies, friendId));
-    handleClose();
+    dispatch(blockFriend(navigate, cookies, friendId))
+      .then(() => dispatch(fetchFriends(navigate, cookies, pageName)))
+      .then(() => handleClose())
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (

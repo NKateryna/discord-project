@@ -5,9 +5,12 @@ import { getFriends } from '../../../../redux/friends/selectors';
 import styles from './index.module.css';
 import Tooltip from '../../Tooltip';
 import { DenyIcon } from '../../icons';
-import { declineFriendInvitation } from '../../../../redux/friends/actions';
+import {
+  declineFriendInvitation,
+  fetchFriends,
+} from '../../../../redux/friends/actions';
 
-export function Deny() {
+export function Deny({ pageName }) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const cookies = new Cookies();
@@ -26,7 +29,11 @@ export function Deny() {
   };
 
   const onClickDeny = () => {
-    dispatch(declineFriendInvitation(navigate, cookies, friendId));
+    dispatch(declineFriendInvitation(navigate, cookies, friendId))
+      .then(() => dispatch(fetchFriends(navigate, cookies, pageName)))
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (

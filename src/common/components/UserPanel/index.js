@@ -9,7 +9,6 @@ import Headphones from '../Headphones';
 import { SettingsIcon } from '../icons';
 import { Modal } from '@mui/material';
 import UserInfoModal from '../UserInfoModal';
-import HashGenerator from '../HashGenerator';
 
 function UserPanel() {
   const [isHovered, setIsHovered] = useState(false);
@@ -102,7 +101,7 @@ function UserPanel() {
           />
         </div>
         <div className={styles.name}>{username}</div>
-        <div className={styles.hash}>#{HashGenerator(hash)}</div>
+        <div className={styles.hash}>#{hash.toString().padStart(4, '0')}</div>
       </div>
       <Modal
         open={userInfoModalActive}

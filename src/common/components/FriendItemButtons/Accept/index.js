@@ -2,12 +2,15 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import Cookies from 'universal-cookie';
 import { getFriends } from '../../../../redux/friends/selectors';
-import { acceptFriendInvitation } from '../../../../redux/friends/actions';
+import {
+  acceptFriendInvitation,
+  fetchFriends,
+} from '../../../../redux/friends/actions';
 import styles from './index.module.css';
 import Tooltip from '../../Tooltip';
 import { AcceptIcon } from '../../icons';
 
-export function Accept() {
+export function Accept({ pageName }) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const cookies = new Cookies();
@@ -26,7 +29,11 @@ export function Accept() {
   };
 
   const onClickAccept = () => {
-    dispatch(acceptFriendInvitation(navigate, cookies, friendId));
+    dispatch(acceptFriendInvitation(navigate, cookies, friendId))
+      .then(() => dispatch(fetchFriends(navigate, cookies, pageName)))
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (

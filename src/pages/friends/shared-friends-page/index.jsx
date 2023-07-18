@@ -7,7 +7,6 @@ import Search from '../../../common/components/Search';
 import FriendItem from '../../../common/components/FriendItem';
 import { getFriends } from '../../../redux/friends/selectors';
 import { fetchFriends, savingActiveItem } from '../../../redux/friends/actions';
-import HashGenerator from '../../../common/components/HashGenerator';
 
 export function SharedFriendsPage({
   pageName,
@@ -55,7 +54,7 @@ export function SharedFriendsPage({
             avatar={avatar}
             status={status}
             username={username}
-            hash={HashGenerator(hash)}
+            hash={hash.toString().padStart(4, '0')}
             buttons={buttonsFriendItem}
             key={_id}
           />
