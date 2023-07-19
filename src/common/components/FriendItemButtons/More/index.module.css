@@ -30,6 +30,8 @@
     font-size: 14px;
     line-height: 17px;
     color: var(--white);
+    background-color: var(--gray-9);
+    border: none;
     cursor: pointer;
 }
 

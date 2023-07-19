@@ -101,15 +101,13 @@ function UserPanel() {
           />
         </div>
         <div className={styles.name}>{username}</div>
-        <div className={styles.hash}>#{hash}</div>
+        <div className={styles.hash}>#{hash.toString().padStart(4, '0')}</div>
       </div>
       <Modal
         open={userInfoModalActive}
         onClose={closeUserInfoModal}
         slotProps={{ backdrop: { sx: { backgroundColor: '#00000000' } } }}
         disablePortal={true}
-        disableEnforceFocus
-        closeAfterTransition
         sx={{
           position: 'absolute',
           top: '-384px',

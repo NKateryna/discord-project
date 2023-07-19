@@ -22,16 +22,48 @@ export const stylesMUI = {
   },
   inputDefault: {
     borderRadius: '8px',
+    marginBottom: '24px',
   },
-  inputaddFriendPage: {
+  inputAddFriendPage: {
     height: '50px',
     borderRadius: '8px',
-
+    marginBottom: '21px',
     '&:focus-within': {
       width: '100%',
       outline: '1px solid var(--blue-1)',
       boxSizing: 'border-box',
     },
+  },
+  searchAddSuccess: {
+    marginBottom: '8px',
+    '&:focus-within': {
+      outline: '1px solid var(--green-4)',
+    },
+  },
+  searchAddError: {
+    marginBottom: '8px',
+    '&:focus-within': {
+      width: '100%',
+      outline: '1px solid var(--red-1)',
+      boxSizing: 'border-box',
+    },
+  },
+  searchAddHelpText: {
+    marginBottom: '21px',
+    fontSize: '14px',
+    fontFamily: 'Whitney',
+    fontStyle: 'normal',
+    fontWeight: '325',
+    lineHeight: 'normal',
+  },
+  searchAddHelpTextSuccess: {
+    color: 'var(--green-4)',
+  },
+  searchAddSuccessFriendName: {
+    fontWeight: '400',
+  },
+  searchAddHelpTextError: {
+    color: 'var(--red-1)',
   },
 };
 

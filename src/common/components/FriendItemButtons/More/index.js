@@ -1,10 +1,22 @@
 import styles from './index.module.css';
-import { makeStyles } from '@mui/styles';
+import { useRef, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import Cookies from 'universal-cookie';
+import { getFriends } from '../../../../redux/friends/selectors';
+import {
+  blockFriend,
+  deleteFriend,
+  fetchFriends,
+} from '../../../../redux/friends/actions';
 import classNames from 'classnames';
-import { useEffect, useRef, useState } from 'react';
+import { makeStyles } from '@mui/styles';
 import { MoreIcon } from '../../icons';
+import { Button } from '@mui/base';
 import Tooltip from '../../Tooltip';
 import Popper from '@mui/material/Popper';
+import { Backdrop, Modal } from '@mui/material';
+import ModalAlert from '../../ModalAlert';
 
 const useStyles = makeStyles(() => ({
   popper: {
@@ -16,12 +28,22 @@ const useStyles = makeStyles(() => ({
     backgroundColor: 'var(--gray-9)',
     width: '188px',
   },
+  backdrop: { background: 'transparent', zIndex: 4 },
 }));
 
-export function More() {
+export function More({ pageName }) {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const cookies = new Cookies();
+
   const classes = useStyles();
-  const [anchorEl, setAnchorEl] = useState(null);
+  const [open, setOpen] = useState(false);
   const moreEl = useRef(null);
+  const [openModalRemove, setOpenModalRemove] = useState(false);
+  const [modalType, setModalType] = useState('');
+  const friendsData = useSelector(getFriends);
+  const friendName = friendsData.activeItem.username;
+  const friendId = friendsData.activeItem._id;
 
   const popperModifiers = {
     name: 'offset',
@@ -29,69 +51,126 @@ export function More() {
       offset: [25, -10],
     },
   };
+  const onClickMore = () => setOpen((prev) => !prev);
 
-  const onClickMore = (event) => {
-    setAnchorEl(anchorEl ? null : event.currentTarget);
+  const handleOpen = (modalName) => {
+    return () => {
+      setModalType(modalName);
+      setOpenModalRemove(true);
+    };
+  };
+  const handleClose = () => {
+    setOpenModalRemove(false);
+    setModalType('');
   };
 
-  const open = Boolean(anchorEl);
-  const id = open ? 'more-popper' : undefined;
+  const confirmRemoveFriend = () => {
+    dispatch(deleteFriend(navigate, cookies, friendId))
+      .then(() => dispatch(fetchFriends(navigate, cookies, pageName)))
+      .then(() => handleClose())
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (moreEl.current && !moreEl.current.contains(event.target)) {
-        setAnchorEl(null);
-      }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [anchorEl]);
+  const confirmBlockFriend = () => {
+    dispatch(blockFriend(navigate, cookies, friendId))
+      .then(() => dispatch(fetchFriends(navigate, cookies, pageName)))
+      .then(() => handleClose())
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   return (
     <>
-      <div
-        aria-describedby={id}
-        onClick={onClickMore}
-        ref={moreEl}
-        className={styles.background}
-      >
+      <div onClick={onClickMore} ref={moreEl} className={styles.background}>
         <Tooltip title="More" placement="top">
           <div className={styles.icon}>
             <MoreIcon />
           </div>
         </Tooltip>
       </div>
+      <Backdrop open={open} onClick={() => setOpen(false)} invisible />
       <Popper
-        id={id}
         open={open}
-        anchorEl={anchorEl}
+        anchorEl={moreEl.current}
         disablePortal={false}
         placement="right-start"
         className={classes.popper}
         modifiers={popperModifiers}
+        onClick={() => setOpen(false)}
       >
-        <div
+        <Button
           onClick={null}
           className={classNames(styles.popperButton, styles.popperButtonBlue)}
         >
           Start Video call
-        </div>
-        <div
+        </Button>
+        <Button
           onClick={null}
           className={classNames(styles.popperButton, styles.popperButtonBlue)}
         >
           Start Voice call
-        </div>
-        <div
-          onClick={null}
+        </Button>
+        <Button
+          onClick={handleOpen('Remove Friend')}
           className={classNames(styles.popperButton, styles.popperButtonRed)}
         >
           Remove Friend
-        </div>
+        </Button>
+        <Button
+          onClick={handleOpen('Block')}
+          className={classNames(styles.popperButton, styles.popperButtonRed)}
+        >
+          Block
+        </Button>
       </Popper>
+      <Modal
+        open={openModalRemove}
+        onClose={handleClose}
+        disablePortal={false}
+        disableEnforceFocus
+        closeAfterTransition
+        slotProps={{
+          backdrop: {
+            sx: {
+              backgroundColor: 'rgba(0, 0, 0, 0.85)',
+            },
+          },
+        }}
+        sx={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
+        {modalType === 'Remove Friend' ? (
+          <ModalAlert
+            titleFirstPart={`Remove '`}
+            titleSecondPart={`'`}
+            subtitleFirstPart={'Are you sure you want to permanently remove '}
+            subtitleSecondPart={' from your friends?'}
+            friendName={friendName}
+            onClickCancel={handleClose}
+            onClickConfirm={confirmRemoveFriend}
+            confirmingButtonText={'Remove Friend'}
+          />
+        ) : (
+          <ModalAlert
+            titleFirstPart={'Block '}
+            titleSecondPart={'?'}
+            subtitleFirstPart={'Are you sure you want to block '}
+            subtitleSecondPart={
+              ' ? Blocking this user will also remove them from your friends list.'
+            }
+            friendName={friendName}
+            onClickCancel={handleClose}
+            onClickConfirm={confirmBlockFriend}
+            confirmingButtonText={'Block'}
+          />
+        )}
+      </Modal>
     </>
   );
 }

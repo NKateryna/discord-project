@@ -48,7 +48,9 @@ function UserInfoModal({ closeUserInfoModal }) {
       </div>
       <div className={styles.box}>
         <div className={styles.userInfo}>
-          <div className={styles.userInfoText}>{`${username}#${hash}`}</div>
+          <div className={styles.userInfoText}>
+            {`${username}#${hash.toString().padStart(4, '0')}`}
+          </div>
         </div>
         <div className={styles.memberIhfo}>
           <div className={styles.memberIhfoTitle}>DISCORD MEMBER SINCE</div>
