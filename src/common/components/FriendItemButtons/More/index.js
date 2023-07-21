@@ -4,11 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import Cookies from 'universal-cookie';
 import { getFriends } from '../../../../redux/friends/selectors';
-import {
-  blockFriend,
-  deleteFriend,
-  fetchFriends,
-} from '../../../../redux/friends/actions';
+import { blockFriend, deleteFriend } from '../../../../redux/friends/actions';
 import classNames from 'classnames';
 import { makeStyles } from '@mui/styles';
 import { MoreIcon } from '../../icons';
@@ -65,21 +61,13 @@ export function More({ pageName }) {
   };
 
   const confirmRemoveFriend = () => {
-    dispatch(deleteFriend(navigate, cookies, friendId))
-      .then(() => dispatch(fetchFriends(navigate, cookies, pageName)))
-      .then(() => handleClose())
-      .catch((error) => {
-        console.log(error);
-      });
+    dispatch(deleteFriend(navigate, cookies, friendId, pageName));
+    handleClose();
   };
 
   const confirmBlockFriend = () => {
-    dispatch(blockFriend(navigate, cookies, friendId))
-      .then(() => dispatch(fetchFriends(navigate, cookies, pageName)))
-      .then(() => handleClose())
-      .catch((error) => {
-        console.log(error);
-      });
+    dispatch(blockFriend(navigate, cookies, friendId, pageName));
+    handleClose();
   };
 
   return (
