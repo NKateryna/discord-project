@@ -1,9 +1,8 @@
 import styles from './index.module.css';
 import { useRef, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import Cookies from 'universal-cookie';
-import { getFriends } from '../../../../redux/friends/selectors';
 import { blockFriend, deleteFriend } from '../../../../redux/friends/actions';
 import classNames from 'classnames';
 import { makeStyles } from '@mui/styles';
@@ -27,7 +26,7 @@ const useStyles = makeStyles(() => ({
   backdrop: { background: 'transparent', zIndex: 4 },
 }));
 
-export function More({ pageName }) {
+export function More({ pageName, activeFriendItem }) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const cookies = new Cookies();
@@ -37,9 +36,7 @@ export function More({ pageName }) {
   const moreEl = useRef(null);
   const [openModalRemove, setOpenModalRemove] = useState(false);
   const [modalType, setModalType] = useState('');
-  const friendsData = useSelector(getFriends);
-  const friendName = friendsData.activeItem.username;
-  const friendId = friendsData.activeItem._id;
+  const { _id: friendId, username: friendUsername } = activeFriendItem;
 
   const popperModifiers = {
     name: 'offset',
@@ -139,7 +136,7 @@ export function More({ pageName }) {
             titleSecondPart={`'`}
             subtitleFirstPart={'Are you sure you want to permanently remove '}
             subtitleSecondPart={' from your friends?'}
-            friendName={friendName}
+            friendName={friendUsername}
             onClickCancel={handleClose}
             onClickConfirm={confirmRemoveFriend}
             confirmingButtonText={'Remove Friend'}
@@ -152,7 +149,7 @@ export function More({ pageName }) {
             subtitleSecondPart={
               ' ? Blocking this user will also remove them from your friends list.'
             }
-            friendName={friendName}
+            friendName={friendUsername}
             onClickCancel={handleClose}
             onClickConfirm={confirmBlockFriend}
             confirmingButtonText={'Block'}

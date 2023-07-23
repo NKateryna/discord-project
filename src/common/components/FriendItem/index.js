@@ -1,12 +1,9 @@
 import styles from './index.module.css';
 import { useState } from 'react';
 import Avatar from '../Avatar';
-import { useDispatch } from 'react-redux';
-import { savingActiveItem } from '../../../redux/friends/actions';
 
 function FriendItem({
   onClick,
-  activeItem,
   avatar,
   status,
   username,
@@ -16,15 +13,12 @@ function FriendItem({
 }) {
   const [isHovered, setIsHovered] = useState(false);
   const statusIconPropsStyle = isHovered ? 'var(--gray-12)' : 'var(--gray-2)';
-  const dispatch = useDispatch();
 
   const friendItemEnter = () => {
     setIsHovered(true);
-    dispatch(savingActiveItem(activeItem));
   };
   const friendItemLeave = () => {
     setIsHovered(false);
-    dispatch(savingActiveItem(''));
   };
 
   return (
@@ -49,9 +43,7 @@ function FriendItem({
         </div>
         <div className={styles.statusText}>{text || status}</div>
       </div>
-      <div className={styles.buttonsBlock}>
-        {buttons ? [...buttons].map((el, i) => <div key={i}>{el}</div>) : null}
-      </div>
+      <div className={styles.buttonsBlock}>{buttons}</div>
     </div>
   );
 }

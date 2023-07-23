@@ -19,7 +19,7 @@ function FriendsPagesSwitcher() {
         <SharedFriendsPage
           pageName="online"
           counterText="ONLINE"
-          buttonsFriendItem={[<Message />, <More pageName="online" />]}
+          buttonsFriendItem={[<Message />, <More />]}
           FriendsEmpty={
             <FriendsEmpty
               emptyIcon={<LoadingV11Icon />}
@@ -33,7 +33,7 @@ function FriendsPagesSwitcher() {
         <SharedFriendsPage
           pageName="all"
           counterText="ALL FRIENDS"
-          buttonsFriendItem={[<Message />, <More pageName="all" />]}
+          buttonsFriendItem={[<Message />, <More />]}
           FriendsEmpty={
             <FriendsEmpty
               emptyIcon={<LoadingV2Icon />}
@@ -48,10 +48,7 @@ function FriendsPagesSwitcher() {
         <SharedFriendsPage
           pageName="pending"
           counterText="PEHDING"
-          buttonsFriendItem={[
-            <Accept pageName="pending" />,
-            <Deny pageName="pending" />,
-          ]}
+          buttonsFriendItem={[<Accept />, <Deny />]}
           FriendsEmpty={
             <FriendsEmpty
               emptyIcon={<LoadingV4Icon />}
@@ -67,7 +64,7 @@ function FriendsPagesSwitcher() {
         <SharedFriendsPage
           pageName="blocked"
           counterText="BLOCKED"
-          buttonsFriendItem={[<UnblockUser pageName="blocked" />]}
+          buttonsFriendItem={[<UnblockUser />]}
           FriendsEmpty={
             <FriendsEmpty
               emptyIcon={<LoadingV3Icon />}
@@ -83,7 +80,7 @@ function FriendsPagesSwitcher() {
         <SharedFriendsPage
           pageName="online"
           counterText="ONLINE"
-          buttonsFriendItem={[<Message />, <More pageName="online" />]}
+          buttonsFriendItem={[<Message />, <More />]}
           FriendsEmpty={
             <FriendsEmpty
               emptyIcon={<LoadingV11Icon />}
