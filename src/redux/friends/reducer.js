@@ -4,6 +4,9 @@ const INITIAL_STATE = {
   data: [],
   total: 0,
   toggleLoading: false,
+  dataSearch: [],
+  totalSearch: 0,
+  toggleSearch: false,
 };
 
 const friendsDataReduser = (state = INITIAL_STATE, action) => {
@@ -28,6 +31,16 @@ const friendsDataReduser = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         toggleLoading: action.payload.toggleValue,
+      };
+    }
+    case actions.SAVING_SEARCH_FRIENDS: {
+      const friendsArray = [];
+      action.payload.dataSearch.map((friend) => friendsArray.push(friend));
+      return {
+        ...state,
+        dataSearch: friendsArray,
+        totalSearch: action.payload.totalSearch,
+        toggleSearch: action.payload.toggleSearch,
       };
     }
     default:
