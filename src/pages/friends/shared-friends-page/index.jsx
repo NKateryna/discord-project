@@ -1,4 +1,4 @@
-import { useLayoutEffect } from 'react';
+import { cloneElement, useLayoutEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import Cookies from 'universal-cookie';
@@ -6,7 +6,7 @@ import FriendsPageBackground from '../../../common/components/FriendsPageBackgro
 import Search from '../../../common/components/Search';
 import FriendItem from '../../../common/components/FriendItem';
 import { getFriends } from '../../../redux/friends/selectors';
-import { fetchFriends, savingActiveItem } from '../../../redux/friends/actions';
+import { fetchFriends } from '../../../redux/friends/actions';
 
 export function SharedFriendsPage({
   pageName,
@@ -36,10 +36,6 @@ export function SharedFriendsPage({
     return FriendsEmpty;
   }
 
-  const onClickFriendItem = (activeItem) => {
-    return () => dispatch(savingActiveItem(activeItem));
-  };
-
   return (
     <FriendsPageBackground
       searchBox={<Search />}
@@ -50,12 +46,19 @@ export function SharedFriendsPage({
 
         return (
           <FriendItem
-            onClick={onClickFriendItem(friend)}
+            onClick={null}
             avatar={avatar}
             status={status}
             username={username}
             hash={hash.toString().padStart(4, '0')}
-            buttons={buttonsFriendItem}
+            buttons={buttonsFriendItem.map((button, index) => (
+              <div key={index}>
+                {cloneElement(button, {
+                  activeFriendItem: friend,
+                  pageName: pageName,
+                })}
+              </div>
+            ))}
             key={_id}
           />
         );

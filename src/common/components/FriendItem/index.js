@@ -14,12 +14,19 @@ function FriendItem({
   const [isHovered, setIsHovered] = useState(false);
   const statusIconPropsStyle = isHovered ? 'var(--gray-12)' : 'var(--gray-2)';
 
+  const friendItemEnter = () => {
+    setIsHovered(true);
+  };
+  const friendItemLeave = () => {
+    setIsHovered(false);
+  };
+
   return (
     <div
       className={styles.friendItem}
       onClick={onClick}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      onMouseEnter={friendItemEnter}
+      onMouseLeave={friendItemLeave}
     >
       <div className={styles.userInfo}>
         <div className={styles.avatar}>
@@ -36,9 +43,7 @@ function FriendItem({
         </div>
         <div className={styles.statusText}>{text || status}</div>
       </div>
-      <div className={styles.buttonsBlock}>
-        {buttons ? [...buttons].map((el, i) => <div key={i}>{el}</div>) : null}
-      </div>
+      <div className={styles.buttonsBlock}>{buttons}</div>
     </div>
   );
 }

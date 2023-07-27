@@ -4,7 +4,6 @@ const INITIAL_STATE = {
   data: [],
   total: 0,
   toggleLoading: false,
-  activeItem: {},
 };
 
 const friendsDataReduser = (state = INITIAL_STATE, action) => {
@@ -29,12 +28,6 @@ const friendsDataReduser = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         toggleLoading: action.payload.toggleValue,
-      };
-    }
-    case actions.SAVE_ACTIVE_ITEM: {
-      return {
-        ...state,
-        activeItem: action.payload.activeItem,
       };
     }
     default:

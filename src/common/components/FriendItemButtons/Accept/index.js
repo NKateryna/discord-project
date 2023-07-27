@@ -1,21 +1,16 @@
 import { useNavigate } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import Cookies from 'universal-cookie';
-import { getFriends } from '../../../../redux/friends/selectors';
-import {
-  acceptFriendInvitation,
-  fetchFriends,
-} from '../../../../redux/friends/actions';
+import { acceptFriendInvitation } from '../../../../redux/friends/actions';
 import styles from './index.module.css';
 import Tooltip from '../../Tooltip';
 import { AcceptIcon } from '../../icons';
 
-export function Accept({ pageName }) {
+export function Accept({ pageName, activeFriendItem }) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const cookies = new Cookies();
-  const friendsData = useSelector(getFriends);
-  const friendId = friendsData.activeItem._id;
+  const { _id: friendId } = activeFriendItem;
 
   const popperProps = {
     modifiers: [
@@ -29,11 +24,7 @@ export function Accept({ pageName }) {
   };
 
   const onClickAccept = () => {
-    dispatch(acceptFriendInvitation(navigate, cookies, friendId))
-      .then(() => dispatch(fetchFriends(navigate, cookies, pageName)))
-      .catch((error) => {
-        console.log(error);
-      });
+    dispatch(acceptFriendInvitation(navigate, cookies, friendId, pageName));
   };
 
   return (
