@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { makeStyles } from '@mui/styles';
 import { adornment, stylesMUI } from './styles';
@@ -6,8 +6,12 @@ import { Button, Input, InputAdornment } from '@mui/material';
 import { SearchIcon } from '../icons';
 import classNames from 'classnames';
 import Cookies from 'universal-cookie';
-import { sendInvitationAnotherUser } from '../../../redux/friends/actions';
-import { useDispatch } from 'react-redux';
+import {
+  savingSearchFriends,
+  sendInvitationAnotherUser,
+} from '../../../redux/friends/actions';
+import { useDispatch, useSelector } from 'react-redux';
+import { getFriends } from '../../../redux/friends/selectors';
 
 const useStyles = makeStyles(stylesMUI);
 
@@ -15,6 +19,9 @@ function Search({ addFriendPage = false }) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const cookies = new Cookies();
+
+  const friendsData = useSelector(getFriends);
+  const friendsAll = friendsData.data;
 
   const classes = useStyles();
   const [searchValue, setSearchValue] = useState('');
@@ -26,6 +33,25 @@ function Search({ addFriendPage = false }) {
     setSearchAddError(false);
     setSearchValue(event.target.value);
   };
+
+  useEffect(() => {
+    if (!addFriendPage) {
+      if (!!searchValue) {
+        const arrayFilterFriends = friendsAll.filter((friend) => {
+          return friend.username
+            .toLowerCase()
+            .includes(searchValue.toLowerCase());
+        });
+        dispatch(
+          savingSearchFriends(
+            arrayFilterFriends,
+            arrayFilterFriends.length,
+            true
+          )
+        );
+      } else dispatch(savingSearchFriends([], 0, false));
+    }
+  }, [addFriendPage, searchValue, friendsAll, dispatch]);
 
   const onKeyDownSearch = (event) => {
     if (event.key === 'Enter') {

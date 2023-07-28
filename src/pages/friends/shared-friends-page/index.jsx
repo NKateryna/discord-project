@@ -22,6 +22,9 @@ export function SharedFriendsPage({
   const friendsAll = friendsData.data;
   const total = friendsData.total;
   const loadingStatus = friendsData.toggleLoading;
+  const toggleSearch = friendsData.toggleSearch;
+  const friendsDataSearch = friendsData.dataSearch;
+  const totalSearch = friendsData.totalSearch;
 
   useLayoutEffect(() => {
     dispatch(fetchFriends(navigate, cookies, pageName));
@@ -32,37 +35,58 @@ export function SharedFriendsPage({
     return <FriendsPageBackground />;
   }
 
-  if (!total) {
+  if (!friendsAll) {
     return FriendsEmpty;
   }
 
   return (
     <FriendsPageBackground
       searchBox={<Search />}
-      friendsCounter={`${counterText}-${total}`}
+      friendsCounter={`${counterText}-${toggleSearch ? totalSearch : total}`}
     >
-      {friendsAll.map((friend) => {
-        const { avatar, status, username, hash, _id } = friend;
-
-        return (
-          <FriendItem
-            onClick={null}
-            avatar={avatar}
-            status={status}
-            username={username}
-            hash={hash.toString().padStart(4, '0')}
-            buttons={buttonsFriendItem.map((button, index) => (
-              <div key={index}>
-                {cloneElement(button, {
-                  activeFriendItem: friend,
-                  pageName: pageName,
-                })}
-              </div>
-            ))}
-            key={_id}
-          />
-        );
-      })}
+      {toggleSearch
+        ? friendsDataSearch.map((friend) => {
+            const { avatar, status, username, hash, _id } = friend;
+            return (
+              <FriendItem
+                onClick={null}
+                avatar={avatar}
+                status={status}
+                username={username}
+                hash={hash.toString().padStart(4, '0')}
+                buttons={buttonsFriendItem.map((button, index) => (
+                  <div key={index}>
+                    {cloneElement(button, {
+                      activeFriendItem: friend,
+                      pageName: pageName,
+                    })}
+                  </div>
+                ))}
+                key={_id}
+              />
+            );
+          })
+        : friendsAll.map((friend) => {
+            const { avatar, status, username, hash, _id } = friend;
+            return (
+              <FriendItem
+                onClick={null}
+                avatar={avatar}
+                status={status}
+                username={username}
+                hash={hash.toString().padStart(4, '0')}
+                buttons={buttonsFriendItem.map((button, index) => (
+                  <div key={index}>
+                    {cloneElement(button, {
+                      activeFriendItem: friend,
+                      pageName: pageName,
+                    })}
+                  </div>
+                ))}
+                key={_id}
+              />
+            );
+          })}
     </FriendsPageBackground>
   );
 }
