@@ -1,6 +1,6 @@
 export { LogoIcon } from './logo';
 export { BackgroundIcon } from './background';
-/**loading */
+/*loading */
 export { LoadingV11Icon } from './loading-v1';
 export { LoadingV2Icon } from './loading-v2';
 export { LoadingV3Icon } from './loading-v3';
@@ -44,3 +44,9 @@ export { CreateServerIcon } from './create-server';
 export { CheckboxIcon } from './checkbox';
 export { CheckboxCheckedIcon } from './checbox-checked';
 export { ArrowSelectIcon } from './arrow-select';
+
+/*create a server*/
+export { ArrowRight2 } from './arrow-right-2';
+export { CloseIcon } from './close-icon';
+export { CreateMyOwn } from './create-my-own';
+export { JoinAServer } from './join-a-server';

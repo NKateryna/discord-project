@@ -1,0 +1,90 @@
+.block {
+    width: 440px;
+    padding: 20px 16px;
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    user-select: none;
+}
+.title{
+    font-family: Noto Sans;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;}
+.subtitle{
+    color: var(--gray-23);
+    text-align: center;
+    font-family: Noto Sans;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.buttonClose{
+    border-style: none;
+    padding: 0;
+    cursor: pointer;
+    position: absolute;
+    right: 16px;
+    top: 15px;
+    background-color: var(--white);
+}
+
+
+.buttonCreateMyOwn, .buttonJoinServer{
+    border-style: none;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 8px;
+    padding: 0px 17px;
+}
+.buttonCreateMyOwn{
+    height: 66px;
+    background-color: var(--white);
+    border: 1px solid var(--gray-27);
+}
+
+.buttonCreateMyOwn__icon, .buttonJoinServer__icon{
+    margin-right: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.buttonCreateMyOwn__boxText, .buttonJoinServer__boxText{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.buttonCreateMyOwn__title, .buttonJoinServer__title{
+    text-align: center;
+    font-family: Noto Sans;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.buttonJoinServer{
+    height: 64px;
+    background: var(--gray-22);
+}
+.buttonJoinServer:hover{
+    background: var(--gray-28);
+}
+.buttonJoinServer__subtitle{
+    color: var(--gray-26);
+    text-align: center;
+    font-family: Noto Sans;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}

@@ -13,6 +13,7 @@ const buttonSX = {
 };
 
 function Login() {
+  // eslint-disable-next-line
   const [user, setUser] = useContext(AuthContext);
   const [emailValue, setEmailValue] = useState('');
   const [passwordValue, setPasswordValue] = useState('');
