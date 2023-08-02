@@ -9,6 +9,7 @@
     padding-top: 12px;
     padding-bottom: 12px;
     min-width: 72px;;
+    overflow-y: auto;
 }
 
 .container::-webkit-scrollbar {
