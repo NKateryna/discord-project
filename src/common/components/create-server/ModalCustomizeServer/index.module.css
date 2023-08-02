@@ -1,0 +1,110 @@
+.block {
+    width: 440px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    user-select: none;
+}
+.buttonClose{
+    border-style: none;
+    padding: 0;
+    position: absolute;
+    right: 12px;
+    background-color: var(--white);
+}
+
+
+.boxCustomize{
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 7px 12px 20px 12px;
+}
+.title{
+    font-family: Noto Sans;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 8px;
+}
+.subtitle{
+    color: var(--gray-23);
+    text-align: center;
+    font-family: Noto Sans;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 10px;
+}
+
+.boxServerName{
+    width: 100%;
+}
+.boxServerName__lable{
+    color: var(--gray-23);
+    font-family: Noto Sans;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.6px;
+}
+.boxServerName__input{
+    margin: 8px auto 8px auto;
+    width: 100%;
+    height: 40px;
+    border-radius: 2px;
+    background: var(--gray-25);
+    border-style: none;
+}
+.boxServerName__input:focus-visible{
+    outline: none;
+}
+.boxServerName__warning{
+    color: var(--gray-24);
+    font-family: Noto Sans;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    letter-spacing: -0.6px;
+}
+.boxServerName__warningLink{
+    color: var(--blue-2);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.boxButtons{
+    background-color: var(--gray-22);
+    padding: 16px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.boxButtons__buttonBack{
+    border-style: none;
+    padding: 0;
+    font-family: Whitney;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 450;
+    line-height: normal;
+    cursor: pointer;
+}
+.boxButtons__buttonCreate{
+    border-style: none;
+    border-radius: 3px;
+    padding: 11px 28px;
+    background-color: var(--brend-color);
+    color: var(--white);
+    font-family: Whitney;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 350;
+    line-height: normal;
+    cursor: pointer;
+}

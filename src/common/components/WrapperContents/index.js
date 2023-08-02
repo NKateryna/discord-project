@@ -1,5 +1,5 @@
 import styles from './index.module.css';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { getServers } from '../../../redux/servers/selectors';
@@ -13,13 +13,19 @@ import {
   DownloadAppIcon,
   LogoIcon,
 } from '../icons';
+import { Backdrop, Modal } from '@mui/material';
+import ModalCreateServer from '../create-server/ModalCreateServer';
+import ModalCustomizeServer from '../create-server/ModalCustomizeServer';
 
 function WrapperContents({ children }) {
   const serversData = useSelector(getServers);
   const dispatch = useDispatch();
-
   const navigate = useNavigate();
   const location = useLocation();
+
+  const [open, setOpen] = useState(false);
+  const [openModalCreateServer, setOpenModalCreateServer] = useState(false);
+  const [modalType, setModalType] = useState('');
 
   useEffect(() => {
     const cookies = new Cookies();
@@ -27,27 +33,49 @@ function WrapperContents({ children }) {
     // eslint-disable-next-line
   }, []);
 
-  function onClickServer(server) {
+  const onClickServer = (server) => {
     return () => {
       navigate(`channels/${server._id}`);
       dispatch(saveActiveItem(server._id));
     };
-  }
-  function onClickMenuItem(menuItemName) {
+  };
+
+  const onClickAddServer = () => {
+    setModalType('ModalCreateServer');
+    setOpenModalCreateServer(true);
+    setOpen((prev) => !prev);
+  };
+
+  const handleClose = () => {
+    setOpenModalCreateServer(false);
+    setModalType('');
+  };
+
+  const onClickCreateMyOwn = () => {
+    setModalType('ModalCustomizeServer');
+  };
+
+  const onClickBack = () => {
+    setModalType('ModalCreateServer');
+  };
+
+  const onClickMenuItem = (menuItemName) => {
     return () => {
       navigate(`${menuItemName}`);
       dispatch(saveActiveItem(menuItemName));
     };
-  }
-  function onClickPrivateMessages(privateMessages) {
+  };
+
+  const onClickPrivateMessages = (privateMessages) => {
     return () => {
       navigate('channels/');
       dispatch(saveActiveItem(privateMessages));
     };
-  }
+  };
 
   return (
     <div className={styles.wrapperContent}>
+      <Backdrop open={open} onClick={() => setOpen(false)} invisible />
       <Sidebar>
         <SidebarItem
           name={'Private messages'}
@@ -74,8 +102,40 @@ function WrapperContents({ children }) {
           green={true}
           name={'Add server'}
           icon={<AddChannelIcon />}
-          onClick={null}
+          onClick={onClickAddServer}
         />
+        <Modal
+          open={openModalCreateServer}
+          onClose={handleClose}
+          disablePortal={false}
+          disableEnforceFocus
+          closeAfterTransition
+          slotProps={{
+            backdrop: {
+              sx: {
+                backgroundColor: 'rgba(0, 0, 0, 0.85)',
+              },
+            },
+          }}
+          sx={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
+          {modalType === 'ModalCreateServer' ? (
+            <ModalCreateServer
+              onClickClose={handleClose}
+              onClickCreateMyOwn={onClickCreateMyOwn}
+              onClickJoinServer={null}
+            />
+          ) : (
+            <ModalCustomizeServer
+              onClickClose={handleClose}
+              onClickBack={onClickBack}
+            />
+          )}
+        </Modal>
         <SidebarItem
           green={true}
           name={'Explore'}
