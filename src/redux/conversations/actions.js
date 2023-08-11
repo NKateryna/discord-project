@@ -23,7 +23,7 @@ export const fetchСonversations = (navigate, cookies) => async (dispatch) => {
   const token = cookies.get('authToken', { path: '/' });
 
   if (!token) {
-    navigate('login');
+    navigate('/login');
   } else {
     try {
       const userInfoResponse = await fetch(
@@ -38,7 +38,7 @@ export const fetchСonversations = (navigate, cookies) => async (dispatch) => {
       );
       if (!userInfoResponse.ok) {
         if (userInfoResponse.status === 401) {
-          navigate('login');
+          navigate('/login');
           throw new Error('Unauthorized');
         }
       }
@@ -58,7 +58,7 @@ export const deleteСonversationAsync =
     const token = cookies.get('authToken', { path: '/' });
 
     if (!token) {
-      navigate('login');
+      navigate('/login');
     } else {
       try {
         const requestDeleteСonversation = await fetch(
@@ -73,7 +73,7 @@ export const deleteСonversationAsync =
         );
         if (!requestDeleteСonversation.ok) {
           if (requestDeleteСonversation.status === 401) {
-            navigate('login');
+            navigate('/login');
             throw new Error('Unauthorized');
           }
         }

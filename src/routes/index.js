@@ -5,9 +5,16 @@ import Login from '../pages/login';
 import Register from '../pages/register';
 import ProtectedRoute from './ProtectedRoute';
 import Protected from './routes-protected';
+import Cookies from 'universal-cookie';
+import { useEffect, useState } from 'react';
 
 function AppRoutes() {
-  let user = true;
+  const [userToken, setUserToken] = useState(null);
+
+  useEffect(() => {
+    const cookies = new Cookies();
+    return setUserToken(cookies.get('authToken', { path: '/' }));
+  }, []);
 
   return (
     <BrowserRouter>
@@ -17,7 +24,7 @@ function AppRoutes() {
         <Route
           path="/*"
           element={
-            <ProtectedRoute user={user}>
+            <ProtectedRoute userToken={!!userToken}>
               <WrapperContents>
                 <Protected />
               </WrapperContents>

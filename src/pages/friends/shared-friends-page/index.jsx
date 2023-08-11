@@ -34,8 +34,7 @@ export function SharedFriendsPage({
   if (loadingStatus) {
     return <FriendsPageBackground />;
   }
-
-  if (!friendsAll) {
+  if (!total) {
     return FriendsEmpty;
   }
 
