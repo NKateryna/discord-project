@@ -7,6 +7,7 @@
     padding: 24px 16px 48px 16px;
     overflow-x: hidden; 
     overflow-y: auto;
+    user-select: none;
 }
 
 .friendsSidbar::-webkit-scrollbar{
@@ -22,16 +23,42 @@
     border: 2px solid var(--gray-1);
 }
 
-.title{
+.friendsSidbar__title{
     font-family: 'ABC Ginto Normal';
     font-style: normal;
     font-weight: 700;
     font-size: 20px;
     line-height: 26px;
-    color: #FFFFFF;
+    color: var(--white);
     margin-bottom: 14px;
     cursor: default;
     user-select: none;
+}
+
+.emptyStateBox {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 18px;
+}
+.emptyStateBox__title{
+    color: var(--white);
+    text-align: center;
+    font-family: ABC Ginto Normal;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-bottom: 4px;
+}
+.emptyStateBox__text{
+    color: var(--gray-3);
+    text-align: center;
+    font-family: Whitney;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 325;
+    line-height: normal;
 }
 
 @media (max-width: 1200px) {
