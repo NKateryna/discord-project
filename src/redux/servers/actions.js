@@ -27,7 +27,7 @@ export const fetchUserData = (navigate, cookies) => async (dispatch) => {
   const token = cookies.get('authToken', { path: '/' });
 
   if (!token) {
-    navigate('login');
+    navigate('/login');
   } else {
     try {
       const userInfoResponse = await fetch('http://localhost:80/users/me', {
@@ -39,7 +39,7 @@ export const fetchUserData = (navigate, cookies) => async (dispatch) => {
       });
       if (!userInfoResponse.ok) {
         if (userInfoResponse.status === 401) {
-          navigate('login');
+          navigate('/login');
           throw new Error('Unauthorized');
         }
       }
@@ -58,7 +58,7 @@ export const fetchUserData = (navigate, cookies) => async (dispatch) => {
       });
       if (!serversResponse.ok) {
         if (serversResponse.status === 401) {
-          navigate('login');
+          navigate('/login');
           throw new Error('Unauthorized');
         }
       }
@@ -77,7 +77,7 @@ export const creatingNewServer =
     const token = cookies.get('authToken', { path: '/' });
 
     if (!token) {
-      navigate('login');
+      navigate('/login');
     } else {
       try {
         const response = await fetch(`http://localhost:80/servers`, {
@@ -92,7 +92,7 @@ export const creatingNewServer =
         });
         if (!response.ok) {
           if (response.status === 401) {
-            navigate('login');
+            navigate('/login');
             throw new Error('Unauthorized');
           }
         }

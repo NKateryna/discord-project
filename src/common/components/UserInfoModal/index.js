@@ -6,6 +6,8 @@ import Avatar from '../Avatar';
 import CreateStatus from '../CreateStatus';
 import { ArrowRight, LogOut } from '../icons';
 import StatusModal from '../StatusModal';
+import Cookies from 'universal-cookie';
+import { useNavigate } from 'react-router-dom';
 
 function UserInfoModal({ closeUserInfoModal }) {
   const statusIconPropsStyle = 'var(--gray-16)';
@@ -20,6 +22,7 @@ function UserInfoModal({ closeUserInfoModal }) {
     BUSY: 'Do Not Disturb',
     OFFLINE: 'Invisible',
   };
+  const navigate = useNavigate();
 
   useEffect(() => {
     const dateRegistration = new Date(createdAt);
@@ -31,8 +34,13 @@ function UserInfoModal({ closeUserInfoModal }) {
     setMemberIhfoData(dateRegistration.toLocaleString('en-US', optionsDate));
   }, [createdAt]);
 
-  const onClickLogOut = () => {
+  const onClickLogOut = async () => {
+    const cookies = new Cookies();
+
+    await cookies.remove('authToken', { path: '/' });
+
     closeUserInfoModal();
+    navigate('/login');
   };
 
   return (
