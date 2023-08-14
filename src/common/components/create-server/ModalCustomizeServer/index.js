@@ -18,11 +18,15 @@ function ModalCustomizeServer({ onClickClose, onClickBack }) {
     setServerNameValue(event.target.value);
   };
 
-  const onClickCreate = () => {
+  const onClickCreate = async () => {
     if (serverNameValue) {
-      dispatch(creatingNewServer(navigate, cookies, serverNameValue));
-      setServerNameValue('');
-      onClickClose();
+      const resultCreatingServer = await dispatch(
+        creatingNewServer(navigate, cookies, serverNameValue)
+      );
+      if (resultCreatingServer) {
+        setServerNameValue('');
+        onClickClose();
+      }
     }
   };
 

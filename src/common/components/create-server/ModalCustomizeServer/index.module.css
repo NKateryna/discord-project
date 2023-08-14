@@ -59,6 +59,10 @@
     border-radius: 2px;
     background: var(--gray-25);
     border-style: none;
+    padding: 0px 8px;
+    font-family: Noto Sans;
+    font-weight: 400;
+    font-size: 16px;
 }
 .boxServerName__input:focus-visible{
     outline: none;

@@ -73,14 +73,14 @@ export const fetchUserData = (navigate, cookies) => async (dispatch) => {
 };
 
 export const creatingNewServer =
-  (navigate, cookies, serverName) => async () => {
+  (navigate, cookies, serverName) => async (dispatch) => {
     const token = cookies.get('authToken', { path: '/' });
 
     if (!token) {
       navigate('login');
     } else {
       try {
-        const userInfoResponse = await fetch(`http://localhost:80/servers`, {
+        const response = await fetch(`http://localhost:80/servers`, {
           method: 'POST',
           headers: {
             Authorization: `Bearer ${token}`,
@@ -90,8 +90,8 @@ export const creatingNewServer =
             name: serverName,
           }),
         });
-        if (!userInfoResponse.ok) {
-          if (userInfoResponse.status === 401) {
+        if (!response.ok) {
+          if (response.status === 401) {
             navigate('login');
             throw new Error('Unauthorized');
           }
@@ -100,4 +100,6 @@ export const creatingNewServer =
         console.log(error);
       }
     }
+    dispatch(fetchUserData(navigate, cookies));
+    return true;
   };
