@@ -6,14 +6,14 @@
     flex-direction: column;
     align-items: center;
     position: relative;
-    user-select: none;
 }
 .title{
     font-family: Noto Sans;
     font-size: 24px;
     font-style: normal;
     font-weight: 700;
-    line-height: normal;}
+    line-height: normal;
+}
 .subtitle{
     color: var(--gray-23);
     text-align: center;

@@ -1,0 +1,83 @@
+.box {
+    min-width: 630px;
+    width: 100%;
+    height: 790px;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 80px;
+}
+
+.header{
+    max-width: 538px;
+    max-height: 228px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 93px 0px 73px 0px;
+    position: relative;
+}
+
+.header__title{
+    color: var(--white);
+    text-align: center;
+    font-family: ABC Ginto Nord;
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 97.5%;
+    margin-bottom: 22px;
+}
+.header__subtitle{
+    color: var(--white);
+    font-family: ABC Ginto Normal;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.header__buttons{
+    margin: 31px 0px 23px 0px;
+    padding: 0px 101px 0px 101px;
+    height: 40px;
+    display: flex;
+    width: 100%;
+    gap: 16px;
+}
+
+.star1, .star2, .star3, .star4{ 
+    position:absolute;
+    fill: var(--white);
+}
+.star1 {
+    width: 16px;
+    height: 32px;
+    top: -30px;
+    left: -115px;
+}
+.star2 {
+    width: 16px;
+    height: 32px;
+    top: 0px;
+    left: -65px;
+} 
+.star3 {
+    width: 25px;
+    height: 48px;
+    top: 140px;
+    left: 595px;
+} 
+.star4 {
+    width: 16px;
+    height: 32px;
+    top: 195px;
+    left: 550px;
+}
+
+.plans{
+    display: flex;
+    gap: 24px;
+}

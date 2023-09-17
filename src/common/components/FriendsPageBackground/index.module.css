@@ -27,7 +27,6 @@
     color: var(--white);
     margin-bottom: 8px;
     cursor:default;
-    user-select: none;
 }
 
 .helpText{
@@ -38,12 +37,10 @@
     line-height: 17px;
     color: var(--gray-3);
     cursor:default;
-    user-select: none;
 }
 
 .searchBox{
     margin: 16px 21px 0px 0px;
-    user-select: none;
 }
 
 .friendsCounter{
@@ -54,7 +51,6 @@
     line-height: 16px;
     color: var(--gray-3);
     margin-bottom: 17px;
-    user-select: none;
 }
 
 .friendsEmptyBox {

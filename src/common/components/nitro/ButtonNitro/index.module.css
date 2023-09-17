@@ -1,0 +1,46 @@
+.button {
+    border-style: none;
+    width: 100%;
+    height: 100%;
+    border-radius: 2px;
+    font-family: ABC Ginto Normal;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.button_white {
+    background: var(--white);
+    color: var(--brend-color);
+}
+.button_white:hover {
+    background: var(--gray-29);
+}
+.button_white:focus {
+    background: var(--gray-30);
+}
+.button_transparent {
+    background: transparent;
+    color: var(--white);
+    border: 1px solid var(--white);
+}
+
+.icon{
+    display: flex;
+    align-items: center;
+    width: 20px;
+    height: 20px; 
+}
+.icon_transparent {
+    margin-right: 5px;
+    fill: var(--brend-color);
+
+}
+.icon_white {
+    margin-right: 5px;
+    fill: var(--brend-color);
+}

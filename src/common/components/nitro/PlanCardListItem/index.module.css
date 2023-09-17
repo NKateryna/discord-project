@@ -1,0 +1,19 @@
+.planCard__perkItem{
+    color: var(--white);
+    font-family: ABC Ginto Normal;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    height: 24px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.planCard__perkItemIcon{
+    margin-right: 8px;
+    fill: var(--white);
+}
+.planCard__text{
+    margin-right: 4px;
+}

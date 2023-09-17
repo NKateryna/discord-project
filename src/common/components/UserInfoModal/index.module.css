@@ -6,7 +6,6 @@
     border-radius: 8px;
     background-color: var(--gray-16);
     position: relative;
-    user-select: none;
 }
 
 .banner{
