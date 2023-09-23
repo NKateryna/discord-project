@@ -1,0 +1,70 @@
+.block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.box {
+    width: 387px;
+    height: 85px;
+    position: relative;
+}
+
+.title {
+    color: var(--white);
+    text-align: center;
+    font-family: ABC Ginto Nord;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 97.5%;
+    margin-bottom: 24px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    height: 40px;
+    padding: 0 25px 0 25px;
+    gap: 16px;
+}
+
+.star1, .star2, .star3, .star4{ 
+    position:absolute;
+}
+.star1 {
+    fill: #5765F1;
+    width: 12px;
+    height: 24px;
+    top: -32px;
+    left: -44px;
+}
+.star2 {
+    fill: #66BBFF;
+    width: 8px;
+    height: 16px;
+    top: -36px;
+    left: -28px;
+} 
+.star3 {
+    fill: #EA459E;
+    width: 12px;
+    height: 24px;
+    top: 28px;
+    right: -20px;
+} 
+.star4 {
+    fill: #91FFAC;
+    width: 8px;
+    height: 16px;
+    top: 21px;
+    right: -32px;
+}
+
+.bottomDecoration{
+    margin-top: 127px;
+    width: 112px;
+    height: 85px;
+    bottom: 0px;   
+}

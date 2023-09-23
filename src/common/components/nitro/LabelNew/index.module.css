@@ -1,0 +1,63 @@
+.labelBox {
+    position: relative;
+    padding: 0px 5px;
+    display: flex;
+    justify-content: center;
+    border-radius: 8px;
+    font-family: ABC Ginto Normal;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.labelBox_whiteLabel {
+    background: var(--white);
+    color: var(--purple-1);
+}
+.labelBox_purpleLabel {
+    background: linear-gradient(90deg, var(--purple-1) 0%,  var(--pink-3) 100%);
+    color: var(--green-5);
+}
+
+.stars { 
+    position: absolute;
+}
+
+.star1 {
+    width: 12px;
+    height: 12px;
+    top: -9px;
+    right: -8px;
+}
+
+.star1_whiteLabel {
+    fill: var(--green-5); 
+}
+
+.star2{
+    width: 8px;
+    height: 8px;
+    bottom: -9px;
+    left: -1px;
+} 
+
+.star2_whiteLabel {
+    fill: var(--orange-1);
+}
+
+.star3{
+    width: 7px;
+    height: 7px;
+    right: -9px;
+    bottom: 2px;
+} 
+
+.star3_whiteLabel {
+    fill: var(--pink-1);
+}
+
+.star1_purpleLabe,.star2_purpleLabe,.star3_purpleLabe{ 
+    fill: var(--white);
+}
+

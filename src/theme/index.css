@@ -40,26 +40,45 @@
     --gray-26: #2E3338;
     --gray-27: #DBDEE1;
     --gray-28: #E7E9EB;
+    --gray-29: #F7F7FE;
+    --gray-30:#DEE0FC;
+    --gray-31: #4E5058;
     
     --blue-1: #00AFF4;
     --blue-2: #0068E0;
+    --blue-3: #5B6EFF;
+    --blue-4: #0079B6;
 
     --green-1: #3BA55D;
     --green-2: #2D7D46;
     --green-3: #46C46E;
     --green-4: #50C46E;
+    --green-5:#83DDC5;
 
     --red-1: #ED4245;
     --red-2: #A12D2F;
     --red-3: #C80000;
     --red-4: #DA373C;
     --red-5: #A12828;
+
+    --purple-1: #8447C6;
+    --purple-2:#B945FF;
+
+ 
+
+    --pink-1:#E15BE1;
+    --pink-2: #AA5F8C;
+    --pink-3: #AB5D8B;
+    --pink-4: #B945C1;
+
+    --orange-1:#FCC245;
   }
 
   *,
   *::before,
   *::after {
     box-sizing: border-box;
+    user-select: none;
   }
   
   ul[class],
@@ -88,7 +107,7 @@
     min-height: 100vh;
     scroll-behavior: smooth;
     text-rendering: optimizeSpeed;
-    line-height: 1.5;
+    line-height: 0;
   }
   
   ul[class],

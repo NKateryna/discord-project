@@ -1,0 +1,51 @@
+.planCard{ 
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 400px;
+    height: 400px;
+    padding: 24px;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.planCard__img {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 160px;
+    height: 143px;
+
+}
+.planCard__nameIcon{
+    margin-bottom: 8px;
+}
+
+.planCardBasicNitro{
+    background: linear-gradient(225deg, var(--blue-4) 0%, var(--blue-3) 100%);
+}
+
+.planCardNitro{
+    background: linear-gradient(225deg, var(--pink-2) 0%, var(--purple-1) 100%);
+}
+
+.planCard__price {
+    color: var(--white);
+    font-family: ABC Ginto Normal;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 18px;
+}
+
+.planCard__perksList{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 8px;
+}
+
+.planCard__button{
+    height: 38px;
+}
