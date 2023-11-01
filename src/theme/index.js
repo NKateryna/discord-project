@@ -307,11 +307,11 @@ const theme = createTheme({
           boxSizing: 'border-box',
           marginRight: '16px',
           '&:hover': {
-            backgroundColor: 'var(--gray-8-opacity-4)',
+            backgroundColor: 'var(--gray-opacity-2)',
             color: 'var(--white-2)',
           },
           '&.Mui-selected': {
-            backgroundColor: 'var(--gray-8-opacity-6)',
+            backgroundColor: 'var(--gray-opacity-1)',
             color: 'var(--white)',
           },
         },

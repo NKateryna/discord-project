@@ -51,7 +51,7 @@ function UserInfoModal({ closeUserInfoModal }) {
           avatar={avatar}
           status={status}
           statusBcgColor={statusIconPropsStyle}
-          bigAvatar={true}
+          size={'80px'}
         />
       </div>
       <div className={styles.box}>

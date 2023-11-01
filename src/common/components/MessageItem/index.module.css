@@ -1,0 +1,55 @@
+
+.box {
+    width: 100%;
+    display: grid;
+    align-items: start;
+    justify-content: start;
+    grid-template-areas:
+    "A A B B B B"
+    "A A C C C C";
+    padding: 4px 0px;
+}
+.box:hover {
+    background: var(--gray-34);
+}
+
+.avatar {
+    grid-area: A;
+    margin: 0px 16px;
+}
+
+.messageData { 
+    grid-area: B;
+    display: flex;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+.name {
+    color: #F2F3F5;
+    font-family: ABC Ginto Normal;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.time {
+    color: #949BA4;
+    font-family: ABC Ginto Normal;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-left: 2px;
+}
+
+.text {
+    grid-area: C;
+    color: var(--white);
+    font-family: ABC Ginto Normal;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}

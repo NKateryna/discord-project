@@ -1,0 +1,80 @@
+
+.box {
+    background: var(--gray-32);
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    min-height: 44px;
+    max-height: 515px; 
+    border-radius: 8px;
+    padding: 0px 8px;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.box::-webkit-scrollbar {
+    width: 8px;
+    position: absolute;
+    background: var(--gray-32);
+}
+.box::-webkit-scrollbar-thumb {
+    background-color: var(--gray-4);
+    height: 258px;
+    width: 4px;
+    border: 2px solid var(--gray-32);
+    border-radius: 4px;
+}
+
+.textareaMessage {
+    height: 100%;
+    flex: 1;
+    min-height: 44px;
+    color: var(--gray-3);
+    font-family: ABC Ginto Normal;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0px 8px;
+}
+
+.textareaMessage > textarea {
+    color: var(--gray-27);
+    font-family: ABC Ginto Normal;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.buttonAttach {
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 44px;
+    margin: 0px 8px;
+    cursor: pointer;
+}
+
+.buttonSend {
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 44px;
+    padding: 4px;
+    margin: 0px 4px;
+    cursor: pointer;
+}
+
+.buttonAttach > svg, .buttonSend > svg {
+    fill: var(--gray-3);
+}
+
+.buttonAttach:hover > svg, .buttonSend:hover > svg  {
+    fill: var(--white-2);
+}

@@ -1,32 +1,35 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
 import WrapperFriendsPages from '../../common/components/WrapperFriendsPages';
-import WrapperNavigationBar from '../../common/components/WrapperNavigationBar';
+import NavBarDirectMessages from '../../common/components/NavBarDirectMessages';
 import Nitro from '../../pages/nitro';
 import FriendsRouters from './routes-friends/index';
+import Server from '../../pages/server';
 
 const Protected = () => {
   return (
     <Routes>
-      <Route index element={<Navigate replace to="/channels/" />} />
-      <Route path="channels/*">
-        <Route index element={<Navigate replace to="@me" />} />
+      <Route index element={<Navigate replace to="/channels/@me" />} />
+      <Route path="channels/@me/*">
         <Route
           path="*"
           element={
-            <WrapperNavigationBar>
+            <NavBarDirectMessages>
               <WrapperFriendsPages>
                 <FriendsRouters />
               </WrapperFriendsPages>
-            </WrapperNavigationBar>
+            </NavBarDirectMessages>
           }
         />
+      </Route>
+      <Route path="channels/*">
+        <Route path="*" element={<Server />} />
       </Route>
       <Route
         path="nitro/"
         element={
-          <WrapperNavigationBar>
+          <NavBarDirectMessages>
             <Nitro />
-          </WrapperNavigationBar>
+          </NavBarDirectMessages>
         }
       />
     </Routes>

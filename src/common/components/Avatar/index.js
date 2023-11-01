@@ -4,16 +4,13 @@ import { useState } from 'react';
 import { LogoIcon } from '../icons';
 import CreateStatus from '../CreateStatus';
 
-function Avatar({ avatar, name, status, statusBcgColor, bigAvatar = false }) {
+function Avatar({ avatar, name, status, statusBcgColor, size }) {
   const [fallbackAvatar, setFallbackAvatar] = useState(false);
 
-  const styleLogo = {
-    default: { width: '20px', height: '20px', fill: 'var(--white-2)' },
-    bigLogo: { width: '50px', height: '50px', fill: 'var(--white-2)' },
-  };
   const statusIconPropsStyle = {
     backgroundColor: statusBcgColor,
   };
+
   const styleIconHover = {
     fill: statusBcgColor,
   };
@@ -23,29 +20,40 @@ function Avatar({ avatar, name, status, statusBcgColor, bigAvatar = false }) {
   return (
     <div className={styles.box}>
       <div
-        className={classNames(styles.avatarBcg, {
-          [styles.avatarBcgBigAvatar]: bigAvatar,
+        className={classNames(styles.bcg, {
+          [styles.bcg80px]: size === '80px',
+          [styles.bcg40px]: size === '40px',
         })}
       >
         {avatar && !fallbackAvatar ? (
           <img
             src={avatar}
             alt={name}
-            className={styles.avatar}
+            className={classNames(styles.avatar, {
+              [styles.avatar80px]: size === '80px',
+              [styles.avatar40px]: size === '40px',
+            })}
             onError={() => setFallbackAvatar(true)}
           />
         ) : (
-          <LogoIcon style={bigAvatar ? styleLogo.bigLogo : styleLogo.default} />
+          <LogoIcon
+            className={classNames(styles.logoIcon, {
+              [styles.logoIcon80px]: size === '80px',
+              [styles.logoIcon40px]: size === '40px',
+            })}
+          />
         )}
       </div>
-      <div
-        className={classNames(styles.statusIcon, {
-          [styles.statusIconBigAvatar]: bigAvatar,
-        })}
-        style={statusIconPropsStyle}
-      >
-        {statusIcon}
-      </div>
+      {status ? (
+        <div
+          className={classNames(styles.statusIcon, {
+            [styles.statusIcon80px]: size === '80px',
+          })}
+          style={statusIconPropsStyle}
+        >
+          {statusIcon}
+        </div>
+      ) : null}
     </div>
   );
 }

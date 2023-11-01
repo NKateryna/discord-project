@@ -27,17 +27,23 @@ export { FriendsIcon } from './frends';
 export { NitroIcon } from './nitro';
 export { CreateMessagesIcon } from './create-messages.js';
 export { CloseChatIcon } from './сlose-chat';
-/*content*/
+/*friends manipulation*/
 export { AcceptIcon } from './accept';
 export { DenyIcon } from './deny';
 export { MessageIcon } from './message';
 export { MoreIcon } from './more';
 export { UnblockUserIcon } from './unblock-user.js';
 
+export { SearchIcon } from './search';
+
+/* headear */
 export { NewGroupChatIcon } from './new-group-chat.js';
 export { MailIcon } from './mail';
 export { HelpIcon } from './help';
-export { SearchIcon } from './search';
+export { NotificationSettingsIcon } from './notification-settings-icon';
+export { PinnedMessagesIcon } from './pinned-messages-icon';
+export { ShowMemberListIcon } from './show-member-list-icon';
+export { ThreadsIcon } from './threads-icon';
 
 export { CreateServerIcon } from './create-server';
 /*icon components*/
@@ -50,3 +56,12 @@ export { ArrowRight2 } from './arrow-right-2';
 export { CloseIcon } from './close-icon';
 export { CreateMyOwn } from './create-my-own';
 export { JoinAServer } from './join-a-server';
+
+/*server page*/
+export { ChannelIconHashtag } from './server_channel-hashtag';
+export { ChannelIconVoice } from './server_channel-voice';
+
+/*message*/
+export { AttachIcon } from './attach-icon';
+export { SendGifIcon } from './send-gif-icon';
+export { SendStickerIcon } from './send-sticker-icon';

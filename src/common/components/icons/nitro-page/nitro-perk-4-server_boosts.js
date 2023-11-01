@@ -7,7 +7,7 @@ export function NitroPerk4ServerBoosts() {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g clip-path="url(#clip0_1125_1931)">
+      <g clipPath="url(#clip0_1125_1931)">
         <mask
           id="mask0_1125_1931"
           style={{ maskType: 'luminance' }}

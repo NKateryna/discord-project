@@ -18,8 +18,6 @@
     --gray-6: #72767D;
     --gray-7: #A3A6AA;
     --gray-8: #4F545C;
-    --gray-8-opacity-6: rgba(79, 84, 92, 0.6);
-    --gray-8-opacity-4: rgba(79, 84, 92, 0.4);
     --gray-9: #18191C;
     --gray-10: #292B2F;
     --gray-11: #96989D;
@@ -41,9 +39,16 @@
     --gray-27: #DBDEE1;
     --gray-28: #E7E9EB;
     --gray-29: #F7F7FE;
-    --gray-30:#DEE0FC;
+    --gray-30: #DEE0FC;
     --gray-31: #4E5058;
+    --gray-32: #40444B;
+    --gray-33: #949BA4;
+    --gray-34: #2E3035;
     
+    --gray-opacity-1: rgba(79, 84, 92, 0.6);
+    --gray-opacity-2: rgba(79, 84, 92, 0.4);
+    --gray-opacity-3: rgba(79, 81, 89, 0.48);
+
     --blue-1: #00AFF4;
     --blue-2: #0068E0;
     --blue-3: #5B6EFF;
@@ -119,6 +124,12 @@
     text-decoration-skip-ink: auto;
   }
   
+  input[type="search"]::-webkit-search-decoration,
+  input[type="search"]::-webkit-search-cancel-button,
+  input[type="search"]::-webkit-search-results-button,
+  input[type="search"]::-webkit-search-results-decoration {
+    -webkit-appearance:none;
+  }
 
 
 
