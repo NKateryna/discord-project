@@ -30,9 +30,9 @@ export function NitroBcgImg3() {
         <path
           d="M71.9971 66.5264L83.6983 84.4518"
           stroke="#0EC2BC"
-          stroke-width="1.1315"
-          stroke-miterlimit="10"
-          stroke-linecap="round"
+          strokeWidth="1.1315"
+          strokeMiterlimit="10"
+          strokeLinecap="round"
         />
         <path
           d="M35.8145 62.709C22.5365 64.8667 20.5448 74.4103 15.8145 87.6054C11.0842 100.801 28.0137 99.8876 39.383 99.8876C50.7523 99.8876 71.4163 95.1573 76.8105 66.1115L35.8145 62.709Z"
@@ -57,16 +57,16 @@ export function NitroBcgImg3() {
         <path
           d="M37.3076 39.7216C40.2952 39.6387 42.0379 40.6345 43.4487 42.5432"
           stroke="#0EC2BC"
-          stroke-width="1.1315"
-          stroke-miterlimit="10"
-          stroke-linecap="round"
+          strokeWidth="1.1315"
+          strokeMiterlimit="10"
+          strokeLinecap="round"
         />
         <path
           d="M76.8104 39.9707C74.9017 45.9458 73.4909 52.4189 68.6776 53.1658C63.8643 53.9127 55.9805 47.9375 47.8477 42.4603"
           stroke="black"
-          stroke-width="1.601"
-          stroke-miterlimit="10"
-          stroke-linecap="round"
+          strokeWidth="1.601"
+          strokeMiterlimit="10"
+          strokeLinecap="round"
         />
         <path
           d="M76.3112 37.3979C78.0539 37.1489 81.2904 38.4767 81.7054 40.8834C82.1203 43.29 78.2199 42.8751 76.1452 41.1323C75.3319 40.5597 74.8423 39.6386 74.8174 38.6427C74.8174 38.0618 75.3983 37.4809 76.3112 37.3979Z"
@@ -175,10 +175,10 @@ export function NitroBcgImg3() {
           y2="64.4755"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.04" stop-color="#2AE5C4" />
-          <stop offset="0.27" stop-color="#25DFC3" />
-          <stop offset="0.56" stop-color="#19CFBF" />
-          <stop offset="0.73" stop-color="#0EC2BC" />
+          <stop offset="0.04" stopColor="#2AE5C4" />
+          <stop offset="0.27" stopColor="#25DFC3" />
+          <stop offset="0.56" stopColor="#19CFBF" />
+          <stop offset="0.73" stopColor="#0EC2BC" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_1130_38"
@@ -188,8 +188,8 @@ export function NitroBcgImg3() {
           y2="64.7994"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#2AE5C4" />
-          <stop offset="0.9" stop-color="#0EC2BC" />
+          <stop stopColor="#2AE5C4" />
+          <stop offset="0.9" stopColor="#0EC2BC" />
         </linearGradient>
       </defs>
     </svg>

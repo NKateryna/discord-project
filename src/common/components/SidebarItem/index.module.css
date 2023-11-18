@@ -2,14 +2,12 @@
     display: flex;
     justify-content: center;
     position: relative;
-    padding-top: 4px;
-    padding-bottom: 4px;
     width: 100%;
     fill: var(--white);
     cursor: pointer;
 }
 .box:not(.itemActive):hover .photoBcg  {
-    background-color: var(--brend-color);
+    background-color: var(--brand-color);
     color: var(--white);
     border-radius: 16px;
 }
@@ -34,7 +32,7 @@
     border-radius: 16px;
 }
 .itemActive .photoBcg  {
-    background-color: var(--brend-color);
+    background-color: var(--brand-color);
     border-radius: 16px;
 }
 .itemActive .green  {
@@ -94,5 +92,42 @@
     height: 100%;
     object-fit: cover;
     border-radius: 24px;
-} 
+}
+
+.backdrop { 
+    z-index: 20 
+}
+
+.popper {
+    z-index: 25;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px;
+    background-color: var(--gray-9);
+    width: 160px;
+  }
+
+.popperButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 32px;
+    font-family: 'Whitney';
+    font-style: normal;
+    font-weight: 350;
+    font-size: 14px;
+    line-height: 17px;
+    color: var(--red-1);
+    background-color: var(--gray-9);
+    border: none;
+    cursor: pointer;
+}
+
+.popperButton:hover {
+    color: var(--white);
+    background-color:  var(--red-1);
+    border-radius: 1px;
+}
 

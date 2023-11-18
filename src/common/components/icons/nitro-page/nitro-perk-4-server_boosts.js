@@ -291,7 +291,7 @@ export function NitroPerk4ServerBoosts() {
           <path
             d="M151 158C181.111 158 205.5 133.387 205.5 103C205.5 72.6125 181.111 48 151 48C120.889 48 96.5 72.6125 96.5 103C96.5 133.387 120.889 158 151 158Z"
             fill="#3E70DD"
-            fill-opacity="0.6"
+            fillOpacity="0.6"
           />
           <path
             d="M197.487 78.9593L242.125 71.125L228.327 89.2675C225.636 92.8411 221.704 95.1776 217.288 96.0023L185.897 101.5L185 96.6208L197.487 78.9593Z"
@@ -396,8 +396,8 @@ export function NitroPerk4ServerBoosts() {
           y2="-84.108"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#3E70DD" />
-          <stop offset="1" stop-color="#B377F3" />
+          <stop stopColor="#3E70DD" />
+          <stop offset="1" stopColor="#B377F3" />
         </linearGradient>
         <clipPath id="clip0_1125_1931">
           <rect width="301" height="200" fill="white" />

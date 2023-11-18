@@ -14,7 +14,7 @@ function CheckboxSingle({
   const styleCheckboxChecked = {
     border: '1px solid "var(--gray-6)"',
     borderRadius: '6px',
-    backgroundColor: 'var(--brend-color)',
+    backgroundColor: 'var(--brand-color)',
     boxSizing: 'border-box',
   };
 

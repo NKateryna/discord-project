@@ -35,19 +35,19 @@ const theme = createTheme({
             fontWeight: '500',
             fontSize: '16px',
             lineHeight: '22px',
-            background: 'var(--brend-color)',
+            background: 'var(--brand-color)',
             height: '44px',
             color: 'var(--white)',
             borderRadius: '3px',
             width: '100%',
             '&:hover': {
-              background: 'var(--brend-color-hover)',
+              background: 'var(--brand-color-hover)',
             },
             '&:active': {
-              background: 'var(--brend-color-active)',
+              background: 'var(--brand-color-active)',
             },
             '&.Mui-disabled': {
-              background: 'var(--brend-color)',
+              background: 'var(--brand-color)',
               opacity: '0.5',
               color: 'var(--white)',
             },
@@ -82,7 +82,7 @@ const theme = createTheme({
             lineHeight: '17px',
             color: 'var(--white)',
             '&:hover': {
-              backgroundColor: 'var(--brend-color-hover)',
+              backgroundColor: 'var(--brand-color-hover)',
               color: 'var(--white)',
             },
           },

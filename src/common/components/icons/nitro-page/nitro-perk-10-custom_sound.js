@@ -273,8 +273,8 @@ export function NitroPerk10CustomSound() {
           y2="70.0833"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#718CF6" />
-          <stop offset="1" stop-color="#4C70E0" />
+          <stop stopColor="#718CF6" />
+          <stop offset="1" stopColor="#4C70E0" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_1128_3363"
@@ -284,10 +284,10 @@ export function NitroPerk10CustomSound() {
           y2="65.1503"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.67" stop-color="#718CF6" />
-          <stop offset="0.78" stop-color="#6986F1" />
-          <stop offset="0.96" stop-color="#5275E4" />
-          <stop offset="1" stop-color="#4C70E0" />
+          <stop offset="0.67" stopColor="#718CF6" />
+          <stop offset="0.78" stopColor="#6986F1" />
+          <stop offset="0.96" stopColor="#5275E4" />
+          <stop offset="1" stopColor="#4C70E0" />
         </linearGradient>
         <linearGradient
           id="paint2_linear_1128_3363"
@@ -297,10 +297,10 @@ export function NitroPerk10CustomSound() {
           y2="86.9486"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.2" stop-color="#FF78B9" />
-          <stop offset="0.45" stop-color="#F973B5" />
-          <stop offset="0.79" stop-color="#E964AA" />
-          <stop offset="1" stop-color="#DB58A0" />
+          <stop offset="0.2" stopColor="#FF78B9" />
+          <stop offset="0.45" stopColor="#F973B5" />
+          <stop offset="0.79" stopColor="#E964AA" />
+          <stop offset="1" stopColor="#DB58A0" />
         </linearGradient>
         <linearGradient
           id="paint3_linear_1128_3363"
@@ -310,8 +310,8 @@ export function NitroPerk10CustomSound() {
           y2="77.0249"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#7393F9" />
-          <stop offset="1" stop-color="#4C70E0" />
+          <stop stopColor="#7393F9" />
+          <stop offset="1" stopColor="#4C70E0" />
         </linearGradient>
       </defs>
     </svg>

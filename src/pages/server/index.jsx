@@ -9,6 +9,7 @@ import Tooltip from '../../common/components/Tooltip';
 import MessageTextArea from '../../common/components/MessageTextArea';
 import { saveActiveItem } from '../../redux/servers/actions';
 import {
+  ChannelIconHashtag,
   HelpIcon,
   MailIcon,
   NotificationSettingsIcon,
@@ -39,8 +40,10 @@ function Server() {
   );
   const serverName = currentServerData?.name;
 
-  const [currentChannelName, setCurrentChannelName] = useState('');
-  const [currentChannelIcon, setCurrentChannelIcon] = useState('');
+  const [currentChannelName, setCurrentChannelName] = useState('general');
+  const [currentChannelIcon, setCurrentChannelIcon] = useState(
+    <ChannelIconHashtag />
+  );
   const onClickItemServer = (channelName, channelIcon) => {
     return () => {
       setCurrentChannelName(channelName);
@@ -59,10 +62,10 @@ function Server() {
         <div className={styles.serverName}>{serverName}</div>
         <div className={styles.navigation}>
           <NavigationBarItemServer
-            icon={null}
-            name={null}
-            onClick={onClickItemServer()}
-            active={null}
+            icon={<ChannelIconHashtag />}
+            name={'general'}
+            onClick={onClickItemServer('general', <ChannelIconHashtag />)}
+            active={true}
           />
         </div>
         <UserPanel />

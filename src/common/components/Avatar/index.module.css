@@ -12,7 +12,7 @@
     justify-content: center;
     align-items: center;
     border-radius: 16px;
-    background-color: var(--brend-color);
+    background-color: var(--brand-color);
     object-fit: cover;
     width: 32px;
     height: 32px;
@@ -27,7 +27,6 @@
     width: 40px;
     height: 40px;
 }
-
 
 .statusIcon {
     display: flex;

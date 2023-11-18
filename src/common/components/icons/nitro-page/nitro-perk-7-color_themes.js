@@ -811,9 +811,9 @@ export function NitroPerk7color_themes() {
           y2="128.901"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#172751" />
-          <stop offset="0.53" stop-color="#31114F" />
-          <stop offset="1" stop-color="#5E136B" />
+          <stop stopColor="#172751" />
+          <stop offset="0.53" stopColor="#31114F" />
+          <stop offset="1" stopColor="#5E136B" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_1126_2712"
@@ -823,8 +823,8 @@ export function NitroPerk7color_themes() {
           y2="117.645"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#15103E" />
-          <stop offset="1" stop-color="#5E136B" />
+          <stop stopColor="#15103E" />
+          <stop offset="1" stopColor="#5E136B" />
         </linearGradient>
         <linearGradient
           id="paint2_linear_1126_2712"
@@ -834,9 +834,9 @@ export function NitroPerk7color_themes() {
           y2="122.271"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#172751" />
-          <stop offset="0.53" stop-color="#31114F" />
-          <stop offset="1" stop-color="#5E136B" />
+          <stop stopColor="#172751" />
+          <stop offset="0.53" stopColor="#31114F" />
+          <stop offset="1" stopColor="#5E136B" />
         </linearGradient>
         <linearGradient
           id="paint3_linear_1126_2712"
@@ -846,8 +846,8 @@ export function NitroPerk7color_themes() {
           y2="22.991"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#15103E" />
-          <stop offset="1" stop-color="#5E136B" />
+          <stop stopColor="#15103E" />
+          <stop offset="1" stopColor="#5E136B" />
         </linearGradient>
         <linearGradient
           id="paint4_linear_1126_2712"
@@ -857,8 +857,8 @@ export function NitroPerk7color_themes() {
           y2="115.72"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#15103E" />
-          <stop offset="1" stop-color="#5E136B" />
+          <stop stopColor="#15103E" />
+          <stop offset="1" stopColor="#5E136B" />
         </linearGradient>
         <linearGradient
           id="paint5_linear_1126_2712"
@@ -868,8 +868,8 @@ export function NitroPerk7color_themes() {
           y2="71.536"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#15103E" />
-          <stop offset="1" stop-color="#821968" />
+          <stop stopColor="#15103E" />
+          <stop offset="1" stopColor="#821968" />
         </linearGradient>
         <linearGradient
           id="paint6_linear_1126_2712"
@@ -879,9 +879,9 @@ export function NitroPerk7color_themes() {
           y2="128.747"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#172751" />
-          <stop offset="0.53" stop-color="#31114F" />
-          <stop offset="1" stop-color="#5E136B" />
+          <stop stopColor="#172751" />
+          <stop offset="0.53" stopColor="#31114F" />
+          <stop offset="1" stopColor="#5E136B" />
         </linearGradient>
         <linearGradient
           id="paint7_linear_1126_2712"
@@ -891,8 +891,8 @@ export function NitroPerk7color_themes() {
           y2="117.499"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#15103E" />
-          <stop offset="1" stop-color="#5E136B" />
+          <stop stopColor="#15103E" />
+          <stop offset="1" stopColor="#5E136B" />
         </linearGradient>
         <linearGradient
           id="paint8_linear_1126_2712"
@@ -902,9 +902,9 @@ export function NitroPerk7color_themes() {
           y2="122.13"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#172751" />
-          <stop offset="0.53" stop-color="#31114F" />
-          <stop offset="1" stop-color="#5E136B" />
+          <stop stopColor="#172751" />
+          <stop offset="0.53" stopColor="#31114F" />
+          <stop offset="1" stopColor="#5E136B" />
         </linearGradient>
         <linearGradient
           id="paint9_linear_1126_2712"
@@ -914,8 +914,8 @@ export function NitroPerk7color_themes() {
           y2="22.9724"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#15103E" />
-          <stop offset="1" stop-color="#5E136B" />
+          <stop stopColor="#15103E" />
+          <stop offset="1" stopColor="#5E136B" />
         </linearGradient>
         <linearGradient
           id="paint10_linear_1126_2712"
@@ -925,8 +925,8 @@ export function NitroPerk7color_themes() {
           y2="115.584"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#15103E" />
-          <stop offset="1" stop-color="#5E136B" />
+          <stop stopColor="#15103E" />
+          <stop offset="1" stopColor="#5E136B" />
         </linearGradient>
         <linearGradient
           id="paint11_linear_1126_2712"
@@ -936,11 +936,11 @@ export function NitroPerk7color_themes() {
           y2="143.236"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.2" stop-color="#F7CA7A" />
-          <stop offset="0.43" stop-color="#F4C480" />
-          <stop offset="0.71" stop-color="#EBB68E" />
-          <stop offset="0.99" stop-color="#E9AD91" />
-          <stop offset="1" stop-color="#E9AD91" />
+          <stop offset="0.2" stopColor="#F7CA7A" />
+          <stop offset="0.43" stopColor="#F4C480" />
+          <stop offset="0.71" stopColor="#EBB68E" />
+          <stop offset="0.99" stopColor="#E9AD91" />
+          <stop offset="1" stopColor="#E9AD91" />
         </linearGradient>
         <linearGradient
           id="paint12_linear_1126_2712"
@@ -950,15 +950,15 @@ export function NitroPerk7color_themes() {
           y2="82.936"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.15" stop-color="#FFEED7" />
-          <stop offset="0.51" stop-color="#FFEED7" stop-opacity="0.99" />
-          <stop offset="0.63" stop-color="#FEEDD7" stop-opacity="0.97" />
-          <stop offset="0.73" stop-color="#FEEBD6" stop-opacity="0.92" />
-          <stop offset="0.8" stop-color="#FCE9D5" stop-opacity="0.86" />
-          <stop offset="0.86" stop-color="#FBE6D4" stop-opacity="0.78" />
-          <stop offset="0.92" stop-color="#F9E2D2" stop-opacity="0.67" />
-          <stop offset="0.97" stop-color="#F7DED1" stop-opacity="0.55" />
-          <stop offset="0.99" stop-color="#F6DCD0" stop-opacity="0.5" />
+          <stop offset="0.15" stopColor="#FFEED7" />
+          <stop offset="0.51" stopColor="#FFEED7" stop-opacity="0.99" />
+          <stop offset="0.63" stopColor="#FEEDD7" stop-opacity="0.97" />
+          <stop offset="0.73" stopColor="#FEEBD6" stop-opacity="0.92" />
+          <stop offset="0.8" stopColor="#FCE9D5" stop-opacity="0.86" />
+          <stop offset="0.86" stopColor="#FBE6D4" stop-opacity="0.78" />
+          <stop offset="0.92" stopColor="#F9E2D2" stop-opacity="0.67" />
+          <stop offset="0.97" stopColor="#F7DED1" stop-opacity="0.55" />
+          <stop offset="0.99" stopColor="#F6DCD0" stop-opacity="0.5" />
         </linearGradient>
         <linearGradient
           id="paint13_linear_1126_2712"
@@ -968,11 +968,11 @@ export function NitroPerk7color_themes() {
           y2="58.1987"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.2" stop-color="#F7CA7A" />
-          <stop offset="0.37" stop-color="#F6C478" />
-          <stop offset="0.6" stop-color="#F4B473" />
-          <stop offset="0.85" stop-color="#F1996B" />
-          <stop offset="1" stop-color="#EF8665" />
+          <stop offset="0.2" stopColor="#F7CA7A" />
+          <stop offset="0.37" stopColor="#F6C478" />
+          <stop offset="0.6" stopColor="#F4B473" />
+          <stop offset="0.85" stopColor="#F1996B" />
+          <stop offset="1" stopColor="#EF8665" />
         </linearGradient>
         <linearGradient
           id="paint14_linear_1126_2712"
@@ -982,9 +982,9 @@ export function NitroPerk7color_themes() {
           y2="92.2394"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.2" stop-color="#AA85FE" />
-          <stop offset="0.73" stop-color="#9469FF" />
-          <stop offset="1" stop-color="#8859FF" />
+          <stop offset="0.2" stopColor="#AA85FE" />
+          <stop offset="0.73" stopColor="#9469FF" />
+          <stop offset="1" stopColor="#8859FF" />
         </linearGradient>
         <linearGradient
           id="paint15_linear_1126_2712"
@@ -994,13 +994,13 @@ export function NitroPerk7color_themes() {
           y2="51.8906"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.2" stop-color="#FF78B9" />
-          <stop offset="0.43" stop-color="#FE75B8" />
-          <stop offset="0.58" stop-color="#FA6DB3" />
-          <stop offset="0.71" stop-color="#F35EAB" />
-          <stop offset="0.82" stop-color="#E9499F" />
-          <stop offset="0.92" stop-color="#DD2E91" />
-          <stop offset="1" stop-color="#D11583" />
+          <stop offset="0.2" stopColor="#FF78B9" />
+          <stop offset="0.43" stopColor="#FE75B8" />
+          <stop offset="0.58" stopColor="#FA6DB3" />
+          <stop offset="0.71" stopColor="#F35EAB" />
+          <stop offset="0.82" stopColor="#E9499F" />
+          <stop offset="0.92" stopColor="#DD2E91" />
+          <stop offset="1" stopColor="#D11583" />
         </linearGradient>
         <linearGradient
           id="paint16_linear_1126_2712"
@@ -1010,10 +1010,10 @@ export function NitroPerk7color_themes() {
           y2="91.9797"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.2" stop-color="#FF78B9" />
-          <stop offset="0.45" stop-color="#F973B5" />
-          <stop offset="0.79" stop-color="#E964AA" />
-          <stop offset="1" stop-color="#DB58A0" />
+          <stop offset="0.2" stopColor="#FF78B9" />
+          <stop offset="0.45" stopColor="#F973B5" />
+          <stop offset="0.79" stopColor="#E964AA" />
+          <stop offset="1" stopColor="#DB58A0" />
         </linearGradient>
         <clipPath id="clip0_1126_2712">
           <rect width="202" height="143.237" fill="white" />

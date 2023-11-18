@@ -96,7 +96,7 @@
     position: relative;
 }
 .statusIhfo:active, .logOut:active {
-    background: var(--brend-color-hover);
+    background: var(--brand-color-hover);
 }
 .statusIhfoIcon{
     display: flex;

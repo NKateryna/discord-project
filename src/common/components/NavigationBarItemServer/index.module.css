@@ -35,6 +35,9 @@
 .box:not(.itemActive):hover .name {
     color: var(--gray-3);
 }
+.itemActive {
+    background: var(--gray-12);
+}
 .itemActive .name{
     color: var(--white); 
 }

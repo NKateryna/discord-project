@@ -699,8 +699,8 @@ export function NitroPerk2AppsAndGames() {
         <path
           d="M84.1425 79.5703V82.1408C84.1451 82.3249 84.0817 82.5038 83.9639 82.6452C83.8461 82.7867 83.6816 82.8813 83.5001 82.9119H67.6973"
           stroke="#2F3849"
-          stroke-width="2.00882"
-          stroke-miterlimit="10"
+          strokeWidth="2.00882"
+          strokeMiterlimit="10"
         />
         <path
           d="M90.695 75.8427C89.811 74.6218 88.6531 73.6254 87.3143 72.9334C85.9755 72.2415 84.4931 71.8732 82.9863 71.8584H70.1385C68.6051 71.8584 67.1345 72.4677 66.0503 73.5524C64.966 74.637 64.3569 76.1081 64.3569 77.6421V88.0527C64.3569 89.0753 64.763 90.056 65.4858 90.7791C66.2087 91.5022 67.189 91.9084 68.2113 91.9084H86.7122C88.2235 91.9088 89.6749 91.3171 90.7555 90.2601C91.8362 89.2031 92.4601 87.7648 92.4937 86.2533V81.3693C92.5123 79.3802 91.8807 77.4395 90.695 75.8427Z"
@@ -1101,12 +1101,12 @@ export function NitroPerk2AppsAndGames() {
           y2="176.557"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#8F473B" />
-          <stop offset="0.12" stop-color="#A65F47" />
-          <stop offset="0.26" stop-color="#B87250" />
-          <stop offset="0.42" stop-color="#C58057" />
-          <stop offset="0.62" stop-color="#CD885B" />
-          <stop offset="1" stop-color="#CF8A5C" />
+          <stop stopColor="#8F473B" />
+          <stop offset="0.12" stopColor="#A65F47" />
+          <stop offset="0.26" stopColor="#B87250" />
+          <stop offset="0.42" stopColor="#C58057" />
+          <stop offset="0.62" stopColor="#CD885B" />
+          <stop offset="1" stopColor="#CF8A5C" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_1125_1085"
@@ -1116,8 +1116,8 @@ export function NitroPerk2AppsAndGames() {
           y2="187.689"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#EB459F" />
-          <stop offset="1" stop-color="#FF78B9" />
+          <stop stopColor="#EB459F" />
+          <stop offset="1" stopColor="#FF78B9" />
         </linearGradient>
         <linearGradient
           id="paint2_linear_1125_1085"
@@ -1127,8 +1127,8 @@ export function NitroPerk2AppsAndGames() {
           y2="186.453"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#EB459F" />
-          <stop offset="1" stop-color="#FF78B9" />
+          <stop stopColor="#EB459F" />
+          <stop offset="1" stopColor="#FF78B9" />
         </linearGradient>
         <linearGradient
           id="paint3_linear_1125_1085"
@@ -1138,8 +1138,8 @@ export function NitroPerk2AppsAndGames() {
           y2="190.594"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#7196FF" />
-          <stop offset="1" stop-color="#4D7AF7" />
+          <stop stopColor="#7196FF" />
+          <stop offset="1" stopColor="#4D7AF7" />
         </linearGradient>
         <clipPath id="clip0_1125_1085">
           <rect width="301" height="200" fill="white" />
