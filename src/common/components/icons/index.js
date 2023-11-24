@@ -44,6 +44,7 @@ export { NotificationSettingsIcon } from './notification-settings-icon';
 export { PinnedMessagesIcon } from './pinned-messages-icon';
 export { ShowMemberListIcon } from './show-member-list-icon';
 export { ThreadsIcon } from './threads-icon';
+export { UserProfileIcon } from './user-profile-icon';
 
 export { CreateServerIcon } from './create-server';
 /*icon components*/
@@ -69,3 +70,6 @@ export { SendStickerIcon } from './send-sticker-icon';
 /*guild discovery */
 export { DiscoverSearchBcg } from './discover-search-bcg';
 export { CommunitiesMembersOffline } from './communities-members-offline';
+
+/*conversation*/
+export { At } from './at';

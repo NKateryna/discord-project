@@ -2,26 +2,25 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import WrapperFriendsPages from '../../common/components/WrapperFriendsPages';
 import NavBarDirectMessages from '../../common/components/NavBarDirectMessages';
 import Nitro from '../../pages/nitro';
-import FriendsRouters from './routes-friends/index';
 import Server from '../../pages/server';
 import GuildDiscovery from '../../pages/guild-discovery';
+import Сonversation from '../../pages/conversation';
 
 const Protected = () => {
   return (
     <Routes>
       <Route index element={<Navigate replace to="/channels/@me" />} />
-      <Route path="channels/@me/*">
-        <Route
-          path="*"
-          element={
-            <NavBarDirectMessages>
-              <WrapperFriendsPages>
-                <FriendsRouters />
-              </WrapperFriendsPages>
-            </NavBarDirectMessages>
-          }
-        />
-      </Route>
+      <Route
+        path="channels/@me/*"
+        element={
+          <NavBarDirectMessages>
+            <Routes>
+              <Route index element={<WrapperFriendsPages />} />
+              <Route path=":conversationId/" element={<Сonversation />} />
+            </Routes>
+          </NavBarDirectMessages>
+        }
+      />
       <Route
         path="nitro/"
         element={
@@ -32,7 +31,7 @@ const Protected = () => {
       />
       <Route path="channels/*">
         <Route index element={<Navigate replace to="/channels/@me" />} />
-        <Route path="*" element={<Server />} />
+        <Route path=":serverId/" element={<Server />} />
       </Route>
       <Route path="guild-discovery/" element={<GuildDiscovery />} />
     </Routes>

@@ -1,5 +1,5 @@
 import styles from './index.module.css';
-import { useLocation } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getServers } from '../../redux/servers/selectors';
@@ -21,19 +21,14 @@ import {
 import NavigationBarItemServer from '../../common/components/NavigationBarItemServer';
 
 function Server() {
-  const location = useLocation();
   const serversData = useSelector(getServers);
   const dispatch = useDispatch();
+  const { serverId } = useParams();
 
   useEffect(() => {
-    const pathCheckingServerId = location.pathname.replace(
-      /\/channels\/([^/]+).*/,
-      '$1'
-    );
-
-    dispatch(saveActiveItem(pathCheckingServerId));
+    dispatch(saveActiveItem(serverId));
     // eslint-disable-next-line
-  }, []);
+  }, [serverId]);
 
   const currentServerData = serversData.servers.find(
     (server) => server._id === serversData.activeServer

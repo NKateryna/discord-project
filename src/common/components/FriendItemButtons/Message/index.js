@@ -1,8 +1,13 @@
 import styles from './index.module.css';
 import Tooltip from '../../Tooltip';
 import { MessageIcon } from '../../icons';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { addingСonversation } from '../../../../redux/conversations/actions';
 
-export function Message() {
+export function Message({ activeFriendItem }) {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const popperProps = {
     modifiers: [
       {
@@ -14,7 +19,16 @@ export function Message() {
     ],
   };
 
-  const onClickMessage = () => {};
+  const onClickMessage = () => {
+    const { _id, ...sender } = activeFriendItem;
+    dispatch(
+      addingСonversation({
+        _id,
+        sender,
+      })
+    );
+    navigate(`/channels/@me/${_id}`);
+  };
 
   return (
     <div className={styles.background} onClick={onClickMessage}>

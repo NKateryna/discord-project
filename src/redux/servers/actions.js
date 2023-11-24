@@ -1,6 +1,7 @@
 import { creationUserInfo } from '../userInfo/actions';
 
 const actions = {
+  SET_IS_LOADED: 'SET_IS_LOADED',
   ADDING_SERVER: 'ADDING_SERVER',
   LEAVE_SERVER: 'LEAVE_SERVER',
   SAVE_ACTIVE_ITEM_SIDEBAR: 'SAVE_ACTIVE_ITEM_SIDEBAR',
@@ -13,6 +14,12 @@ export default actions;
 
 export const creationServersList = (servers) => {
   return { type: actions.CREATING_SERVERS_LIST, payload: { servers } };
+};
+
+export const setIsLoaded = () => {
+  return {
+    type: actions.SET_IS_LOADED,
+  };
 };
 
 export const addingServer = (server) => {
@@ -87,6 +94,7 @@ export const fetchUserData = (navigate, cookies) => async (dispatch) => {
 
       const servers = serversData.data;
       dispatch(creationServersList(servers));
+      dispatch(setIsLoaded());
     } catch (error) {
       console.log(error);
     }

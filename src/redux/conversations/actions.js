@@ -1,5 +1,7 @@
 const actions = {
   CREATING_CONVERSATIONS_LIST: 'CREATING_CONVERSATIONS_LIST',
+  CONVERSATIONS_TOGGLE_LOADING: 'CONVERSATIONS_TOGGLE_LOADING',
+  ADDING_CONVERSATION: 'ADDING_CONVERSATION',
   DELETE_CONVERSATION: 'DELETE_CONVERSATION',
 };
 
@@ -10,6 +12,17 @@ export const creationСonversationsList = (data) => {
     type: actions.CREATING_CONVERSATIONS_LIST,
     payload: { data },
   };
+};
+
+export const setLoaging = (toggleValue) => {
+  return {
+    type: actions.CONVERSATIONS_TOGGLE_LOADING,
+    payload: { toggleValue },
+  };
+};
+
+export const addingСonversation = (conversation) => {
+  return { type: actions.ADDING_CONVERSATION, payload: { conversation } };
 };
 
 export const deleteСonversation = (id) => {
@@ -25,6 +38,7 @@ export const fetchСonversations = (navigate, cookies) => async (dispatch) => {
   if (!token) {
     navigate('/login');
   } else {
+    dispatch(setLoaging(true));
     try {
       const userInfoResponse = await fetch(
         'http://localhost:80/users/conversations',
@@ -47,6 +61,7 @@ export const fetchСonversations = (navigate, cookies) => async (dispatch) => {
       const { data } = conversations;
 
       dispatch(creationСonversationsList(data));
+      dispatch(setLoaging(false));
     } catch (error) {
       console.log(error);
     }

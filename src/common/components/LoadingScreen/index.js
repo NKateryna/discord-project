@@ -4,6 +4,7 @@ import { LogoIcon } from '../icons';
 const styleLogo = {
   width: '70px',
   height: '55px',
+  fill: 'var(--white)',
   marginBottom: '56px',
 };
 

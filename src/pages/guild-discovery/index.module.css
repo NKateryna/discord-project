@@ -148,7 +148,7 @@
 }
 
 
-.communitiesList{
+.communitiesList {
     height: 100%;
     width: 100%;
 }
@@ -168,5 +168,6 @@
     grid-template-columns: repeat(auto-fill, minmax(248px, auto)); 
     justify-content: center;
     gap: 16px;
+    padding-bottom: 16px;
 }
 

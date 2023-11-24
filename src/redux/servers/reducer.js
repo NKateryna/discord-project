@@ -2,6 +2,7 @@ import actions from './actions';
 
 const INITIAL_STATE = {
   servers: [],
+  isLoaded: false,
   activeServer: '',
   communities: [],
   communitiesSearch: [],
@@ -10,6 +11,12 @@ const INITIAL_STATE = {
 
 const serversReduser = (state = INITIAL_STATE, action) => {
   switch (action.type) {
+    case actions.SET_IS_LOADED: {
+      return {
+        ...state,
+        isLoaded: true,
+      };
+    }
     case actions.CREATING_SERVERS_LIST: {
       return { ...state, servers: action.payload.servers };
     }
@@ -41,6 +48,7 @@ const serversReduser = (state = INITIAL_STATE, action) => {
       action.payload.communitiesSearch.map((community) =>
         communitiesSearchArray.push(community)
       );
+
       return {
         ...state,
         communitiesSearch: communitiesSearchArray,
