@@ -1,11 +1,12 @@
 import actions from './actions';
+import { Action, Conversation, conversationsData } from './types';
 
 const INITIAL_STATE = {
   data: [],
   toggleLoading: false,
 };
 
-const conversationsDataReduser = (state = INITIAL_STATE, action) => {
+const conversationsDataReduser = (state = INITIAL_STATE, action: Action) => {
   switch (action.type) {
     case actions.CREATING_CONVERSATIONS_LIST: {
       return { ...state, data: action.payload.data };
@@ -17,9 +18,10 @@ const conversationsDataReduser = (state = INITIAL_STATE, action) => {
       };
     }
     case actions.ADDING_CONVERSATION: {
-      const сonversationsArray = [...state.data];
+      const сonversationsArray: conversationsData = [...state.data];
       const existingConversation = сonversationsArray.some(
-        (сonversation) => сonversation._id === action.payload.conversation._id
+        (сonversation: Conversation) =>
+          сonversation._id === action.payload.conversation._id
       );
       if (!existingConversation) {
         сonversationsArray.push(action.payload.conversation);
@@ -28,7 +30,7 @@ const conversationsDataReduser = (state = INITIAL_STATE, action) => {
     }
     case actions.DELETE_CONVERSATION: {
       const сonversationsArray = state.data.filter(
-        (сonversation) => сonversation._id !== action.payload.id
+        (сonversation: Conversation) => сonversation._id !== action.payload.id
       );
       return {
         ...state,

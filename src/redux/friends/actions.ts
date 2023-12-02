@@ -1,4 +1,10 @@
-const actions = {
+import { FriendsActionTypes, FriendsData } from './types';
+
+import { Dispatch } from 'redux';
+import { NavigateFunction } from 'react-router-dom';
+import Cookies from 'universal-cookie';
+
+const actions: FriendsActionTypes = {
   CREATING_FRIENDS_LIST: 'CREATING_FRIENDS_LIST',
   REMOVE_FRIENDS_LIST: 'REMOVE_FRIENDS_LIST',
   FRIENDS_TOGGLE_LOADING: 'FRIENDS_TOGGLE_LOADING',
@@ -7,7 +13,7 @@ const actions = {
 
 export default actions;
 
-export const creationFriendsList = (data, total) => {
+export const creationFriendsList = (data: FriendsData, total: number) => {
   return {
     type: actions.CREATING_FRIENDS_LIST,
     payload: { data, total },
@@ -20,21 +26,18 @@ export const removeFriendsList = () => {
   };
 };
 
-export const setLoaging = (toggleValue) => {
+export const setLoaging = (toggleValue: boolean) => {
   return {
     type: actions.FRIENDS_TOGGLE_LOADING,
     payload: { toggleValue },
   };
 };
 
-export const savingActiveItem = (activeItem) => {
-  return {
-    type: actions.SAVE_ACTIVE_ITEM,
-    payload: { activeItem },
-  };
-};
-
-export const savingSearchFriends = (dataSearch, totalSearch, toggleSearch) => {
+export const savingSearchFriends = (
+  dataSearch: FriendsData,
+  totalSearch: number,
+  toggleSearch: boolean
+) => {
   return {
     type: actions.SAVING_SEARCH_FRIENDS,
     payload: { dataSearch, totalSearch, toggleSearch },
@@ -42,9 +45,9 @@ export const savingSearchFriends = (dataSearch, totalSearch, toggleSearch) => {
 };
 
 export const fetchFriends =
-  (navigate, cookies, status = 'online') =>
-  async (dispatch) => {
-    const token = cookies.get('authToken', { path: '/' });
+  (navigate: NavigateFunction, cookies: Cookies, status = 'online') =>
+  async (dispatch: Dispatch) => {
+    const token = cookies.get('authToken');
 
     if (!token) {
       navigate('/login');
@@ -81,8 +84,14 @@ export const fetchFriends =
   };
 
 export const sendInvitationAnotherUser =
-  (navigate, cookies, username, hash) => async () => {
-    const token = cookies.get('authToken', { path: '/' });
+  (
+    navigate: NavigateFunction,
+    cookies: Cookies,
+    username: string,
+    hash: string
+  ) =>
+  async () => {
+    const token = cookies.get('authToken');
 
     let searchStatus;
 
@@ -113,8 +122,9 @@ export const sendInvitationAnotherUser =
   };
 
 export const acceptFriendInvitation =
-  (navigate, cookies, friendId) => async () => {
-    const token = cookies.get('authToken', { path: '/' });
+  (navigate: NavigateFunction, cookies: Cookies, friendId: string) =>
+  async () => {
+    const token = cookies.get('authToken');
 
     if (!token) {
       navigate('/login');
@@ -143,8 +153,9 @@ export const acceptFriendInvitation =
   };
 
 export const declineFriendInvitation =
-  (navigate, cookies, friendId) => async () => {
-    const token = cookies.get('authToken', { path: '/' });
+  (navigate: NavigateFunction, cookies: Cookies, friendId: string) =>
+  async () => {
+    const token = cookies.get('authToken');
 
     if (!token) {
       navigate('/login');
@@ -172,89 +183,95 @@ export const declineFriendInvitation =
     }
   };
 
-export const blockFriend = (navigate, cookies, friendId) => async () => {
-  const token = cookies.get('authToken', { path: '/' });
+export const blockFriend =
+  (navigate: NavigateFunction, cookies: Cookies, friendId: string) =>
+  async () => {
+    const token = cookies.get('authToken');
 
-  if (!token) {
-    navigate('/login');
-  } else {
-    try {
-      const userInfoResponse = await fetch(
-        `http://localhost:80/users/friends/block/${friendId}`,
-        {
-          method: 'POST',
-          headers: {
-            Authorization: `Bearer ${token}`,
-            'Content-Type': 'application/json',
-          },
+    if (!token) {
+      navigate('/login');
+    } else {
+      try {
+        const userInfoResponse = await fetch(
+          `http://localhost:80/users/friends/block/${friendId}`,
+          {
+            method: 'POST',
+            headers: {
+              Authorization: `Bearer ${token}`,
+              'Content-Type': 'application/json',
+            },
+          }
+        );
+        if (!userInfoResponse.ok) {
+          if (userInfoResponse.status === 401) {
+            navigate('/login');
+            throw new Error('Unauthorized');
+          }
         }
-      );
-      if (!userInfoResponse.ok) {
-        if (userInfoResponse.status === 401) {
-          navigate('/login');
-          throw new Error('Unauthorized');
-        }
+      } catch (error) {
+        console.log(error);
       }
-    } catch (error) {
-      console.log(error);
     }
-  }
-};
+  };
 
-export const unblockFriend = (navigate, cookies, friendId) => async () => {
-  const token = cookies.get('authToken', { path: '/' });
+export const unblockFriend =
+  (navigate: NavigateFunction, cookies: Cookies, friendId: string) =>
+  async () => {
+    const token = cookies.get('authToken');
 
-  if (!token) {
-    navigate('/login');
-  } else {
-    try {
-      const userInfoResponse = await fetch(
-        `http://localhost:80/users/friends/block/${friendId}`,
-        {
-          method: 'DELETE',
-          headers: {
-            Authorization: `Bearer ${token}`,
-            'Content-Type': 'application/json',
-          },
+    if (!token) {
+      navigate('/login');
+    } else {
+      try {
+        const userInfoResponse = await fetch(
+          `http://localhost:80/users/friends/block/${friendId}`,
+          {
+            method: 'DELETE',
+            headers: {
+              Authorization: `Bearer ${token}`,
+              'Content-Type': 'application/json',
+            },
+          }
+        );
+        if (!userInfoResponse.ok) {
+          if (userInfoResponse.status === 401) {
+            navigate('/login');
+            throw new Error('Unauthorized');
+          }
         }
-      );
-      if (!userInfoResponse.ok) {
-        if (userInfoResponse.status === 401) {
-          navigate('/login');
-          throw new Error('Unauthorized');
-        }
+      } catch (error) {
+        console.log(error);
       }
-    } catch (error) {
-      console.log(error);
     }
-  }
-};
+  };
 
-export const deleteFriend = (navigate, cookies, friendId) => async () => {
-  const token = cookies.get('authToken', { path: '/' });
+export const deleteFriend =
+  (navigate: NavigateFunction, cookies: Cookies, friendId: string) =>
+  async () => {
+    const token = cookies.get('authToken');
 
-  if (!token) {
-    navigate('/login');
-  } else {
-    try {
-      const userInfoResponse = await fetch(
-        `http://localhost:80/users/friends/${friendId}`,
-        {
-          method: 'DELETE',
-          headers: {
-            Authorization: `Bearer ${token}`,
-            'Content-Type': 'application/json',
-          },
+    if (!token) {
+      navigate('/login');
+    } else {
+      try {
+        const userInfoResponse = await fetch(
+          `http://localhost:80/users/friends/${friendId}`,
+          {
+            method: 'DELETE',
+            headers: {
+              Authorization: `Bearer ${token}`,
+              'Content-Type': 'application/json',
+            },
+          }
+        );
+        if (!userInfoResponse.ok) {
+          if (userInfoResponse.status === 401) {
+            navigate('/login');
+            throw new Error('Unauthorized');
+          }
         }
-      );
-      if (!userInfoResponse.ok) {
-        if (userInfoResponse.status === 401) {
-          navigate('/login');
-          throw new Error('Unauthorized');
-        }
+      } catch (error) {
+        console.log(error);
       }
-    } catch (error) {
-      console.log(error);
     }
-  }
-};
+  };

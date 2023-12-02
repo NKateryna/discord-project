@@ -35,7 +35,10 @@ function Сonversation() {
   );
 
   useEffect(() => {
-    if (conversationsData.toggleLoading && !currentConversationData) {
+    if (
+      (conversationsData.toggleLoading && !currentConversationData) ||
+      !currentConversationData
+    ) {
       navigate(`/channels/@me/`);
     }
     // eslint-disable-next-line
@@ -132,7 +135,7 @@ function Сonversation() {
               </div>
               <div className={styles.friendInfo}>
                 <div className={styles.friendInfo_info_text}>
-                  {currentConversationData?.sender?.usernamee}
+                  {currentConversationData?.sender?.username}
                   <span
                     className={styles.friendInfo_hash}
                   >{`#${currentConversationData?.sender.hash

@@ -1,4 +1,5 @@
 import actions from './actions';
+import { Action, Server, serversData } from './types';
 
 const INITIAL_STATE = {
   servers: [],
@@ -9,7 +10,7 @@ const INITIAL_STATE = {
   toggleSearch: false,
 };
 
-const serversReduser = (state = INITIAL_STATE, action) => {
+const serversReduser = (state = INITIAL_STATE, action: Action) => {
   switch (action.type) {
     case actions.SET_IS_LOADED: {
       return {
@@ -21,19 +22,23 @@ const serversReduser = (state = INITIAL_STATE, action) => {
       return { ...state, servers: action.payload.servers };
     }
     case actions.ADDING_SERVER: {
-      const serversArray = [...state.servers];
+      const serversArray: serversData = [...state.servers];
       serversArray.push(action.payload.server);
 
-      const communitiesArray = [...state.communities].filter((community) => {
-        return community._id !== action.payload.server._id;
-      });
+      const communitiesArray: serversData = [...state.communities].filter(
+        (community: Server) => {
+          return community._id !== action.payload.server._id;
+        }
+      );
 
       return { ...state, servers: serversArray, communities: communitiesArray };
     }
     case actions.LEAVE_SERVER: {
-      const serversArray = [...state.servers].filter((server) => {
-        return server._id !== action.payload.id;
-      });
+      const serversArray: serversData = [...state.servers].filter(
+        (server: Server) => {
+          return server._id !== action.payload.id;
+        }
+      );
 
       return { ...state, servers: serversArray };
     }
@@ -44,8 +49,8 @@ const serversReduser = (state = INITIAL_STATE, action) => {
       return { ...state, communities: action.payload.communities };
     }
     case actions.SAVING_SEARCH_COMMUMITIES_LIST: {
-      const communitiesSearchArray = [];
-      action.payload.communitiesSearch.map((community) =>
+      const communitiesSearchArray: serversData = [];
+      action.payload.communitiesSearch.map((community: Server) =>
         communitiesSearchArray.push(community)
       );
 
