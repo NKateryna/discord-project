@@ -173,29 +173,6 @@
     border-radius: 4px;
 }
 
-/* .messagesBox_separator {
-    height: 1px;
-    margin: 4px 16px;
-    background: var(--gray-opacity-3);
-    z-index: 6;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
-
-.messagesBox_separatorDate {
-    color: var(--gray-33);
-    font-family: ABC Ginto Normal;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    height: 20px;
-    padding: 2px 4px;
-    background: var(--gray-2);
-} */
-
 .textAreaBox {
     min-height: 68px;
     padding: 0px 16px 24px 16px;

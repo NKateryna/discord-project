@@ -22,7 +22,7 @@ const Protected = () => {
         />
       </Route>
       <Route path="channels/*">
-        <Route path="*" element={<Server />} />
+        <Route path=":serverId/" element={<Server />} />
       </Route>
       <Route
         path="nitro/"

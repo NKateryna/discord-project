@@ -1,5 +1,5 @@
 import styles from './index.module.css';
-import { useLocation } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getServers } from '../../redux/servers/selectors';
@@ -18,29 +18,27 @@ import {
   ThreadsIcon,
 } from '../../common/components/icons';
 import NavigationBarItemServer from '../../common/components/NavigationBarItemServer';
+import { HELP_URL } from '../../constants';
 
 function Server() {
-  const location = useLocation();
+  const [currentChannelName, setCurrentChannelName] = useState('');
+  const [currentChannelIcon, setCurrentChannelIcon] = useState('');
+  const [searchValue, setSearchValue] = useState('');
+
   const serversData = useSelector(getServers);
   const dispatch = useDispatch();
+  const { serverId } = useParams();
 
   useEffect(() => {
-    const pathCheckingServerId = location.pathname.replace(
-      /\/channels\/([^/]+).*/,
-      '$1'
-    );
-
-    dispatch(saveActiveItem(pathCheckingServerId));
+    dispatch(saveActiveItem(serverId));
     // eslint-disable-next-line
-  }, []);
+  }, [serverId]);
 
   const currentServerData = serversData.servers.find(
     (server) => server._id === serversData.activeServer
   );
   const serverName = currentServerData?.name;
 
-  const [currentChannelName, setCurrentChannelName] = useState('');
-  const [currentChannelIcon, setCurrentChannelIcon] = useState('');
   const onClickItemServer = (channelName, channelIcon) => {
     return () => {
       setCurrentChannelName(channelName);
@@ -48,7 +46,6 @@ function Server() {
     };
   };
 
-  const [searchValue, setSearchValue] = useState('');
   const searchValueChange = (event) => {
     setSearchValue(event.target.value);
   };
@@ -102,10 +99,7 @@ function Server() {
               <MailIcon className={styles.header_icon} />
             </Tooltip>
             <Tooltip title="Help" placement="bottom">
-              <HelpIcon
-                className={styles.header_icon}
-                link="https://support.discord.com/"
-              />
+              <HelpIcon className={styles.header_icon} link={HELP_URL} />
             </Tooltip>
           </div>
         </div>
