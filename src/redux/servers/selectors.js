@@ -1,4 +1,3 @@
-export const getServers = (state) => ({
-  servers: state.servers,
-  activeServer: state.activeServer,
-});
+export const getServers = (state) => {
+  return state.servers;
+};

@@ -9,14 +9,14 @@ export function NitroPerk12MoreServers() {
       xmlnsXlink="http://www.w3.org/1999/xlink"
     >
       <rect width="116" height="116" fill="#1E1E1E" />
-      <g clip-path="url(#clip0_0_1)">
+      <g clipPath="url(#clip0_0_1)">
         <rect
           width="1921"
           height="4550"
           transform="translate(-1058 -2416)"
           fill="#36393F"
         />
-        <g clip-path="url(#clip1_0_1)">
+        <g clipPath="url(#clip1_0_1)">
           <rect
             x="-114.333"
             y="-32"

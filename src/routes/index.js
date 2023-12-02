@@ -24,7 +24,8 @@ function AppRoutes() {
         <Route
           path="/*"
           element={
-            <ProtectedRoute userToken={!!userToken}>
+            // <ProtectedRoute userToken={!!userToken}>
+            <ProtectedRoute userToken={true}>
               <WrapperContents>
                 <Protected />
               </WrapperContents>

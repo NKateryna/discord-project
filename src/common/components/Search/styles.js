@@ -34,6 +34,11 @@ export const stylesMUI = {
       boxSizing: 'border-box',
     },
   },
+  searchIcon: {
+    width: '18px',
+    height: '18px',
+    fill: 'var(--gray-3)',
+  },
   searchAddSuccess: {
     marginBottom: '8px',
     '&:focus-within': {

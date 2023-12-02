@@ -66,10 +66,10 @@ function WrapperContents({ children }) {
     };
   };
 
-  const onClickPrivateMessages = (privateMessages) => {
+  const onClickDirectMessages = (directMessages) => {
     return () => {
-      navigate('channels/');
-      dispatch(saveActiveItem(privateMessages));
+      navigate('channels/@me');
+      dispatch(saveActiveItem(directMessages));
     };
   };
 
@@ -78,23 +78,23 @@ function WrapperContents({ children }) {
       <Backdrop open={open} onClick={() => setOpen(false)} invisible />
       <Sidebar>
         <SidebarItem
-          name={'Private messages'}
+          name={'Direct messages'}
           icon={<LogoIcon style={{ height: '20px', width: '26px' }} />}
-          onClick={onClickPrivateMessages('Private messages')}
+          onClick={onClickDirectMessages('Direct messages')}
           active={
             location.pathname.startsWith('/channels/@me') ||
             location.pathname === '/nitro'
           }
         />
         <div className={styles.separator}></div>
-        {serversData.servers.servers.map((server) => {
+        {serversData.servers.map((server) => {
           return (
             <SidebarItem
               key={server._id}
               name={server.name}
               photo={server.photo}
               onClick={onClickServer(server)}
-              active={server._id === serversData.servers.activeServer}
+              active={server._id === serversData.activeServer}
             />
           );
         })}
@@ -141,7 +141,7 @@ function WrapperContents({ children }) {
           name={'Explore'}
           icon={<ChannelSearchIcon />}
           onClick={onClickMenuItem('guild-discovery')}
-          active={'guild-discovery' === serversData.servers.activeServer}
+          active={'guild-discovery' === serversData.activeServer}
         />
         <div className={styles.separator}></div>
         <SidebarItem

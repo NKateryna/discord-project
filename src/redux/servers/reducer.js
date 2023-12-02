@@ -8,9 +8,7 @@ const INITIAL_STATE = {
 const serversReduser = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case actions.CREATING_SERVERS_LIST: {
-      const serversArray = [];
-      action.payload.servers.map((server) => serversArray.push(server));
-      return { ...state, servers: serversArray };
+      return { ...state, servers: action.payload.servers };
     }
     case actions.ADDING_SERVER: {
       const serversArray = [...state.servers];

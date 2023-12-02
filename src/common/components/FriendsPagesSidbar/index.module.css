@@ -7,7 +7,6 @@
     padding: 24px 16px 48px 16px;
     overflow-x: hidden; 
     overflow-y: auto;
-    user-select: none;
 }
 
 .friendsSidbar::-webkit-scrollbar{

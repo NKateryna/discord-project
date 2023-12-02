@@ -121,7 +121,7 @@ function Search({ addFriendPage = false }) {
             </InputAdornment>
           ) : (
             <InputAdornment sx={adornment} position="end">
-              <SearchIcon />
+              <SearchIcon className={classes.searchIcon} />
             </InputAdornment>
           )
         }

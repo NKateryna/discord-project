@@ -13,7 +13,7 @@ import NavigationBarItem from '../NavigationBarItem';
 import UserPanel from '../UserPanel';
 import { getConversations } from '../../../redux/conversations/selectors';
 
-function WrapperNavigationBar({ children }) {
+function NavBarDirectMessages({ children }) {
   const navigate = useNavigate();
   const location = useLocation();
   const dispatch = useDispatch();
@@ -38,7 +38,7 @@ function WrapperNavigationBar({ children }) {
 
   return (
     <div className={styles.wrapperNavigationBar}>
-      <div className={styles.NavigationBar}>
+      <div className={styles.navigationBar}>
         <NavigationBarSearch />
         <div className={styles.navigationPanel}>
           <div className={styles.NavButtonsBlock}>
@@ -80,4 +80,4 @@ function WrapperNavigationBar({ children }) {
   );
 }
 
-export default WrapperNavigationBar;
+export default NavBarDirectMessages;
