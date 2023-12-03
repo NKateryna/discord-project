@@ -1,7 +1,7 @@
 const actions = {
   CREATING_FRIENDS_LIST: 'CREATING_FRIENDS_LIST',
   REMOVE_FRIENDS_LIST: 'REMOVE_FRIENDS_LIST',
-  TOGGLE_LOADING: 'TOGGLE_LOADING',
+  FRIENDS_TOGGLE_LOADING: 'FRIENDS_TOGGLE_LOADING',
   SAVING_SEARCH_FRIENDS: 'SAVING_RESULT_SEARCH_FRIENDS',
 };
 
@@ -22,7 +22,7 @@ export const removeFriendsList = () => {
 
 export const setLoaging = (toggleValue) => {
   return {
-    type: actions.TOGGLE_LOADING,
+    type: actions.FRIENDS_TOGGLE_LOADING,
     payload: { toggleValue },
   };
 };

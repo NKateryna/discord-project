@@ -27,7 +27,7 @@ const friendsDataReduser = (state = INITIAL_STATE, action) => {
         total: 0,
       };
     }
-    case actions.TOGGLE_LOADING: {
+    case actions.FRIENDS_TOGGLE_LOADING: {
       return {
         ...state,
         toggleLoading: action.payload.toggleValue,

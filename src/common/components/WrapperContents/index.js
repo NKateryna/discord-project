@@ -16,12 +16,14 @@ import {
 import { Backdrop, Modal } from '@mui/material';
 import ModalCreateServer from '../create-server/ModalCreateServer';
 import ModalCustomizeServer from '../create-server/ModalCustomizeServer';
+import LoadingScreen from '../LoadingScreen';
 
 function WrapperContents({ children }) {
   const serversData = useSelector(getServers);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();
+  const { isLoaded } = serversData;
 
   const [open, setOpen] = useState(false);
   const [openModalCreateServer, setOpenModalCreateServer] = useState(false);
@@ -72,6 +74,15 @@ function WrapperContents({ children }) {
       dispatch(saveActiveItem(directMessages));
     };
   };
+
+  if (!isLoaded) {
+    return (
+      <LoadingScreen
+        title={'DID YOU KNOW'}
+        subtitle={'We’re glad you’re back!'}
+      />
+    );
+  }
 
   return (
     <div className={styles.wrapperContent}>

@@ -4,54 +4,6 @@
     flex: 1 1;
 }
 
-.navigationBar { 
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: column;
-    width: 240px;
-    min-height: 100vh;
-    min-width: 240px;
-    background-color: var(--gray-1);
-}
-.serverName {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height: 48px;
-    margin-bottom: 13px;
-    padding-left: 16px;
-    background-color: var(--gray-1);
-    box-shadow: 0px 1px 1px 0px var(--gray-14);
-    color: var(--white);
-    font-family: Whitney;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 350;
-    line-height: normal;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-.navigation {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-    flex:1;
-    overflow-x: hidden; 
-    overflow-y: auto;
-}
-.navigation::-webkit-scrollbar {  
-    width: 4px;
-    position: absolute;
-    background-color: var(--gray-1);
-}
-.navigation::-webkit-scrollbar-thumb {
-    background-color: var(--gray-4);
-    height: 133px;
-    width: 2px;
-    border: 2px solid var(--gray-1);
-}
-
 
 .contentWrapper {
     display: flex;
@@ -71,7 +23,7 @@
     align-items: center;
     padding: 0px 16px 0px 16px;
 }
-.channelIcon {
+.icon_at {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -80,14 +32,31 @@
     width: 24px;
     margin-right: 8px;
 }
-.channelName {
+
+.header_friendInfo {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.header_friendName {
     color: var(--white);
     font-family: ABC Ginto Normal;
     font-size: 17px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
-    flex: 1;
+    margin-right: 11px;
+}
+
+.header_friendStatus {
+    display: flex;
+    width: 16px;
+    height: 16px;
+    padding: 3px;
+    justify-content: center;
+    align-items: center;
 }
 
 .header_icons {
@@ -104,6 +73,10 @@
 
 .header_icon:hover {
     fill: var(--white-2);
+}
+
+.header_icon__active {
+    fill: var(--white); 
 }
 
 .inputSearch {
@@ -144,6 +117,19 @@
     fill: var(--gray-7);
 }
 
+.content {
+   display: flex;
+   width: 100%;
+   height: 100%; 
+}
+
+.conversation{ 
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+
 .messagesBox {
     flex: 1;
     width: 100%;
@@ -176,4 +162,87 @@
 .textAreaBox {
     min-height: 68px;
     padding: 0px 16px 24px 16px;
+}
+
+.friendProfile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 339px;
+    min-width: 308px;
+    height: 100%;
+    background: var(--gray-10);
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.friendProfile_bcg{
+    width: 100%;
+    height: 120px;
+    background: var(--gray-35);
+    position: relative;
+    margin-bottom: 57px;
+}
+.friendProfile_avatar {
+    background-color: var(--gray-10);
+    border-radius: 50%;
+    width: 92px;
+    height: 92px;
+    position: absolute;
+    left: 12px;
+    bottom:-42px;
+}
+
+.friendInfo {
+    width: 308px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    background: var(--gray-9)
+}
+
+
+.friendInfo_info_text {
+    display: flex;
+    color: var(--white);
+    font-family: Noto Sans;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    position: relative;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+.friendInfo_info_text::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 284px;
+    height: 1px;
+    background-color: var(--gray-36);
+}
+
+.friendInfo_hash {
+    color: var(--gray-3)
+}
+
+
+.friendInfo_member {
+    color: var(--white);
+    font-family: Noto Sans;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 8px;
+}
+
+.friendInfo_memberDate {
+    color: var(--gray-3);
+    font-family: Noto Sans;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }

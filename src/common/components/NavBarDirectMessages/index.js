@@ -32,6 +32,9 @@ function NavBarDirectMessages({ children }) {
     navigate('/nitro');
   }
 
+  const onClickOpenConversation = (id) => {
+    return () => navigate(`/channels/@me/${id}`);
+  };
   const onClickDeleteChat = (id) => {
     return () => dispatch(deleteСonversationAsync(navigate, cookies, id));
   };
@@ -65,7 +68,7 @@ function NavBarDirectMessages({ children }) {
                   name={username}
                   avatar={avatar}
                   status={status}
-                  onClickItem={null}
+                  onClickItem={onClickOpenConversation(conversation._id)}
                   onClickDeleteChat={onClickDeleteChat(conversation._id)}
                   key={conversation._id}
                 />

@@ -2,19 +2,29 @@ import actions from './actions';
 
 const INITIAL_STATE = {
   data: [],
+  toggleLoading: false,
 };
 
 const conversationsDataReduser = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case actions.CREATING_CONVERSATIONS_LIST: {
-      const сonversationsArray = [];
-      action.payload.data.map((сonversation) =>
-        сonversationsArray.push(сonversation)
-      );
+      return { ...state, data: action.payload.data };
+    }
+    case actions.CONVERSATIONS_TOGGLE_LOADING: {
       return {
         ...state,
-        data: сonversationsArray,
+        toggleLoading: action.payload.toggleValue,
       };
+    }
+    case actions.ADDING_CONVERSATION: {
+      const сonversationsArray = [...state.data];
+      const existingConversation = сonversationsArray.some(
+        (сonversation) => сonversation._id === action.payload.conversation._id
+      );
+      if (!existingConversation) {
+        сonversationsArray.push(action.payload.conversation);
+      }
+      return { ...state, data: сonversationsArray };
     }
     case actions.DELETE_CONVERSATION: {
       const сonversationsArray = state.data.filter(
