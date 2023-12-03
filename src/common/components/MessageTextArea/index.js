@@ -16,8 +16,7 @@ function MessageTextArea({ targetName }) {
       <InputBase
         value={messageValue}
         onChange={searchValueChange}
-        onClick={null}
-        placeholder={targetName ? `Message ${targetName}` : null}
+        placeholder={targetName ? `Message ${targetName}` : 'Enter Message'}
         className={styles.textareaMessage}
         name="MessageTextArea"
         type={'text'}
@@ -25,11 +24,12 @@ function MessageTextArea({ targetName }) {
         multiline={true}
         minRows={1}
       />
-      {[<SendGifIcon />, <SendStickerIcon />].map((icon, index) => (
-        <div className={styles.buttonSend} onClick={null} key={index}>
-          {icon}
-        </div>
-      ))}
+      <div className={styles.buttonSend} onClick={null}>
+        <SendGifIcon />
+      </div>
+      <div className={styles.buttonSend} onClick={null}>
+        <SendStickerIcon />
+      </div>
     </div>
   );
 }

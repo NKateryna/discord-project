@@ -19,8 +19,16 @@ import {
   ThreadsIcon,
 } from '../../common/components/icons';
 import NavigationBarItemServer from '../../common/components/NavigationBarItemServer';
+import { HELP_URL } from '../../constants';
 
 function Server() {
+  const [currentChannelName, setCurrentChannelName] = useState('general');
+  const [currentChannelIcon, setCurrentChannelIcon] = useState(
+    <ChannelIconHashtag />
+  );
+
+  const [searchValue, setSearchValue] = useState('');
+
   const serversData = useSelector(getServers);
   const dispatch = useDispatch();
   const { serverId } = useParams();
@@ -35,10 +43,6 @@ function Server() {
   );
   const serverName = currentServerData?.name;
 
-  const [currentChannelName, setCurrentChannelName] = useState('general');
-  const [currentChannelIcon, setCurrentChannelIcon] = useState(
-    <ChannelIconHashtag />
-  );
   const onClickItemServer = (channelName, channelIcon) => {
     return () => {
       setCurrentChannelName(channelName);
@@ -46,7 +50,6 @@ function Server() {
     };
   };
 
-  const [searchValue, setSearchValue] = useState('');
   const searchValueChange = (event) => {
     setSearchValue(event.target.value);
   };
@@ -100,10 +103,7 @@ function Server() {
               <MailIcon className={styles.header_icon} />
             </Tooltip>
             <Tooltip title="Help" placement="bottom">
-              <HelpIcon
-                className={styles.header_icon}
-                link="https://support.discord.com/"
-              />
+              <HelpIcon className={styles.header_icon} link={HELP_URL} />
             </Tooltip>
           </div>
         </div>
