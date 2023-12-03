@@ -15,7 +15,7 @@
 }
 .button_white {
     background: var(--white);
-    color: var(--brend-color);
+    color: var(--brand-color);
 }
 .button_white:hover {
     background: var(--gray-29);
@@ -37,10 +37,10 @@
 }
 .icon_transparent {
     margin-right: 5px;
-    fill: var(--brend-color);
+    fill: var(--brand-color);
 
 }
 .icon_white {
     margin-right: 5px;
-    fill: var(--brend-color);
+    fill: var(--brand-color);
 }

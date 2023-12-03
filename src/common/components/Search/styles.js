@@ -9,13 +9,13 @@ export const stylesMUI = {
     fontSize: '14px',
     lineheight: '17px',
     color: 'var(--white)',
-    background: 'var(--brend-color)',
+    background: 'var(--brand-color)',
     '&:hover': {
-      backgroundColor: 'var(--brend-color-hover)',
+      backgroundColor: 'var(--brand-color-hover)',
       color: 'var(--white)',
     },
     '&.Mui-disabled': {
-      background: 'var(--brend-color)',
+      background: 'var(--brand-color)',
       opacity: '0.5',
       color: 'var(--white)',
     },

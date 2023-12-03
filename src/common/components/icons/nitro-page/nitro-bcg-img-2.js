@@ -195,7 +195,7 @@ export function NitroBcgImg2() {
       <path
         d="M85.3453 101.449C81.0571 85.4446 64.607 75.9472 48.603 80.2354C32.599 84.5237 23.1015 100.974 27.3898 116.978C31.678 132.982 48.1281 142.479 64.1321 138.191C80.1361 133.903 89.6336 117.453 85.3453 101.449Z"
         fill="white"
-        fill-opacity="0.1"
+        fillOpacity="0.1"
       />
       <mask
         id="mask2_1130_81"
@@ -232,7 +232,7 @@ export function NitroBcgImg2() {
       <path
         d="M71.3451 441.449C67.0569 425.445 50.6068 415.947 34.6028 420.235C18.5988 424.524 9.10132 440.974 13.3896 456.978C17.6778 472.982 34.1279 482.479 50.1319 478.191C66.1359 473.903 75.6334 457.453 71.3451 441.449Z"
         fill="white"
-        fill-opacity="0.1"
+        fillOpacity="0.1"
       />
       <mask
         id="mask3_1130_81"
@@ -289,7 +289,7 @@ export function NitroBcgImg2() {
       <path
         d="M170.816 44.5069C175.104 28.5029 165.607 12.0528 149.603 7.76457C133.599 3.47632 117.149 12.9738 112.86 28.9778C108.572 44.9818 118.07 61.4319 134.074 65.7201C150.078 70.0084 166.528 60.5109 170.816 44.5069Z"
         fill="white"
-        fill-opacity="0.1"
+        fillOpacity="0.1"
       />
       <path
         d="M157.651 32.7747L160.032 33.4129C160.875 33.6387 161.593 34.189 162.029 34.9429C162.465 35.6969 162.584 36.5929 162.359 37.4335L161.049 42.3201C160.824 43.1607 160.273 43.8773 159.519 44.312C158.764 44.7469 157.867 44.8647 157.024 44.6388L154.643 44.0006L157.686 32.6426L157.651 32.7747Z"
@@ -351,9 +351,9 @@ export function NitroBcgImg2() {
           width="246.394"
           height="165.817"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"
@@ -385,9 +385,9 @@ export function NitroBcgImg2() {
           width="235.978"
           height="144.317"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"
@@ -420,9 +420,9 @@ export function NitroBcgImg2() {
           y2="276.953"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.13" stop-color="#34F4CF" />
-          <stop offset="0.68" stop-color="#19D1C2" />
-          <stop offset="1" stop-color="#0EC2BC" />
+          <stop offset="0.13" stopColor="#34F4CF" />
+          <stop offset="0.68" stopColor="#19D1C2" />
+          <stop offset="1" stopColor="#0EC2BC" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_1130_81"
@@ -432,8 +432,8 @@ export function NitroBcgImg2() {
           y2="433.684"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.34" stop-color="#4C7DFF" />
-          <stop offset="0.99" stop-color="#3464F0" />
+          <stop offset="0.34" stopColor="#4C7DFF" />
+          <stop offset="0.99" stopColor="#3464F0" />
         </linearGradient>
         <linearGradient
           id="paint2_linear_1130_81"
@@ -443,8 +443,8 @@ export function NitroBcgImg2() {
           y2="472.832"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.09375" stop-color="#8497F8" />
-          <stop offset="1" stop-color="#79DCF9" />
+          <stop offset="0.09375" stopColor="#8497F8" />
+          <stop offset="1" stopColor="#79DCF9" />
         </linearGradient>
       </defs>
     </svg>

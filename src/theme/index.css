@@ -6,9 +6,9 @@
     --white: #ffffff;
     --white-2: #DCDDDE;
     
-    --brend-color: #5865F2;
-    --brend-color-hover: #4752c4;
-    --brend-color-active: #3c45a5;
+    --brand-color: #5865F2;
+    --brand-color-hover: #4752c4;
+    --brand-color-active: #3c45a5;
 
     --gray-1: #2F3136;
     --gray-2: #36393F;
@@ -69,12 +69,11 @@
     --purple-1: #8447C6;
     --purple-2:#B945FF;
 
- 
-
     --pink-1:#E15BE1;
     --pink-2: #AA5F8C;
     --pink-3: #AB5D8B;
     --pink-4: #B945C1;
+    --pink-5: #96858F;
 
     --orange-1:#FCC245;
   }

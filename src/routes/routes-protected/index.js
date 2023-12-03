@@ -4,6 +4,8 @@ import NavBarDirectMessages from '../../common/components/NavBarDirectMessages';
 import Nitro from '../../pages/nitro';
 import FriendsRouters from './routes-friends/index';
 import Server from '../../pages/server';
+import GuildDiscovery from '../../pages/guild-discovery';
+
 
 const Protected = () => {
   return (
@@ -32,6 +34,7 @@ const Protected = () => {
           </NavBarDirectMessages>
         }
       />
+      <Route path="guild-discovery/" element={<GuildDiscovery />} />
     </Routes>
   );
 };

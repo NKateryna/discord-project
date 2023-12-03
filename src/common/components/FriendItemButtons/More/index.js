@@ -1,11 +1,10 @@
 import styles from './index.module.css';
+import classNames from 'classnames';
 import { useRef, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import Cookies from 'universal-cookie';
 import { blockFriend, deleteFriend } from '../../../../redux/friends/actions';
-import classNames from 'classnames';
-import { makeStyles } from '@mui/styles';
 import { MoreIcon } from '../../icons';
 import { Button } from '@mui/base';
 import Tooltip from '../../Tooltip';
@@ -13,25 +12,11 @@ import Popper from '@mui/material/Popper';
 import { Backdrop, Modal } from '@mui/material';
 import ModalAlert from '../../ModalAlert';
 
-const useStyles = makeStyles(() => ({
-  popper: {
-    zIndex: 5,
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    padding: '8px',
-    backgroundColor: 'var(--gray-9)',
-    width: '188px',
-  },
-  backdrop: { background: 'transparent', zIndex: 4 },
-}));
-
 export function More({ pageName, activeFriendItem }) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const cookies = new Cookies();
 
-  const classes = useStyles();
   const [open, setOpen] = useState(false);
   const moreEl = useRef(null);
   const [openModalRemove, setOpenModalRemove] = useState(false);
@@ -76,13 +61,23 @@ export function More({ pageName, activeFriendItem }) {
           </div>
         </Tooltip>
       </div>
-      <Backdrop open={open} onClick={() => setOpen(false)} invisible />
+      <Backdrop
+        open={open}
+        onClick={() => setOpen(false)}
+        onContextMenu={(event) => {
+          event.stopPropagation();
+          event.preventDefault();
+          setOpen(false);
+        }}
+        className={styles.backdrop}
+        invisible
+      />
       <Popper
         open={open}
         anchorEl={moreEl.current}
         disablePortal={false}
         placement="right-start"
-        className={classes.popper}
+        className={styles.popper}
         modifiers={popperModifiers}
         onClick={() => setOpen(false)}
       >

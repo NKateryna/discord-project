@@ -90,11 +90,12 @@ function WrapperContents({ children }) {
         {serversData.servers.map((server) => {
           return (
             <SidebarItem
-              key={server._id}
+              id={server._id}
               name={server.name}
               photo={server.photo}
               onClick={onClickServer(server)}
               active={server._id === serversData.activeServer}
+              key={server._id}
             />
           );
         })}

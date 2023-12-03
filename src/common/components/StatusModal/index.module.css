@@ -24,7 +24,7 @@
     margin: 8px 0px 8px 0px;
 }
 .statusItem:hover {
-    background-color: var(--brend-color-hover); 
+    background-color: var(--brand-color-hover); 
     border-radius: 2px;   
 } 
 
@@ -33,7 +33,7 @@
 }
 
 .statusItem:hover .iconHover {
-    fill: var(--brend-color-hover);
+    fill: var(--brand-color-hover);
 }
 .statusItem:hover .statusText,
 .statusItem:hover .helpText {

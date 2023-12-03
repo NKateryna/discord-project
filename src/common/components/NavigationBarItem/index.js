@@ -12,6 +12,7 @@ function NavigationBarItem({
   status,
   name,
   active,
+  color,
   onClickDeleteChat,
 }) {
   const [isHovered, setIsHovered] = useState(false);
@@ -25,7 +26,8 @@ function NavigationBarItem({
       className={classNames(
         styles.box,
         { [styles.boxIcon]: icon },
-        { [styles.itemActive]: active }
+        { [styles.itemActive]: active },
+        { [styles.boxBrandColor]: color === 'brandColor' }
       )}
       key={id}
     >

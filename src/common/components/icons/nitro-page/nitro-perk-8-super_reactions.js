@@ -178,12 +178,12 @@ export function NitroPerk8SuperReactions() {
         <path
           d="M175.716 60.9111H139.62C135.219 60.9111 131.652 64.4785 131.652 68.8791V79.4897C131.652 83.8903 135.219 87.4577 139.62 87.4577H175.716C180.116 87.4577 183.684 83.8903 183.684 79.4897V68.8791C183.684 64.4785 180.116 60.9111 175.716 60.9111Z"
           fill="black"
-          fill-opacity="0.2"
+          fillOpacity="0.2"
         />
         <path
           d="M175.716 61.1514H139.62C135.219 61.1514 131.652 64.7188 131.652 69.1193V79.7299C131.652 84.1305 135.219 87.6979 139.62 87.6979H175.716C180.116 87.6979 183.684 84.1305 183.684 79.7299V69.1193C183.684 64.7188 180.116 61.1514 175.716 61.1514Z"
           fill="#989FF7"
-          fill-opacity="0.2"
+          fillOpacity="0.2"
         />
         <path
           fillRule="evenodd"
@@ -194,7 +194,7 @@ export function NitroPerk8SuperReactions() {
         <path
           d="M84.5646 65.3257H59.5195C56.6393 65.3257 54.3043 67.6606 54.3043 70.5409V77.4979C54.3043 80.3781 56.6393 82.7131 59.5195 82.7131H84.5646C87.4449 82.7131 89.7798 80.3781 89.7798 77.4979V70.5409C89.7798 67.6606 87.4449 65.3257 84.5646 65.3257Z"
           fill="black"
-          fill-opacity="0.1"
+          fillOpacity="0.1"
         />
         <path
           d="M76.0761 77.6379C75.5155 77.6379 75.0451 77.5177 74.6547 77.2775C74.2743 77.0272 74.004 76.7069 73.8439 76.3065L74.7548 75.776C75.0251 76.3666 75.4755 76.6669 76.0961 76.6669C76.4965 76.6669 76.8068 76.5468 77.0171 76.3165C77.2273 76.0863 77.3374 75.766 77.3374 75.3656C77.3374 74.9652 77.2273 74.6649 77.0171 74.4347C76.8068 74.2044 76.5065 74.0843 76.1161 74.0843C75.8659 74.0843 75.6457 74.1344 75.4555 74.2545C75.2653 74.3546 75.1152 74.4947 74.985 74.6549L74.0441 74.3546L74.5546 70.801H78.2283V71.822H75.3954L75.1151 73.6939C75.2453 73.5338 75.4255 73.4136 75.6557 73.3135C75.8859 73.2134 76.1362 73.1634 76.4265 73.1634C76.8369 73.1634 77.1972 73.2535 77.4975 73.4337C77.8078 73.6138 78.0481 73.8641 78.2182 74.1944C78.3884 74.5147 78.4685 74.8951 78.4685 75.3155C78.4685 75.766 78.3784 76.1764 78.1882 76.5368C78.008 76.8871 77.7378 77.1674 77.3674 77.3676C77.007 77.5578 76.5766 77.6579 76.0761 77.6579V77.6379ZM81.8018 73.1434C82.2022 73.1434 82.5526 73.2335 82.8729 73.4237C83.1932 73.6038 83.4335 73.8641 83.6136 74.2144C83.7938 74.5548 83.8839 74.9452 83.8839 75.3856C83.8839 75.826 83.7838 76.1964 83.5936 76.5468C83.4034 76.8871 83.1332 77.1474 82.7728 77.3476C82.4225 77.5378 82.012 77.6379 81.5516 77.6379C81.0911 77.6379 80.6707 77.5478 80.3103 77.3576C79.96 77.1674 79.6897 76.8971 79.4895 76.5668C79.2993 76.2265 79.2092 75.8561 79.2092 75.4357C79.2092 75.0953 79.2593 74.765 79.3594 74.4747C79.4595 74.1644 79.6196 73.8541 79.8198 73.5438L81.5816 70.791H82.8729L81.2413 73.2635C81.4215 73.1934 81.6116 73.1534 81.7918 73.1534L81.8018 73.1434ZM81.5616 76.6669C81.922 76.6669 82.2223 76.5468 82.4425 76.3065C82.6727 76.0663 82.7828 75.756 82.7828 75.3856C82.7828 75.0152 82.6727 74.6949 82.4525 74.4547C82.2323 74.2144 81.932 74.0943 81.5616 74.0943C81.1912 74.0943 80.8909 74.2144 80.6707 74.4547C80.4505 74.6949 80.3404 75.0052 80.3404 75.3856C80.3404 75.766 80.4505 76.0663 80.6707 76.3065C80.9009 76.5468 81.1912 76.6669 81.5616 76.6669Z"
@@ -203,7 +203,7 @@ export function NitroPerk8SuperReactions() {
         <path
           d="M84.5646 65.3257H59.5195C56.6393 65.3257 54.3043 67.6606 54.3043 70.5409V77.4979C54.3043 80.3781 56.6393 82.7131 59.5195 82.7131H84.5646C87.4449 82.7131 89.7798 80.3781 89.7798 77.4979V70.5409C89.7798 67.6606 87.4449 65.3257 84.5646 65.3257Z"
           fill="#989FF7"
-          fill-opacity="0.2"
+          fillOpacity="0.2"
         />
         <path
           fillRule="evenodd"
@@ -214,7 +214,7 @@ export function NitroPerk8SuperReactions() {
         <path
           d="M122.132 65.3257H98.4785C95.5982 65.3257 93.2633 67.6606 93.2633 70.5409V77.4979C93.2633 80.3781 95.5982 82.7131 98.4785 82.7131H122.132C125.012 82.7131 127.347 80.3781 127.347 77.4979V70.5409C127.347 67.6606 125.012 65.3257 122.132 65.3257Z"
           fill="#989FF7"
-          fill-opacity="0.2"
+          fillOpacity="0.2"
         />
         <path
           d="M115.075 77.6376C114.435 77.6376 113.914 77.4675 113.494 77.1371C113.083 76.7968 112.833 76.3664 112.733 75.8558L113.724 75.4454C113.924 76.2462 114.374 76.6566 115.065 76.6566C115.446 76.6566 115.736 76.5565 115.966 76.3663C116.186 76.1762 116.296 75.8959 116.296 75.5355C116.296 75.2252 116.196 74.985 115.986 74.8148C115.786 74.6346 115.496 74.5545 115.115 74.5545H114.585V73.6036H115.045C115.345 73.6036 115.596 73.5135 115.806 73.3433C116.016 73.1632 116.116 72.9129 116.116 72.5926C116.116 72.3123 116.016 72.0821 115.826 71.9119C115.636 71.7317 115.365 71.6416 115.035 71.6416C114.705 71.6416 114.455 71.7217 114.244 71.8819C114.044 72.042 113.894 72.2623 113.804 72.5626L112.863 72.1922C112.983 71.7417 113.233 71.3714 113.594 71.0911C113.964 70.8008 114.445 70.6606 115.025 70.6606C115.716 70.6606 116.256 70.8308 116.647 71.1712C117.027 71.5015 117.217 71.9419 117.217 72.4925C117.217 73.1531 116.907 73.6336 116.306 73.964C116.627 74.0641 116.897 74.2542 117.097 74.5245C117.307 74.7948 117.407 75.1351 117.407 75.5455C117.407 75.9559 117.317 76.3263 117.127 76.6466C116.947 76.957 116.677 77.1972 116.316 77.3774C115.966 77.5575 115.546 77.6376 115.065 77.6376H115.075ZM119.79 72.1822C119.45 72.8228 118.939 73.1732 118.258 73.2432V71.982C118.549 71.9519 118.839 71.8218 119.119 71.6116C119.399 71.4014 119.63 71.1211 119.79 70.7708H120.921V77.4875H119.79V72.1722V72.1822Z"
@@ -562,8 +562,8 @@ export function NitroPerk8SuperReactions() {
           y2="32.8327"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.15" stop-color="#B93444" />
-          <stop offset="1" stop-color="#EC706B" />
+          <stop offset="0.15" stopColor="#B93444" />
+          <stop offset="1" stopColor="#EC706B" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_1128_3247"
@@ -573,8 +573,8 @@ export function NitroPerk8SuperReactions() {
           y2="21.9218"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.24" stop-color="#B93444" />
-          <stop offset="0.68" stop-color="#EC706B" />
+          <stop offset="0.24" stopColor="#B93444" />
+          <stop offset="0.68" stopColor="#EC706B" />
         </linearGradient>
         <linearGradient
           id="paint2_linear_1128_3247"
@@ -584,8 +584,8 @@ export function NitroPerk8SuperReactions() {
           y2="23.3933"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#D75299" />
-          <stop offset="1" stop-color="#ED80B4" />
+          <stop stopColor="#D75299" />
+          <stop offset="1" stopColor="#ED80B4" />
         </linearGradient>
         <linearGradient
           id="paint3_linear_1128_3247"
@@ -595,14 +595,14 @@ export function NitroPerk8SuperReactions() {
           y2="61.1413"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#7271CE" />
-          <stop offset="0.11" stop-color="#7271CE" stop-opacity="0.81" />
-          <stop offset="0.27" stop-color="#7271CE" stop-opacity="0.57" />
-          <stop offset="0.44" stop-color="#7271CE" stop-opacity="0.36" />
-          <stop offset="0.59" stop-color="#7271CE" stop-opacity="0.21" />
-          <stop offset="0.74" stop-color="#7271CE" stop-opacity="0.09" />
-          <stop offset="0.88" stop-color="#7271CE" stop-opacity="0.02" />
-          <stop offset="1" stop-color="#7271CE" stop-opacity="0" />
+          <stop stopColor="#7271CE" />
+          <stop offset="0.11" stopColor="#7271CE" stop-opacity="0.81" />
+          <stop offset="0.27" stopColor="#7271CE" stop-opacity="0.57" />
+          <stop offset="0.44" stopColor="#7271CE" stop-opacity="0.36" />
+          <stop offset="0.59" stopColor="#7271CE" stop-opacity="0.21" />
+          <stop offset="0.74" stopColor="#7271CE" stop-opacity="0.09" />
+          <stop offset="0.88" stopColor="#7271CE" stop-opacity="0.02" />
+          <stop offset="1" stopColor="#7271CE" stop-opacity="0" />
         </linearGradient>
         <linearGradient
           id="paint4_linear_1128_3247"
@@ -612,14 +612,14 @@ export function NitroPerk8SuperReactions() {
           y2="85.3552"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#7271CE" />
-          <stop offset="0.11" stop-color="#7271CE" stop-opacity="0.81" />
-          <stop offset="0.27" stop-color="#7271CE" stop-opacity="0.57" />
-          <stop offset="0.44" stop-color="#7271CE" stop-opacity="0.36" />
-          <stop offset="0.59" stop-color="#7271CE" stop-opacity="0.21" />
-          <stop offset="0.74" stop-color="#7271CE" stop-opacity="0.09" />
-          <stop offset="0.88" stop-color="#7271CE" stop-opacity="0.02" />
-          <stop offset="1" stop-color="#7271CE" stop-opacity="0" />
+          <stop stopColor="#7271CE" />
+          <stop offset="0.11" stopColor="#7271CE" stop-opacity="0.81" />
+          <stop offset="0.27" stopColor="#7271CE" stop-opacity="0.57" />
+          <stop offset="0.44" stopColor="#7271CE" stop-opacity="0.36" />
+          <stop offset="0.59" stopColor="#7271CE" stop-opacity="0.21" />
+          <stop offset="0.74" stopColor="#7271CE" stop-opacity="0.09" />
+          <stop offset="0.88" stopColor="#7271CE" stop-opacity="0.02" />
+          <stop offset="1" stopColor="#7271CE" stop-opacity="0" />
         </linearGradient>
         <radialGradient
           id="paint5_radial_1128_3247"
@@ -629,14 +629,14 @@ export function NitroPerk8SuperReactions() {
           gradientUnits="userSpaceOnUse"
           gradientTransform="translate(66.179 51.3081) scale(4.42272 4.42272)"
         >
-          <stop stop-color="#F1F1EC" />
-          <stop offset="0.01" stop-color="#F1F1EC" stop-opacity="0.99" />
-          <stop offset="0.22" stop-color="#F1F1EC" stop-opacity="0.69" />
-          <stop offset="0.43" stop-color="#F1F1EC" stop-opacity="0.44" />
-          <stop offset="0.61" stop-color="#F1F1EC" stop-opacity="0.25" />
-          <stop offset="0.77" stop-color="#F1F1EC" stop-opacity="0.11" />
-          <stop offset="0.91" stop-color="#F1F1EC" stop-opacity="0.03" />
-          <stop offset="1" stop-color="#F1F1EC" stop-opacity="0" />
+          <stop stopColor="#F1F1EC" />
+          <stop offset="0.01" stopColor="#F1F1EC" stop-opacity="0.99" />
+          <stop offset="0.22" stopColor="#F1F1EC" stop-opacity="0.69" />
+          <stop offset="0.43" stopColor="#F1F1EC" stop-opacity="0.44" />
+          <stop offset="0.61" stopColor="#F1F1EC" stop-opacity="0.25" />
+          <stop offset="0.77" stopColor="#F1F1EC" stop-opacity="0.11" />
+          <stop offset="0.91" stopColor="#F1F1EC" stop-opacity="0.03" />
+          <stop offset="1" stopColor="#F1F1EC" stop-opacity="0" />
         </radialGradient>
         <radialGradient
           id="paint6_radial_1128_3247"
@@ -646,14 +646,14 @@ export function NitroPerk8SuperReactions() {
           gradientUnits="userSpaceOnUse"
           gradientTransform="translate(52.1972 64.2717) scale(4.42272 4.42272)"
         >
-          <stop stop-color="#F1F1EC" />
-          <stop offset="0.01" stop-color="#F1F1EC" stop-opacity="0.99" />
-          <stop offset="0.22" stop-color="#F1F1EC" stop-opacity="0.69" />
-          <stop offset="0.43" stop-color="#F1F1EC" stop-opacity="0.44" />
-          <stop offset="0.61" stop-color="#F1F1EC" stop-opacity="0.25" />
-          <stop offset="0.77" stop-color="#F1F1EC" stop-opacity="0.11" />
-          <stop offset="0.91" stop-color="#F1F1EC" stop-opacity="0.03" />
-          <stop offset="1" stop-color="#F1F1EC" stop-opacity="0" />
+          <stop stopColor="#F1F1EC" />
+          <stop offset="0.01" stopColor="#F1F1EC" stop-opacity="0.99" />
+          <stop offset="0.22" stopColor="#F1F1EC" stop-opacity="0.69" />
+          <stop offset="0.43" stopColor="#F1F1EC" stop-opacity="0.44" />
+          <stop offset="0.61" stopColor="#F1F1EC" stop-opacity="0.25" />
+          <stop offset="0.77" stopColor="#F1F1EC" stop-opacity="0.11" />
+          <stop offset="0.91" stopColor="#F1F1EC" stop-opacity="0.03" />
+          <stop offset="1" stopColor="#F1F1EC" stop-opacity="0" />
         </radialGradient>
         <radialGradient
           id="paint7_radial_1128_3247"
@@ -663,14 +663,14 @@ export function NitroPerk8SuperReactions() {
           gradientUnits="userSpaceOnUse"
           gradientTransform="translate(78.5042 62.6919) scale(4.39279 4.39279)"
         >
-          <stop stop-color="#F1F1EC" />
-          <stop offset="0.01" stop-color="#F1F1EC" stop-opacity="0.99" />
-          <stop offset="0.22" stop-color="#F1F1EC" stop-opacity="0.69" />
-          <stop offset="0.43" stop-color="#F1F1EC" stop-opacity="0.44" />
-          <stop offset="0.61" stop-color="#F1F1EC" stop-opacity="0.25" />
-          <stop offset="0.77" stop-color="#F1F1EC" stop-opacity="0.11" />
-          <stop offset="0.91" stop-color="#F1F1EC" stop-opacity="0.03" />
-          <stop offset="1" stop-color="#F1F1EC" stop-opacity="0" />
+          <stop stopColor="#F1F1EC" />
+          <stop offset="0.01" stopColor="#F1F1EC" stop-opacity="0.99" />
+          <stop offset="0.22" stopColor="#F1F1EC" stop-opacity="0.69" />
+          <stop offset="0.43" stopColor="#F1F1EC" stop-opacity="0.44" />
+          <stop offset="0.61" stopColor="#F1F1EC" stop-opacity="0.25" />
+          <stop offset="0.77" stopColor="#F1F1EC" stop-opacity="0.11" />
+          <stop offset="0.91" stopColor="#F1F1EC" stop-opacity="0.03" />
+          <stop offset="1" stopColor="#F1F1EC" stop-opacity="0" />
         </radialGradient>
         <clipPath id="clip0_1128_3247">
           <rect width="185" height="111" fill="white" />
