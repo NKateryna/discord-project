@@ -26,6 +26,7 @@ function Server() {
   const [currentChannelIcon, setCurrentChannelIcon] = useState(
     <ChannelIconHashtag />
   );
+
   const [searchValue, setSearchValue] = useState('');
 
   const serversData = useSelector(getServers);

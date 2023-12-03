@@ -6,6 +6,7 @@ import FriendsRouters from './routes-friends/index';
 import Server from '../../pages/server';
 import GuildDiscovery from '../../pages/guild-discovery';
 
+
 const Protected = () => {
   return (
     <Routes>
