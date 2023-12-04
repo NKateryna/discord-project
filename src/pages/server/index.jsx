@@ -22,6 +22,13 @@ import NavigationBarItemServer from '../../common/components/NavigationBarItemSe
 import { HELP_URL } from '../../constants';
 
 function Server() {
+  const [currentChannelName, setCurrentChannelName] = useState('general');
+  const [currentChannelIcon, setCurrentChannelIcon] = useState(
+    <ChannelIconHashtag />
+  );
+
+  const [searchValue, setSearchValue] = useState('');
+
   const serversData = useSelector(getServers);
   const dispatch = useDispatch();
   const { serverId } = useParams();
@@ -38,10 +45,6 @@ function Server() {
   );
   const serverName = currentServerData?.name;
 
-  const [currentChannelName, setCurrentChannelName] = useState('general');
-  const [currentChannelIcon, setCurrentChannelIcon] = useState(
-    <ChannelIconHashtag />
-  );
   const onClickItemServer = (channelName, channelIcon) => {
     return () => {
       setCurrentChannelName(channelName);
@@ -49,7 +52,6 @@ function Server() {
     };
   };
 
-  const [searchValue, setSearchValue] = useState('');
   const searchValueChange = (event) => {
     setSearchValue(event.target.value);
   };
