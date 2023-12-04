@@ -1,4 +1,5 @@
 import actions from './actions';
+import { Action, Friend, FriendsData } from './types';
 
 const INITIAL_STATE = {
   data: [],
@@ -9,11 +10,11 @@ const INITIAL_STATE = {
   toggleSearch: false,
 };
 
-const friendsDataReduser = (state = INITIAL_STATE, action) => {
+const friendsDataReduser = (state = INITIAL_STATE, action: Action) => {
   switch (action.type) {
     case actions.CREATING_FRIENDS_LIST: {
-      const friendsArray = [];
-      action.payload.data.map((friend) => friendsArray.push(friend));
+      const friendsArray: FriendsData = [];
+      action.payload.data.map((friend: Friend) => friendsArray.push(friend));
       return {
         ...state,
         data: friendsArray,
@@ -34,8 +35,10 @@ const friendsDataReduser = (state = INITIAL_STATE, action) => {
       };
     }
     case actions.SAVING_SEARCH_FRIENDS: {
-      const friendsArray = [];
-      action.payload.dataSearch.map((friend) => friendsArray.push(friend));
+      const friendsArray: FriendsData = [];
+      action.payload.dataSearch.map((friend: Friend) =>
+        friendsArray.push(friend)
+      );
       return {
         ...state,
         dataSearch: friendsArray,

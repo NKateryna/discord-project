@@ -34,7 +34,9 @@ function Server() {
   const { serverId } = useParams();
 
   useEffect(() => {
-    dispatch(saveActiveItem(serverId));
+    if (serversData.activeServer !== serverId) {
+      dispatch(saveActiveItem(serverId));
+    }
     // eslint-disable-next-line
   }, [serverId]);
 

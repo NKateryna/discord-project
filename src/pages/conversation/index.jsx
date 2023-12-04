@@ -17,6 +17,7 @@ import CreateStatus from '../../common/components/CreateStatus';
 import classNames from 'classnames';
 import Avatar from '../../common/components/Avatar';
 import { getConversations } from '../../redux/conversations/selectors';
+import { HELP_URL } from '../../constants';
 
 function Сonversation() {
   const navigate = useNavigate();
@@ -35,7 +36,10 @@ function Сonversation() {
   );
 
   useEffect(() => {
-    if (conversationsData.toggleLoading && !currentConversationData) {
+    if (
+      (conversationsData.toggleLoading && !currentConversationData) ||
+      !currentConversationData
+    ) {
       navigate(`/channels/@me/`);
     }
     // eslint-disable-next-line
@@ -102,10 +106,7 @@ function Сonversation() {
               <MailIcon className={styles.header_icon} />
             </Tooltip>
             <Tooltip title="Help" placement="bottom">
-              <HelpIcon
-                className={styles.header_icon}
-                link="https://support.discord.com/"
-              />
+              <HelpIcon className={styles.header_icon} link={HELP_URL} />
             </Tooltip>
           </div>
         </div>
@@ -132,7 +133,7 @@ function Сonversation() {
               </div>
               <div className={styles.friendInfo}>
                 <div className={styles.friendInfo_info_text}>
-                  {currentConversationData?.sender?.usernamee}
+                  {currentConversationData?.sender?.username}
                   <span
                     className={styles.friendInfo_hash}
                   >{`#${currentConversationData?.sender.hash

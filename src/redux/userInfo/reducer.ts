@@ -1,4 +1,5 @@
 import actions from './actions';
+import { Action } from './types';
 
 const INITIAL_STATE = {
   username: '',
@@ -10,7 +11,7 @@ const INITIAL_STATE = {
   createdAt: '',
 };
 
-const userInfoReduser = (state = INITIAL_STATE, action) => {
+const userInfoReduser = (state = INITIAL_STATE, action: Action) => {
   switch (action.type) {
     case actions.CREATING_USER_INFO: {
       const {

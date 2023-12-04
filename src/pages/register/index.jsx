@@ -15,7 +15,7 @@ import { useNavigate } from 'react-router-dom';
 const useStyles = makeStyles(stylesMUI);
 
 function Register() {
-  const [user, setUser] = useContext(AuthContext);
+  const [, setUser] = useContext(AuthContext);
   const classes = useStyles();
   const [emailValue, setEmailValue] = useState('');
   const [userNameValue, setUserNameValue] = useState('');
@@ -51,6 +51,7 @@ function Register() {
     if (dayValue && dayValue > numberOfDays) {
       setDayValue('');
     }
+    // eslint-disable-next-line
   }, [monthValue, yearValue]);
 
   const emailValueChange = (event) => {

@@ -32,7 +32,6 @@ const useStyles = makeStyles({
 
 function FriendsEmpty({ emptyIcon, text, buttonText }) {
   const classes = useStyles();
-
   const [, setValue] = useContext(FriendsPagesContext);
 
   const buttonAddFriend = () => {
