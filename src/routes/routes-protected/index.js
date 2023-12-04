@@ -10,6 +10,7 @@ const Protected = () => {
   return (
     <Routes>
       <Route index element={<Navigate replace to="/channels/@me" />} />
+
       <Route
         path="channels/@me/*"
         element={
@@ -21,6 +22,7 @@ const Protected = () => {
           </NavBarDirectMessages>
         }
       />
+
       <Route
         path="nitro/"
         element={
@@ -29,10 +31,12 @@ const Protected = () => {
           </NavBarDirectMessages>
         }
       />
+
       <Route path="channels/*">
         <Route index element={<Navigate replace to="/channels/@me" />} />
         <Route path=":serverId/" element={<Server />} />
       </Route>
+      
       <Route path="guild-discovery/" element={<GuildDiscovery />} />
     </Routes>
   );
