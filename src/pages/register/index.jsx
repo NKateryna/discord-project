@@ -15,8 +15,7 @@ import { useNavigate } from 'react-router-dom';
 const useStyles = makeStyles(stylesMUI);
 
 function Register() {
-  // eslint-disable-next-line
-  const [user, setUser] = useContext(AuthContext);
+  const [, setUser] = useContext(AuthContext);
   const classes = useStyles();
   const [emailValue, setEmailValue] = useState('');
   const [userNameValue, setUserNameValue] = useState('');

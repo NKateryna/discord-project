@@ -38,21 +38,21 @@ interface SaveActiveItemSidebar {
 interface СreationServersList {
   type: typeof actions.CREATING_SERVERS_LIST;
   payload: {
-    servers: serversData,
+    servers: ServersData,
   };
 }
 
 interface СreationCommunitiesList {
   type: typeof actions.CREATING_COMMUMITIES_LIST;
   payload: {
-    communities: serversData,
+    communities: ServersData,
   };
 }
 
 interface SavingSearchCommunitiesList {
   type: typeof actions.SAVING_SEARCH_COMMUMITIES_LIST;
   payload: {
-    communitiesSearch: serversData,
+    communitiesSearch: ServersData,
     toggleSearch: boolean,
   };
 }
@@ -72,4 +72,4 @@ export interface Server {
   photo: string;
 }
 
-export type serversData = Array<Server>;
+export type ServersData = Array<Server>;

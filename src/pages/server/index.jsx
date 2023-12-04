@@ -19,6 +19,7 @@ import {
   ThreadsIcon,
 } from '../../common/components/icons';
 import NavigationBarItemServer from '../../common/components/NavigationBarItemServer';
+import { HELP_URL } from '../../constants';
 
 function Server() {
   const serversData = useSelector(getServers);
@@ -102,10 +103,7 @@ function Server() {
               <MailIcon className={styles.header_icon} />
             </Tooltip>
             <Tooltip title="Help" placement="bottom">
-              <HelpIcon
-                className={styles.header_icon}
-                link="https://support.discord.com/"
-              />
+              <HelpIcon className={styles.header_icon} link={HELP_URL} />
             </Tooltip>
           </div>
         </div>

@@ -1,5 +1,5 @@
 import actions from './actions';
-import { Action, Server, serversData } from './types';
+import { Action, Server, ServersData } from './types';
 
 const INITIAL_STATE = {
   servers: [],
@@ -22,10 +22,10 @@ const serversReduser = (state = INITIAL_STATE, action: Action) => {
       return { ...state, servers: action.payload.servers };
     }
     case actions.ADDING_SERVER: {
-      const serversArray: serversData = [...state.servers];
+      const serversArray: ServersData = [...state.servers];
       serversArray.push(action.payload.server);
 
-      const communitiesArray: serversData = [...state.communities].filter(
+      const communitiesArray: ServersData = [...state.communities].filter(
         (community: Server) => {
           return community._id !== action.payload.server._id;
         }
@@ -34,7 +34,7 @@ const serversReduser = (state = INITIAL_STATE, action: Action) => {
       return { ...state, servers: serversArray, communities: communitiesArray };
     }
     case actions.LEAVE_SERVER: {
-      const serversArray: serversData = [...state.servers].filter(
+      const serversArray: ServersData = [...state.servers].filter(
         (server: Server) => {
           return server._id !== action.payload.id;
         }
@@ -49,7 +49,7 @@ const serversReduser = (state = INITIAL_STATE, action: Action) => {
       return { ...state, communities: action.payload.communities };
     }
     case actions.SAVING_SEARCH_COMMUMITIES_LIST: {
-      const communitiesSearchArray: serversData = [];
+      const communitiesSearchArray: ServersData = [];
       action.payload.communitiesSearch.map((community: Server) =>
         communitiesSearchArray.push(community)
       );

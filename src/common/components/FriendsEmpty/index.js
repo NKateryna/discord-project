@@ -32,8 +32,7 @@ const useStyles = makeStyles({
 
 function FriendsEmpty({ emptyIcon, text, buttonText }) {
   const classes = useStyles();
-  // eslint-disable-next-line
-  const [_, setValue] = useContext(FriendsPagesContext);
+  const [, setValue] = useContext(FriendsPagesContext);
 
   const buttonAddFriend = () => {
     setValue(4);

@@ -1,5 +1,5 @@
 import { creationUserInfo } from '../userInfo/actions';
-import { Server, ServersActionTypes, serversData } from './types';
+import { Server, ServersActionTypes, ServersData } from './types';
 import { Dispatch } from 'redux';
 import { NavigateFunction } from 'react-router-dom';
 import Cookies from 'universal-cookie';
@@ -16,7 +16,7 @@ const actions: ServersActionTypes = {
 
 export default actions;
 
-export const creationServersList = (servers: serversData) => {
+export const creationServersList = (servers: ServersData) => {
   return { type: actions.CREATING_SERVERS_LIST, payload: { servers } };
 };
 
@@ -41,12 +41,12 @@ export const saveActiveItem = (id: string) => {
   };
 };
 
-export const creationCommunitiesList = (communities: serversData) => {
+export const creationCommunitiesList = (communities: ServersData) => {
   return { type: actions.CREATING_COMMUMITIES_LIST, payload: { communities } };
 };
 
 export const savingSearchCommunitiesList = (
-  communitiesSearch: serversData,
+  communitiesSearch: ServersData,
   toggleSearch: boolean
 ) => {
   return {

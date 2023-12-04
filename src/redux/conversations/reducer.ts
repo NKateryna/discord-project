@@ -1,5 +1,5 @@
 import actions from './actions';
-import { Action, Conversation, conversationsData } from './types';
+import { Action, Conversation, ConversationsData } from './types';
 
 const INITIAL_STATE = {
   data: [],
@@ -18,7 +18,7 @@ const conversationsDataReduser = (state = INITIAL_STATE, action: Action) => {
       };
     }
     case actions.ADDING_CONVERSATION: {
-      const сonversationsArray: conversationsData = [...state.data];
+      const сonversationsArray: ConversationsData = [...state.data];
       const existingConversation = сonversationsArray.some(
         (сonversation: Conversation) =>
           сonversation._id === action.payload.conversation._id

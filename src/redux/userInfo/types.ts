@@ -4,14 +4,14 @@ export type UserInfoActionTypes = {
   CREATING_USER_INFO: 'CREATING_USER_INFO',
 };
 
-interface creationUserInfo {
+interface CreationUserInfo {
     type: typeof actions.CREATING_USER_INFO;
     payload: {
         userInfo:UserInfo
     }
 }
 
-export type Action = creationUserInfo
+export type Action = CreationUserInfo
 
 export interface UserInfo {
     username: string

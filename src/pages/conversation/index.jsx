@@ -17,6 +17,7 @@ import CreateStatus from '../../common/components/CreateStatus';
 import classNames from 'classnames';
 import Avatar from '../../common/components/Avatar';
 import { getConversations } from '../../redux/conversations/selectors';
+import { HELP_URL } from '../../constants';
 
 function Сonversation() {
   const navigate = useNavigate();
@@ -105,10 +106,7 @@ function Сonversation() {
               <MailIcon className={styles.header_icon} />
             </Tooltip>
             <Tooltip title="Help" placement="bottom">
-              <HelpIcon
-                className={styles.header_icon}
-                link="https://support.discord.com/"
-              />
+              <HelpIcon className={styles.header_icon} link={HELP_URL} />
             </Tooltip>
           </div>
         </div>

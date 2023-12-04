@@ -48,4 +48,4 @@ export interface Conversation {
   };
 }
 
-export type conversationsData = Array<Conversation>;
+export type ConversationsData = Array<Conversation>;

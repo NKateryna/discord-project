@@ -2,6 +2,7 @@ import styles from './index.module.css';
 import { FriendsIcon, NewGroupChatIcon, MailIcon, HelpIcon } from '../icons';
 import Tooltip from '../Tooltip';
 import FriendsPagesTabs from '../FriendsPagesTabs';
+import { HELP_URL } from '../../../constants';
 
 function FriendsPagesHeader() {
   return (
@@ -21,10 +22,7 @@ function FriendsPagesHeader() {
           <MailIcon className={styles.icon} />
         </Tooltip>
         <Tooltip title="Help" placement="bottom">
-          <HelpIcon
-            className={styles.icon}
-            link="https://support.discord.com/"
-          />
+          <HelpIcon className={styles.icon} link={HELP_URL} />
         </Tooltip>
       </div>
     </div>
