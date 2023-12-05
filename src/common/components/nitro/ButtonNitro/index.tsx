@@ -1,8 +1,16 @@
 import styles from './index.module.css';
 import classNames from 'classnames';
 import Button from '@mui/base/Button';
+import { JSXElement, OnClickButton } from '../../../../types';
 
-function ButtonNitro({ onClick, icon, text, color }) {
+interface PropsButtonNitro {
+  onClick?: OnClickButton;
+  icon?: JSXElement;
+  text: string;
+  color: 'white' | 'transparent';
+}
+
+function ButtonNitro({ onClick, icon, text, color }: PropsButtonNitro) {
   return (
     <Button
       onClick={onClick}
@@ -11,7 +19,7 @@ function ButtonNitro({ onClick, icon, text, color }) {
         [styles.button_transparent]: color === 'transparent',
       })}
     >
-      {icon ? (
+      {icon && (
         <div
           className={classNames(styles.icon, {
             [styles.icon_white]: color === 'white',
@@ -20,7 +28,7 @@ function ButtonNitro({ onClick, icon, text, color }) {
         >
           {icon}
         </div>
-      ) : null}
+      )}
       {text}
     </Button>
   );

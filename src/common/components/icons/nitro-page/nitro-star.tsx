@@ -1,4 +1,4 @@
-export function NitroStar({ className }) {
+export function NitroStar({ className }: { className: string }) {
   return (
     <svg
       className={className}

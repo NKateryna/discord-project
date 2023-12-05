@@ -14,13 +14,11 @@ export function NitroBuyingButtonsBlock() {
         <div className={styles.title}>{'Unleash the fun with Nitro!'}</div>
         <div className={styles.buttons}>
           <ButtonNitro
-            onClick={null}
             icon={<NitroTitleSubscribe />}
             text={'Subscribe'}
             color={'white'}
           />
           <ButtonNitro
-            onClick={null}
             icon={<NitroTitleNitroGift />}
             text={'Gift Nitro'}
             color={'transparent'}
