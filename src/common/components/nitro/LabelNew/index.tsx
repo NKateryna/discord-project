@@ -2,11 +2,11 @@ import styles from './index.module.css';
 import classNames from 'classnames';
 import { NitroStar2 } from '../../icons/nitro-page';
 
-interface PropsLabelNew {
+interface Props {
   color: 'white' | 'purple';
 }
 
-function LabelNew({ color }: PropsLabelNew) {
+function LabelNew({ color }: Props) {
   return (
     <div className={styles.labelBox}>
       <div

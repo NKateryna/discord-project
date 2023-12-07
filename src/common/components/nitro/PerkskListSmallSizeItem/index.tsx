@@ -2,7 +2,7 @@ import styles from './index.module.css';
 import LabelNew from '../LabelNew';
 import { JSXElement } from '../../../../types';
 
-interface PropsPerkskListSmallSizeItem {
+interface Props {
   icon: JSXElement;
   title: string;
   subtitle: string | JSXElement;
@@ -16,7 +16,7 @@ function PerkskListSmallSizeItem({
   subtitle,
   newPerk = false,
   beta = false,
-}: PropsPerkskListSmallSizeItem) {
+}: Props) {
   return (
     <div className={styles.smallSizeItem}>
       <div className={styles.smallSizeItem__LabelNew}>

@@ -1,29 +1,34 @@
-import { InputAdornment, InputBase } from '@mui/material';
-import NavigationBarItem from '../../common/components/NavigationBarItem';
-import UserPanel from '../../common/components/UserPanel';
-import {
-  ChannelSearchIcon,
-  DiscoverSearchBcg,
-  SearchIcon,
-} from '../../common/components/icons';
 import styles from './index.module.css';
 import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import CommunitiesListItem from '../../common/components/CommunitiesListItem';
+import { useSelector } from 'react-redux';
+import { InputAdornment, InputBase } from '@mui/material';
 import { getServers } from '../../redux/servers/selectors';
+import Cookies from 'universal-cookie';
+import { useNavigate } from 'react-router-dom';
 import {
   fetchCommunities,
   joinNewServer,
   savingSearchCommunitiesList,
 } from '../../redux/servers/actions';
-import Cookies from 'universal-cookie';
-import { useNavigate } from 'react-router-dom';
+import NavigationBarItem from '../../common/components/NavigationBarItem';
+import UserPanel from '../../common/components/UserPanel';
+import CommunitiesListItem from '../../common/components/CommunitiesListItem';
+import {
+  ChannelSearchIcon,
+  DiscoverSearchBcg,
+  SearchIcon,
+} from '../../common/components/icons';
+import { Server } from '../../types/components-types';
+import { ServersState } from '../../redux/servers/types';
+import { EventInput } from '../../types';
+import { useAppThunkDispatch } from '../../hooks';
 
 function GuildDiscovery() {
-  const dispatch = useDispatch();
+  const dispatch = useAppThunkDispatch();
+
   const navigate = useNavigate();
   const cookies = new Cookies();
-  const serversData = useSelector(getServers);
+  const serversData: ServersState = useSelector(getServers);
   const { communities, communitiesSearch, toggleSearch } = serversData;
 
   useEffect(() => {
@@ -32,19 +37,19 @@ function GuildDiscovery() {
   }, []);
 
   const [searchValue, setSearchValue] = useState('');
-  const searchValueChange = (event) => {
+  const searchValueChange = (event: EventInput) => {
     setSearchValue(event.target.value);
   };
   useEffect(() => {
     if (!!searchValue) {
-      const communitiesSearch = communities.filter((community) => {
+      const communitiesSearch = communities.filter((community: Server) => {
         return community.name.toLowerCase().includes(searchValue.toLowerCase());
       });
       dispatch(savingSearchCommunitiesList(communitiesSearch, true));
     } else dispatch(savingSearchCommunitiesList([], false));
   }, [searchValue, communities, dispatch]);
 
-  const onClickCommunity = (community) => {
+  const onClickCommunity = (community: Server) => {
     return () => {
       dispatch(joinNewServer(navigate, cookies, community));
     };
@@ -60,7 +65,6 @@ function GuildDiscovery() {
             icon={<ChannelSearchIcon />}
             color={'brandColor'}
             active={true}
-            onClickItem={null}
           />
         </div>
         <UserPanel />
@@ -87,7 +91,6 @@ function GuildDiscovery() {
               }
               name="Search"
               type={'search'}
-              disableUnderline={true}
             />
           </div>
         </div>
@@ -98,13 +101,13 @@ function GuildDiscovery() {
             </div>
             <div className={styles.communitiesList_items}>
               {toggleSearch
-                ? communitiesSearch.map((community) => {
+                ? communitiesSearch.map((community: Server) => {
                     const { _id, name, photo } = community;
                     return (
                       <CommunitiesListItem
                         key={_id}
                         name={name}
-                        icon={photo}
+                        photo={photo}
                         onClick={onClickCommunity(community)}
                         description={
                           'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae veritatis, harum esse amet nihil quo ducimus.'
@@ -118,13 +121,13 @@ function GuildDiscovery() {
                     return (
                       <CommunitiesListItem
                         name={name}
-                        icon={photo}
+                        photo={photo}
                         key={_id}
                         onClick={onClickCommunity(community)}
                         description={
                           'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae veritatis, harum esse amet nihil quo ducimus.'
                         }
-                        members={'111'}
+                        members={111}
                       />
                     );
                   })}

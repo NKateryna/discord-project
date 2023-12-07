@@ -1,8 +1,9 @@
-import { FriendsActionTypes, FriendsData } from './types';
+import { FriendsActionTypes } from './types';
 
 import { Dispatch } from 'redux';
 import { NavigateFunction } from 'react-router-dom';
 import Cookies from 'universal-cookie';
+import { Friend } from '../../types/components-types';
 
 const actions: FriendsActionTypes = {
   CREATING_FRIENDS_LIST: 'CREATING_FRIENDS_LIST',
@@ -13,7 +14,7 @@ const actions: FriendsActionTypes = {
 
 export default actions;
 
-export const creationFriendsList = (data: FriendsData, total: number) => {
+export const creationFriendsList = (data: Friend[], total: number) => {
   return {
     type: actions.CREATING_FRIENDS_LIST,
     payload: { data, total },
@@ -34,7 +35,7 @@ export const setLoaging = (toggleValue: boolean) => {
 };
 
 export const savingSearchFriends = (
-  dataSearch: FriendsData,
+  dataSearch: Friend[],
   totalSearch: number,
   toggleSearch: boolean
 ) => {

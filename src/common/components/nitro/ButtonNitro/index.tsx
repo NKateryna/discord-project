@@ -3,14 +3,14 @@ import classNames from 'classnames';
 import Button from '@mui/base/Button';
 import { JSXElement, OnClickButton } from '../../../../types';
 
-interface PropsButtonNitro {
+interface Props {
   onClick?: OnClickButton;
   icon?: JSXElement;
   text: string;
   color: 'white' | 'transparent';
 }
 
-function ButtonNitro({ onClick, icon, text, color }: PropsButtonNitro) {
+function ButtonNitro({ onClick, icon, text, color }: Props) {
   return (
     <Button
       onClick={onClick}

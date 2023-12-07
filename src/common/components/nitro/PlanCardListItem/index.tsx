@@ -2,17 +2,13 @@ import styles from './index.module.css';
 import LabelNew from '../LabelNew';
 import { JSXElement } from '../../../../types';
 
-interface PropsPlanCardListItem {
+interface Props {
   perkItemIcon: JSXElement;
   text: string;
   newPerk?: boolean;
 }
 
-function PlanCardListItem({
-  perkItemIcon,
-  text,
-  newPerk = false,
-}: PropsPlanCardListItem) {
+function PlanCardListItem({ perkItemIcon, text, newPerk = false }: Props) {
   return (
     <li className={styles.planCard__perkItem}>
       <div className={styles.planCard__perkItemIcon}>{perkItemIcon}</div>

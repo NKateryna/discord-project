@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import ButtonNitro from '../ButtonNitro';
 import { JSXElement, OnClickButton, ReactNodeElement } from '../../../../types';
 
-interface PropsButtonNitro {
+interface Props {
   onClick?: OnClickButton;
   planName: PlanName;
   planNameIcon: JSXElement;
@@ -20,7 +20,7 @@ function PlanCard({
   img,
   priceText,
   children,
-}: PropsButtonNitro) {
+}: Props) {
   return (
     <div
       className={classNames(styles.planCard, {

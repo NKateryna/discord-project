@@ -3,8 +3,9 @@ import classNames from 'classnames';
 import { useState } from 'react';
 import { LogoIcon } from '../icons';
 import CreateStatus from '../CreateStatus';
+import { AvatarProps } from '../../../types/components-types';
 
-function Avatar({ avatar, name, status, statusBcgColor, size }) {
+function Avatar({ avatar, name, status, statusBcgColor, size }: AvatarProps) {
   const [fallbackAvatar, setFallbackAvatar] = useState(false);
 
   const statusIconPropsStyle = {
@@ -44,7 +45,7 @@ function Avatar({ avatar, name, status, statusBcgColor, size }) {
           />
         )}
       </div>
-      {status ? (
+      {status && (
         <div
           className={classNames(styles.statusIcon, {
             [styles.statusIcon80px]: size === '80px',
@@ -53,7 +54,7 @@ function Avatar({ avatar, name, status, statusBcgColor, size }) {
         >
           {statusIcon}
         </div>
-      ) : null}
+      )}
     </div>
   );
 }

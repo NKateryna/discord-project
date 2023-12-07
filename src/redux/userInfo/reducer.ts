@@ -1,7 +1,7 @@
 import actions from './actions';
-import { Action } from './types';
+import { Action, UserInfoState } from './types';
 
-const INITIAL_STATE = {
+const INITIAL_STATE: UserInfoState = {
   username: '',
   hash: '',
   status: '',

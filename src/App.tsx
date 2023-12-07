@@ -12,6 +12,7 @@ const store = configureStore({
   reducer: rootReducer,
   middleware: [thunk],
 });
+export type AppDispatch = typeof store.dispatch;
 
 function App() {
   return (

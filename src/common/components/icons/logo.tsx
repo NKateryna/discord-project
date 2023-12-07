@@ -1,4 +1,11 @@
-export function LogoIcon({ style, className }) {
+import { CSSProps } from '../../../types';
+
+interface Props {
+  style?: CSSProps;
+  className?: string;
+}
+
+export function LogoIcon({ style, className }: Props) {
   return (
     <svg
       style={style}

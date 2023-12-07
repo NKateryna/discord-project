@@ -1,8 +1,4 @@
-import {
-  ConversationsActionTypes,
-  Conversation,
-  ConversationsData,
-} from './types';
+import { ConversationsActionTypes, Conversation } from './types';
 import { Dispatch } from 'redux';
 import { NavigateFunction } from 'react-router-dom';
 import Cookies from 'universal-cookie';
@@ -16,7 +12,7 @@ const actions: ConversationsActionTypes = {
 
 export default actions;
 
-export const creationСonversationsList = (data: ConversationsData) => {
+export const creationСonversationsList = (data: Conversation[]) => {
   return {
     type: actions.CREATING_CONVERSATIONS_LIST,
     payload: { data },
