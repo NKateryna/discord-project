@@ -1,16 +1,16 @@
 import styles from './index.module.css';
 import classNames from 'classnames';
+import { MouseEventHandler, ReactElement } from 'react';
 import Button from '@mui/base/Button';
-import { JSXElement, OnClickButton } from '../../../../types';
 
-interface PropsButtonNitro {
-  onClick?: OnClickButton;
-  icon?: JSXElement;
+interface Props {
+  onClick?: MouseEventHandler<HTMLButtonElement>;
+  icon?: ReactElement;
   text: string;
   color: 'white' | 'transparent';
 }
 
-function ButtonNitro({ onClick, icon, text, color }: PropsButtonNitro) {
+function ButtonNitro({ onClick, icon, text, color }: Props) {
   return (
     <Button
       onClick={onClick}

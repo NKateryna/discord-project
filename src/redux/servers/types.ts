@@ -1,4 +1,14 @@
+import { Server } from '../../types';
 import actions from './actions';
+
+export type ServersState = {
+  servers: Server[],
+  isLoaded: boolean,
+  activeServer: string,
+  communities: Server[],
+  communitiesSearch: Server[],
+  toggleSearch: boolean,
+};
 
 export type ServersActionTypes = {
   SET_IS_LOADED: 'SET_IS_LOADED',
@@ -38,21 +48,21 @@ interface SaveActiveItemSidebar {
 interface СreationServersList {
   type: typeof actions.CREATING_SERVERS_LIST;
   payload: {
-    servers: ServersData,
+    servers: Server[],
   };
 }
 
-interface СreationCommunitiesList {
+export interface СreationCommunitiesList {
   type: typeof actions.CREATING_COMMUMITIES_LIST;
   payload: {
-    communities: ServersData,
+    communities: Server[],
   };
 }
 
 interface SavingSearchCommunitiesList {
   type: typeof actions.SAVING_SEARCH_COMMUMITIES_LIST;
   payload: {
-    communitiesSearch: ServersData,
+    communitiesSearch: Server[],
     toggleSearch: boolean,
   };
 }
@@ -65,11 +75,3 @@ export type Action =
   | СreationServersList
   | СreationCommunitiesList
   | SavingSearchCommunitiesList;
-
-export interface Server {
-  _id: string;
-  name: string;
-  photo: string;
-}
-
-export type ServersData = Array<Server>;

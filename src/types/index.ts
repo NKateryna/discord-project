@@ -1,16 +1,24 @@
-import {
-  ReactNode,
-  ReactElement,
-  CSSProperties,
-  MouseEventHandler,
-} from 'react';
+export interface Friend {
+  _id: string;
+  username: string;
+  status: string;
+  hash: number;
+  avatar: string;
+}
 
-export type PropsWithChildren = {
-  children: ReactNode,
-};
-export type ReactNodeElement = ReactNode;
-export type JSXElement = ReactElement;
+export interface Server {
+  _id: string;
+  name: string;
+  photo: string;
+}
 
-export type CSSProps = CSSProperties;
+export interface AvatarProps {
+  avatar: string;
+  name: string;
+  status: UserStatus;
+  statusBcgColor?: string;
+  size?: UserAvatarSize;
+}
+export type UserAvatarSize = '80px' | '40px';
 
-export type OnClickButton = MouseEventHandler<HTMLButtonElement>;
+export type UserStatus = 'ONLINE' | 'OFFLINE' | 'AWAY' | 'BUSY';

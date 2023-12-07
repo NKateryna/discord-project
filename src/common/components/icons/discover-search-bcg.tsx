@@ -1,12 +1,13 @@
+import { CSSProperties } from 'react';
+
 export function DiscoverSearchBcg() {
-  const style = {
+  const style: CSSProperties = {
     zIndex: '-2',
     borderRadius: '12px',
   };
   return (
     <svg
       width="100%"
-      minHeight="482"
       viewBox="0 0 1545 482"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

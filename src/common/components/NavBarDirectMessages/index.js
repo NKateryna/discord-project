@@ -12,6 +12,7 @@ import NavigationBarSearch from '../NavigationBarSearch';
 import NavigationBarItem from '../NavigationBarItem';
 import UserPanel from '../UserPanel';
 import { getConversations } from '../../../redux/conversations/selectors';
+import NavigationBarItemDirect from '../NavigationBarItemDirect';
 
 function NavBarDirectMessages({ children }) {
   const navigate = useNavigate();
@@ -63,7 +64,7 @@ function NavBarDirectMessages({ children }) {
             {conversationsData.data.map((conversation) => {
               const { username, avatar, status } = conversation.sender;
               return (
-                <NavigationBarItem
+                <NavigationBarItemDirect
                   id={conversation._id}
                   name={username}
                   avatar={avatar}

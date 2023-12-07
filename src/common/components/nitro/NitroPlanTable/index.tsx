@@ -1,4 +1,5 @@
 import styles from './index.module.css';
+import { ReactElement } from 'react';
 import ButtonNitro from '../ButtonNitro';
 import {
   NitroPlanNitro,
@@ -6,10 +7,9 @@ import {
   NitroPlanTableCross,
   NitroTitleNitroGift,
 } from '../../icons/nitro-page';
-import { JSXElement } from '../../../../types';
 
 function NitroPlanTable() {
-  const included = (included: boolean): JSXElement => {
+  const included = (included: boolean): ReactElement => {
     return included ? <NitroPlanTableCheck /> : <NitroPlanTableCross />;
   };
 

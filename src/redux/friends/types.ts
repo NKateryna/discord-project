@@ -1,4 +1,14 @@
+import { Friend } from '../../types';
 import actions from './actions';
+
+export interface FriendsDataState {
+  data: Friend[],
+  total: number,
+  toggleLoading: boolean,
+  dataSearch: Friend[],
+  totalSearch: number,
+  toggleSearch: boolean,
+};
 
 export type FriendsActionTypes = {
   CREATING_FRIENDS_LIST: 'CREATING_FRIENDS_LIST',
@@ -10,7 +20,7 @@ export type FriendsActionTypes = {
 interface CreatingFriendList {
   type: typeof actions.CREATING_FRIENDS_LIST;
   payload: {
-    data: FriendsData,
+    data: Friend[],
     total: number,
   };
 }
@@ -23,10 +33,10 @@ interface FriendsToggleLoading {
     toggleValue: boolean,
   };
 }
-interface SavingSearchFriends {
+export interface SavingSearchFriends {
   type: typeof actions.SAVING_SEARCH_FRIENDS;
   payload: {
-   dataSearch: FriendsData,
+   dataSearch: Friend[]
    totalSearch: number
    toggleSearch: boolean
   };
@@ -37,14 +47,3 @@ export type Action =
   | RemoveFriendsList
   | FriendsToggleLoading 
   | SavingSearchFriends;
-
-
-export interface Friend {
-  _id: string;
-  username: string;
-  status: string;
-  hash: number;
-  avatar: string;
-}
-
-export type FriendsData = Array<Friend>;

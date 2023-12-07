@@ -1,8 +1,10 @@
 import styles from './index.module.css';
-import { PropsWithChildren } from '../../../../types';
+import { PropsWithChildren, ReactNode } from 'react';
 import { NitroIcon } from '../../icons';
 
-export function NitroPageWrapper({ children }: PropsWithChildren) {
+export function NitroPageWrapper({
+  children,
+}: PropsWithChildren<{ children: ReactNode }>) {
   return (
     <div className={styles.wrapper}>
       <div className={styles.headerBlock}>

@@ -1,8 +1,9 @@
 import { creationUserInfo } from '../userInfo/actions';
-import { Server, ServersActionTypes, ServersData } from './types';
+import { ServersActionTypes } from './types';
 import { Dispatch } from 'redux';
 import { NavigateFunction } from 'react-router-dom';
 import Cookies from 'universal-cookie';
+import { Server } from '../../types';
 
 const actions: ServersActionTypes = {
   SET_IS_LOADED: 'SET_IS_LOADED',
@@ -16,7 +17,7 @@ const actions: ServersActionTypes = {
 
 export default actions;
 
-export const creationServersList = (servers: ServersData) => {
+export const creationServersList = (servers: Server[]) => {
   return { type: actions.CREATING_SERVERS_LIST, payload: { servers } };
 };
 
@@ -41,12 +42,12 @@ export const saveActiveItem = (id: string) => {
   };
 };
 
-export const creationCommunitiesList = (communities: ServersData) => {
+export const creationCommunitiesList = (communities: Server[]) => {
   return { type: actions.CREATING_COMMUMITIES_LIST, payload: { communities } };
 };
 
 export const savingSearchCommunitiesList = (
-  communitiesSearch: ServersData,
+  communitiesSearch: Server[],
   toggleSearch: boolean
 ) => {
   return {

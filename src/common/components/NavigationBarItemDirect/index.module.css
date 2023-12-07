@@ -21,20 +21,14 @@
     background-color:var(--gray-12);
 }
 
-.icon {
-    margin-left: 14px;
-    margin-right: 16px;
-    width: 24px;
-    height: 24px;
-    fill: var(--gray-11)
-}
-.box:not(.itemActive):hover .icon  {
-    fill: var(--white);
-}
-.itemActive .icon{ 
-    fill: var(--white);
-}
 
+
+.avatar {
+    margin-left: 8px;
+    margin-right: 12px;
+    height: 32px;
+    width: 32px;
+}
 
 .name { 
     font-family: 'Whitney';
@@ -54,6 +48,24 @@
 .itemActive .name{
     color: var(--white); 
 }
+
+.closeChat {
+    height: 12px;
+    width: 12px;
+    display: none;
+    margin-left: auto;
+    margin-right: 12px;
+}
+
+.box:not(.itemActive):hover .closeChat  {
+    display: flex;
+    fill: var(--gray-13);
+}
+
+.box:not(.itemActive):hover .closeChat:hover {
+    fill: var(--white);
+}
+
 
 .boxBrandColor.itemActive {
     background-color: var(--brand-color);

@@ -1,23 +1,27 @@
 import styles from './index.module.css';
 import classNames from 'classnames';
-import { useState } from 'react';
+import { MouseEventHandler, useState } from 'react';
+import { AvatarProps } from '../../../types';
 import { CloseChatIcon } from '../icons';
 import Avatar from '../Avatar';
+interface Props extends AvatarProps {
+  onClickItem:MouseEventHandler<HTMLDivElement>;
+  onClickDeleteChat?: MouseEventHandler<HTMLDivElement>;
+  active: boolean
+  id: string;
+}
 
-function NavigationBarItem({
+function NavigationBarItemDirect({
   onClickItem,
-  id,
-  icon,
-  avatar,
-  status,
-  name,
   active,
-  color,
+  id,
   onClickDeleteChat,
-}) {
+  avatar,
+  name,
+  status
+}: Props) {
   const [isHovered, setIsHovered] = useState(false);
   const statusIconPropsStyle = isHovered ? 'var(--gray-5)' : 'var(--gray-1)';
-
   return (
     <div
       onClick={onClickItem}
@@ -25,15 +29,10 @@ function NavigationBarItem({
       onMouseLeave={() => setIsHovered(false)}
       className={classNames(
         styles.box,
-        { [styles.boxIcon]: icon },
         { [styles.itemActive]: active },
-        { [styles.boxBrandColor]: color === 'brandColor' }
       )}
       key={id}
     >
-      {icon ? (
-        <div className={styles.icon}>{icon}</div>
-      ) : (
         <div className={styles.avatar}>
           <Avatar
             avatar={avatar}
@@ -42,15 +41,12 @@ function NavigationBarItem({
             statusBcgColor={statusIconPropsStyle}
           />
         </div>
-      )}
       <div className={styles.name}>{name}</div>
-      {icon ? null : (
-        <div onClick={onClickDeleteChat} className={styles.closeChat}>
+      <div onClick={onClickDeleteChat} className={styles.closeChat}>
           <CloseChatIcon />
         </div>
-      )}
     </div>
   );
 }
 
-export default NavigationBarItem;
+export default NavigationBarItemDirect;
