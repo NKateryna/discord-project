@@ -32,13 +32,11 @@ export function NitroHeaderBlock() {
         </div>
         <div className={styles.header__buttons}>
           <ButtonNitro
-            onClick={null}
             icon={<NitroTitleSubscribe />}
             text={'Subscribe'}
             color={'white'}
           />
           <ButtonNitro
-            onClick={null}
             icon={<NitroTitleNitroGift />}
             text={'Gift Nitro'}
             color={'transparent'}
@@ -52,7 +50,6 @@ export function NitroHeaderBlock() {
       <div className={styles.plans}>
         <PlanCard
           planName={'BasicNitro'}
-          onClick={null}
           planNameIcon={<NitroPlanBasicNitro />}
           img={<NitroPlanImg1 />}
           priceText={'$2.99/month'}
@@ -77,7 +74,6 @@ export function NitroHeaderBlock() {
         </PlanCard>
         <PlanCard
           planName={'Nitro'}
-          onClick={null}
           planNameIcon={<NitroPlanNitro />}
           img={<NitroPlanImg2 />}
           priceText={'$9.99/month'}

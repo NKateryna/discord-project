@@ -1,6 +1,17 @@
 import styles from './index.module.css';
 import classNames from 'classnames';
 import ButtonNitro from '../ButtonNitro';
+import { JSXElement, OnClickButton, ReactNodeElement } from '../../../../types';
+
+interface PropsButtonNitro {
+  onClick?: OnClickButton;
+  planName: PlanName;
+  planNameIcon: JSXElement;
+  img: JSXElement;
+  priceText: string;
+  children: ReactNodeElement;
+}
+type PlanName = 'BasicNitro' | 'Nitro';
 
 function PlanCard({
   onClick,
@@ -9,7 +20,7 @@ function PlanCard({
   img,
   priceText,
   children,
-}) {
+}: PropsButtonNitro) {
   return (
     <div
       className={classNames(styles.planCard, {

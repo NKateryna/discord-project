@@ -1,9 +1,11 @@
+import { CSSProps } from '../../../../types';
+
 export function NitroBcgGradient() {
-  const style = {
-    '-webkit-mask-image': 'linear-gradient(180deg,#000 48.68%,transparent)',
-    'mask-image': 'linear-gradient(180deg,#000 48.68%,transparent)',
+  const style: CSSProps = {
+    WebkitMaskImage: 'linear-gradient(180deg,#000 48.68%,transparent)',
+    maskImage: 'linear-gradient(180deg,#000 48.68%,transparent)',
     position: 'absolute',
-    zIndex: '-2',
+    zIndex: -2,
   };
 
   return (
