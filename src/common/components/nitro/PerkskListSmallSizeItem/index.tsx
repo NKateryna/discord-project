@@ -1,11 +1,11 @@
 import styles from './index.module.css';
+import { ReactElement } from 'react';
 import LabelNew from '../LabelNew';
-import { JSXElement } from '../../../../types';
 
 interface Props {
-  icon: JSXElement;
+  icon: ReactElement;
   title: string;
-  subtitle: string | JSXElement;
+  subtitle: string | ReactElement;
   newPerk?: boolean;
   beta?: boolean;
 }

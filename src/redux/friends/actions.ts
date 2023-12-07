@@ -3,7 +3,7 @@ import { FriendsActionTypes } from './types';
 import { Dispatch } from 'redux';
 import { NavigateFunction } from 'react-router-dom';
 import Cookies from 'universal-cookie';
-import { Friend } from '../../types/components-types';
+import { Friend } from '../../types';
 
 const actions: FriendsActionTypes = {
   CREATING_FRIENDS_LIST: 'CREATING_FRIENDS_LIST',

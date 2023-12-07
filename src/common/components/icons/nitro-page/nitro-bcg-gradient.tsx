@@ -1,7 +1,7 @@
-import { CSSProps } from '../../../../types';
+import { CSSProperties } from 'react';
 
 export function NitroBcgGradient() {
-  const style: CSSProps = {
+  const style: CSSProperties = {
     WebkitMaskImage: 'linear-gradient(180deg,#000 48.68%,transparent)',
     maskImage: 'linear-gradient(180deg,#000 48.68%,transparent)',
     position: 'absolute',

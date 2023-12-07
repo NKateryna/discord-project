@@ -1,7 +1,7 @@
-import { CSSProps } from '../../../types';
+import { CSSProperties } from 'react';
 
 export function DiscoverSearchBcg() {
-  const style: CSSProps = {
+  const style: CSSProperties = {
     zIndex: '-2',
     borderRadius: '12px',
   };

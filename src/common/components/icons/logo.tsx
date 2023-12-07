@@ -1,7 +1,7 @@
-import { CSSProps } from '../../../types';
+import { CSSProperties } from 'react';
 
 interface Props {
-  style?: CSSProps;
+  style?: CSSProperties;
   className?: string;
 }
 

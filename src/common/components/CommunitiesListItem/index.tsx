@@ -1,8 +1,6 @@
-import { useState } from 'react';
-import { OnClickDiv } from '../../../types';
-import { Server } from '../../../types/components-types';
-import { CommunitiesMembersOffline } from '../icons';
 import styles from './index.module.css';
+import { MouseEventHandler, useState } from 'react';
+import { CommunitiesMembersOffline } from '../icons';
 
 interface Props{
   name: string;
@@ -10,7 +8,7 @@ interface Props{
   bcg?: string 
   description: string
   members:number | string
-  onClick:OnClickDiv
+  onClick:MouseEventHandler<HTMLDivElement>
 }
 
 function CommunitiesListItem({

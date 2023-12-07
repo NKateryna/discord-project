@@ -1,9 +1,9 @@
-import { JSXElement } from '../../../../types';
 import styles from './index.module.css';
+import { ReactElement } from 'react';
 
 interface Props {
-  title: JSXElement;
-  icon: JSXElement;
+  title: ReactElement;
+  icon: ReactElement;
 }
 
 function PerkskListMidlSizeItem({ title, icon }: Props) {

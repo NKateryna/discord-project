@@ -1,4 +1,4 @@
-import { Server } from '../../types/components-types';
+import { Server } from '../../types';
 import actions from './actions';
 import { Action, ServersState } from './types';
 

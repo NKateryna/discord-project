@@ -1,11 +1,10 @@
 import styles from './index.module.css';
 import classNames from 'classnames';
-import { OnClickDiv, ReactNodeElement } from '../../../types';
-
+import { MouseEventHandler, ReactNode } from 'react';
 
 interface Props {
-  icon: ReactNodeElement;
-  onClickItem?: OnClickDiv;
+  icon: ReactNode;
+  onClickItem?: MouseEventHandler<HTMLDivElement>;
   active: boolean
   name: string;
   color?: 'brandColor'

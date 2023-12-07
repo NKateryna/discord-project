@@ -1,15 +1,15 @@
 import styles from './index.module.css';
 import classNames from 'classnames';
+import { ReactElement, ReactNode, MouseEventHandler } from 'react';
 import ButtonNitro from '../ButtonNitro';
-import { JSXElement, OnClickButton, ReactNodeElement } from '../../../../types';
 
 interface Props {
-  onClick?: OnClickButton;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
   planName: PlanName;
-  planNameIcon: JSXElement;
-  img: JSXElement;
+  planNameIcon: ReactElement;
+  img: ReactElement;
   priceText: string;
-  children: ReactNodeElement;
+  children: ReactNode;
 }
 type PlanName = 'BasicNitro' | 'Nitro';
 

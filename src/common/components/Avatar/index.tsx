@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { useState } from 'react';
 import { LogoIcon } from '../icons';
 import CreateStatus from '../CreateStatus';
-import { AvatarProps } from '../../../types/components-types';
+import { AvatarProps } from '../../../types';
 
 function Avatar({ avatar, name, status, statusBcgColor, size }: AvatarProps) {
   const [fallbackAvatar, setFallbackAvatar] = useState(false);

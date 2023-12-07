@@ -1,9 +1,9 @@
 import styles from './index.module.css';
+import { ReactElement } from 'react';
 import LabelNew from '../LabelNew';
-import { JSXElement } from '../../../../types';
 
 interface Props {
-  perkItemIcon: JSXElement;
+  perkItemIcon: ReactElement;
   text: string;
   newPerk?: boolean;
 }

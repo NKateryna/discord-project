@@ -1,4 +1,4 @@
-import { Friend } from '../../types/components-types';
+import { Friend } from '../../types';
 import actions from './actions';
 import { Action, FriendsDataState } from './types';
 

@@ -1,15 +1,12 @@
 import styles from './index.module.css';
 import classNames from 'classnames';
-import { useState } from 'react';
+import { MouseEventHandler, useState } from 'react';
+import { AvatarProps } from '../../../types';
 import { CloseChatIcon } from '../icons';
 import Avatar from '../Avatar';
-import { OnClickDiv } from '../../../types';
-import { AvatarProps } from '../../../types/components-types';
-
-
 interface Props extends AvatarProps {
-  onClickItem: OnClickDiv;
-  onClickDeleteChat?: OnClickDiv;
+  onClickItem:MouseEventHandler<HTMLDivElement>;
+  onClickDeleteChat?: MouseEventHandler<HTMLDivElement>;
   active: boolean
   id: string;
 }

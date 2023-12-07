@@ -1,5 +1,5 @@
 import styles from './index.module.css';
-import { useEffect, useState } from 'react';
+import { ChangeEvent, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { InputAdornment, InputBase } from '@mui/material';
 import { getServers } from '../../redux/servers/selectors';
@@ -10,6 +10,9 @@ import {
   joinNewServer,
   savingSearchCommunitiesList,
 } from '../../redux/servers/actions';
+import { ServersState } from '../../redux/servers/types';
+import { useAppThunkDispatch } from '../../hooks';
+import { Server } from '../../types';
 import NavigationBarItem from '../../common/components/NavigationBarItem';
 import UserPanel from '../../common/components/UserPanel';
 import CommunitiesListItem from '../../common/components/CommunitiesListItem';
@@ -18,14 +21,9 @@ import {
   DiscoverSearchBcg,
   SearchIcon,
 } from '../../common/components/icons';
-import { Server } from '../../types/components-types';
-import { ServersState } from '../../redux/servers/types';
-import { EventInput } from '../../types';
-import { useAppThunkDispatch } from '../../hooks';
 
 function GuildDiscovery() {
   const dispatch = useAppThunkDispatch();
-
   const navigate = useNavigate();
   const cookies = new Cookies();
   const serversData: ServersState = useSelector(getServers);
@@ -37,7 +35,7 @@ function GuildDiscovery() {
   }, []);
 
   const [searchValue, setSearchValue] = useState('');
-  const searchValueChange = (event: EventInput) => {
+  const searchValueChange = (event: ChangeEvent<HTMLInputElement>) => {
     setSearchValue(event.target.value);
   };
   useEffect(() => {

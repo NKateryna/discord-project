@@ -3,7 +3,7 @@ import { ServersActionTypes } from './types';
 import { Dispatch } from 'redux';
 import { NavigateFunction } from 'react-router-dom';
 import Cookies from 'universal-cookie';
-import { Server } from '../../types/components-types';
+import { Server } from '../../types';
 
 const actions: ServersActionTypes = {
   SET_IS_LOADED: 'SET_IS_LOADED',

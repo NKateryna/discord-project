@@ -1,11 +1,11 @@
 import styles from './index.module.css';
 import classNames from 'classnames';
+import { MouseEventHandler, ReactElement } from 'react';
 import Button from '@mui/base/Button';
-import { JSXElement, OnClickButton } from '../../../../types';
 
 interface Props {
-  onClick?: OnClickButton;
-  icon?: JSXElement;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
+  icon?: ReactElement;
   text: string;
   color: 'white' | 'transparent';
 }
